@@ -25,8 +25,6 @@ export class AuthService {
    
   }
 
-
-
   signUpUser(user: {}) {
     return this.http.post<any>(this.URL + '/signup', user);
   }
@@ -90,6 +88,19 @@ getIngresosEstadisticas() {
 getIngresosPorUsuario() {
   return this.http.get<any[]>(this.URL+'/estadisticas/ingresos-por-usuario');
 }
+
+getIngresosPorUsuarioYMES(usuario: string, mes: string) {
+  return this.http.post<any>(`${this.URL}/ingresos/usuario-mes`, {
+    usuario,
+    mes
+  });
+}
+
+getRetencionYPromedio() {
+  return this.http.get<any>(`${this.URL}/estadisticas/retencion-y-promedio`);
+}
+
+
 
 isAuthenticated(): boolean {
   return !!this.getToken(); // o tu lógica de sesión

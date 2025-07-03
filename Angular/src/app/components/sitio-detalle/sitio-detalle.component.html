@@ -242,23 +242,31 @@
       
               <mat-divider></mat-divider>
       
-              <p>
+              <!-- <p>
                 <mat-icon>explore</mat-icon>
                 <b>Latitud:</b> {{sitio.grad_lat}}° {{sitio.min_lat}}' {{sitio.seg_lat}}"
               </p>
               <p>
                 <mat-icon>explore</mat-icon>
                 <b>Longitud:</b> {{sitio.grad_long}}° {{sitio.min_long}}' {{sitio.seg_log}}"
-              </p>
-      
-              <p><b>Localización GPS:</b>
-                <mat-icon *ngIf="sitio.localizacion_gps" color="primary">check_circle</mat-icon>
-              </p>
-            </mat-card-content>
-          </mat-card>
-        </div>
-      </mat-tab>
-      
+              </p> -->
+         <p *ngIf="sitio.latitude !== undefined">
+        <mat-icon>explore</mat-icon>
+          <b>Latitud:</b> {{ convertToDMS(sitio.latitude, true) }}
+        </p>
+
+        <p *ngIf="sitio.longitude !== undefined">
+          <mat-icon>explore</mat-icon>
+          <b>Longitud:</b> {{ convertToDMS(sitio.longitude, false) }}
+        </p>
+
+<p><b>Localización GPS:</b>
+  <mat-icon *ngIf="sitio.localizacion_gps" color="primary">check_circle</mat-icon>
+</p>
+</mat-card-content>
+</mat-card>
+</div>
+</mat-tab>
 
     <mat-tab>
         <ng-template mat-tab-label>

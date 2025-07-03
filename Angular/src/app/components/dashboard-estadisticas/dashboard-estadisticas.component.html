@@ -1,74 +1,200 @@
+<!-- BOTÓN VOLVER -->
 <div style="text-align: right; width: 100%; margin-bottom: 10px;">
-    <button mat-stroked-button color="accent" routerLink="/pag-ori">
-      <mat-icon>arrow_back</mat-icon>
-      Volver al inicio
-    </button>
-  </div>
-  
-  <h1 style="text-align: center; margin-top: 10px;">
-    Estadísticas de Ingreso al Sistema
-  </h1>
-  <p style="text-align: center; color: gray; margin-top: -5px;">
-    Registro mensual y por usuario de accesos al sistema Orígenes
-  </p>
-  
-  <!-- CONTENEDOR PARA EXPORTACIÓN -->
-  <div id="pdf-section"
+  <button mat-stroked-button color="accent" routerLink="/pag-ori">
+    <mat-icon>arrow_back</mat-icon>
+    Volver al inicio
+  </button>
+</div>
+
+<!-- TÍTULO -->
+<h1 style="text-align: center; margin-top: 10px;">
+  Estadísticas de Ingreso al Sistema
+</h1>
+<p style="text-align: center; color: gray; margin-top: -5px;">
+  Registro mensual y por usuario de accesos al sistema Orígenes
+</p>
+
+<!-- CONTENEDOR EXPORTABLE -->
+<div id="pdf-section"
      style="display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 20px; padding: 20px; background: white;">
 
-  
-    <!-- SOLO GRÁFICO -->
-    <div id="grafico-ingresos" style="display: flex; justify-content: center; margin-bottom: 20px;">
-      <mat-card style="width: 600px;">
-        <mat-card-title>
-          <mat-icon>bar_chart</mat-icon> Ingresos por Mes
-        </mat-card-title>
-        <ngx-charts-bar-vertical
-          [results]="ingresosPorMes"
-          [xAxis]="true"
-          [yAxis]="true"
-          [legend]="false"
-          [showDataLabel]="true"
-          [animations]="true"
-          [xAxisLabel]="'Mes'"
-          [yAxisLabel]="'Ingresos'"
-          [barPadding]="70">
-        </ngx-charts-bar-vertical>
-      </mat-card>
-    </div>
-  
-    <!-- RESTO DEL CONTENIDO -->
-    <div id="contenido-resto" style="display: flex; justify-content: center;">
-      <mat-card style="width: 600px;">
-        <mat-card-title>
-          <mat-icon>supervisor_account</mat-icon> Accesos por Usuario
-          <button mat-raised-button color="primary" (click)="exportarPDF()">
-            <mat-icon>download</mat-icon> Exportar PDF
-          </button>
-        </mat-card-title>
-  
-        <table mat-table [dataSource]="dataSource" matSort>
-          <ng-container matColumnDef="usuario">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Usuario</th>
-            <td mat-cell *matCellDef="let row">{{ row._id }}</td>
-          </ng-container>
-  
-          <ng-container matColumnDef="nombre_usuario">
-            <th mat-header-cell *matHeaderCellDef>Nombre</th>
-            <td mat-cell *matCellDef="let row">{{ row.nombre_usuario }}</td>
-          </ng-container>
-  
-          <ng-container matColumnDef="total">
-            <th mat-header-cell *matHeaderCellDef>Total Ingresos</th>
-            <td mat-cell *matCellDef="let row">{{ row.total }}</td>
-          </ng-container>
-  
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-      </mat-card>
-    </div>
-  
+  <!-- GRÁFICO: INGRESOS POR MES -->
+  <div id="grafico-ingresos" style="display: flex; justify-content: center; margin-bottom: 20px;">
+    <mat-card style="width: 600px;">
+      <mat-card-title>
+        <mat-icon>bar_chart</mat-icon> Ingresos por Mes
+      </mat-card-title>
+      <ngx-charts-bar-vertical
+        [results]="ingresosPorMes"
+        [xAxis]="true"
+        [yAxis]="true"
+        [legend]="false"
+        [showDataLabel]="true"
+        [animations]="true"
+        [xAxisLabel]="'Mes'"
+        [yAxisLabel]="'Ingresos'"
+        [barPadding]="70">
+      </ngx-charts-bar-vertical>
+    </mat-card>
   </div>
+
+  <!-- GRÁFICO: CRECIMIENTO MENSUAL -->
+<!--   <div id="grafico-crecimiento" style="display: flex; justify-content: center;">
+    <mat-card style="width: 600px;">
+      <mat-card-title>
+        <mat-icon>trending_up</mat-icon> Porcentaje de Crecimiento Mensual
+      </mat-card-title>
+      <ngx-charts-bar-vertical
+        [results]="porcentajeCrecimiento"
+        [xAxis]="true"
+        [yAxis]="true"
+        [legend]="false"
+        [showDataLabel]="true"
+        [xAxisLabel]="'Mes'"
+        [yAxisLabel]="'% Crecimiento'"
+        [animations]="true"
+        [barPadding]="40">
+      </ngx-charts-bar-vertical>
+    </mat-card>
+  </div> -->
+
+  <!-- GRÁFICO: CRECIMIENTO MENSUAL -->
+<div id="grafico-crecimiento" style="display: flex; justify-content: center;">
+  <mat-card style="width: 600px;">
+    <mat-card-title>
+      <mat-icon>trending_up</mat-icon> Porcentaje de Crecimiento Mensual
+    </mat-card-title>
+    <ngx-charts-line-chart
+      [results]="porcentajeCrecimiento"
+      [xAxis]="true"
+      [yAxis]="true"
+      [legend]="false"
+      [xAxisLabel]="'Mes'"
+      [yAxisLabel]="'% Crecimiento'"
+      [animations]="true">
+    </ngx-charts-line-chart>
+  </mat-card>
+</div>
+
   
 
+
+  <!-- TABLA DE ACCESOS -->
+  <div id="contenido-resto" style="display: flex; justify-content: center;">
+    <mat-card style="width: 600px;">
+      <mat-card-title style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <mat-icon>supervisor_account</mat-icon> Accesos por Usuario
+        </div>
+        <button mat-raised-button color="primary" (click)="exportarPDF()">
+          <mat-icon>download</mat-icon> Exportar PDF
+        </button>
+      </mat-card-title>
+
+      <table mat-table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="usuario">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Usuario</th>
+          <td mat-cell *matCellDef="let row">{{ row._id }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="nombre_usuario">
+          <th mat-header-cell *matHeaderCellDef>Nombre</th>
+          <td mat-cell *matCellDef="let row">{{ row.nombre_usuario }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="total">
+          <th mat-header-cell *matHeaderCellDef>Total Ingresos</th>
+          <td mat-cell *matCellDef="let row">{{ row.total }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <!-- PAGINADOR -->
+      <mat-paginator [pageSize]="10"
+                     [pageSizeOptions]="[5, 10, 20]"
+                     showFirstLastButtons>
+      </mat-paginator>
+    </mat-card>
+  </div>
+<!-- Contenedor general -->
+<div style="display: flex; gap: 30px; align-items: flex-start;">
+<!-- Contenedor de filtros -->
+  <div style="width: 300px; display: flex; flex-direction: column; gap: 15px;">
+    <mat-form-field appearance="outline" style="width: 100%;">
+      <mat-label><mat-icon>person</mat-icon> Usuario</mat-label>
+      <mat-select [(value)]="usuarioSeleccionado" (selectionChange)="filtrarIngresosUsuario()">
+        <mat-option *ngFor="let user of usuarios" [value]="user.email">{{ user.nombre }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" style="width: 100%;">
+      <mat-label><mat-icon>calendar_today</mat-icon> Mes</mat-label>
+      <mat-select [(value)]="mesSeleccionado" (selectionChange)="filtrarIngresosUsuario()">
+        <mat-option *ngFor="let mes of mesesDisponibles" [value]="mes">{{ mes }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <!-- GRÁFICO: INGRESOS POR USUARIO -->
+  <div *ngIf="ingresosPorUsuario.length > 0" style="flex: 1; display: flex; justify-content: center;">
+    <mat-card style="width: 600px;">
+      <mat-card-title>
+        <mat-icon>person</mat-icon> Ingresos Mensuales del Usuario
+      </mat-card-title>
+      <ngx-charts-bar-vertical
+        [results]="ingresosPorUsuario"
+        [xAxis]="true"
+        [yAxis]="true"
+        [legend]="false"
+        [showDataLabel]="true"
+        [animations]="true"
+        [xAxisLabel]="'Mes'"
+        [yAxisLabel]="'Ingresos'">
+      </ngx-charts-bar-vertical>
+    </mat-card>
+  </div>
+</div>
+
+<!-- Gráfico Tasa de Retención -->
+<mat-card style="width: 600px; margin-top: 20px;">
+  <mat-card-title>
+    <mat-icon>repeat</mat-icon> Tasa de Retención de Usuarios
+  </mat-card-title>
+  <ngx-charts-line-chart
+    [results]="datosRetencion"
+    [xAxis]="true"
+    [yAxis]="true"
+    [legend]="true"
+    [legendTitle]="' '"
+    [animations]="true"
+    [xAxisLabel]="'Mes'"
+    [yAxisLabel]="'Retención (%)'"
+    [autoScale]="true">
+  </ngx-charts-line-chart>
+</mat-card>
+
+<!-- Gráfico Promedio de Accesos -->
+<mat-card style="width: 600px; margin-top: 20px;">
+  <mat-card-title>
+    <mat-icon>bar_chart</mat-icon> Promedio de Accesos por Usuario
+  </mat-card-title>
+  <ngx-charts-bar-vertical
+    [results]="datosPromedio"
+    [xAxis]="true"
+    [yAxis]="true"
+    [legend]="true"
+    [legendTitle]="' '"
+    [showDataLabel]="true"
+    [animations]="true"
+    [xAxisLabel]="'Mes'"
+    [yAxisLabel]="'Promedio Accesos'"
+    [scheme]="{ domain: ['#c2185b', '#1976d2', '#7b1fa2'] }">
+  </ngx-charts-bar-vertical>
+</mat-card>
+
+
+
+</div>

@@ -1151,7 +1151,7 @@
   
           <mat-form-field fxFlex="30" appearance="outline" disabled>
             <mat-label>Latitud Decimal</mat-label>
-            <input matInput [value]="sitio.latitude">
+            <input matInput [value]="sitio.latitude !== undefined ? convertToDMS(sitio.latitude, true) : ''">
           </mat-form-field>
         </div>
   
@@ -1173,7 +1173,7 @@
   
           <mat-form-field fxFlex="30" appearance="outline" disabled>
             <mat-label>Longitud Decimal</mat-label>
-            <input matInput [value]="sitio.Logitude">
+            <input matInput [value]="sitio.longitude !== undefined ? convertToDMS(sitio.longitude, false) : ''">
           </mat-form-field>
         </div>
   
@@ -1374,6 +1374,17 @@
     </mat-form-field>
 
   </div>
+  
+  <div class="acciones-formulario">
+  <button mat-raised-button color="primary" (click)="guardarSitio()">
+    <mat-icon>save</mat-icon> Guardar Cambios
+  </button>
+  <button mat-raised-button color="accent" (click)="actualizarSitio()">
+  <mat-icon>update</mat-icon> Actualizar
+</button>
+
+</div>
+
 </mat-expansion-panel>
 
 <button mat-fab color="primary" class="boton-flotante" (click)="volverInicio()" matTooltip="Regresar al inicio">

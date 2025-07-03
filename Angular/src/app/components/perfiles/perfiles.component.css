@@ -71,4 +71,29 @@
     font-size: 12px;
     font-weight: 500;
   }
+
+  .contador-card {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.aprobado {
+  background-color: #e0f7e9;
+  color: #2e7d32;
+}
+
+.rechazado {
+  background-color: #fdecea;
+  color: #c62828;
+}
+
+.contador-texto {
+  font-size: 16px;
+}
+
   

@@ -50,7 +50,7 @@ export class SitioEditComponent implements OnInit {
   dropdownSettings6!: IDropdownSettings;
 
   user: any;
-  public sitio: Sitio;
+  public sitio: Partial<Sitio> = {};
   public status!: string;
   public url: string;
   public is_edit: boolean;
@@ -91,7 +91,7 @@ export class SitioEditComponent implements OnInit {
     this.page_title = 'Editar Sitio';
     this.url = Globals.url;
 
-    this.sitio = new Sitio(
+    /* this.sitio = new Sitio(
       '',
 '',
 '',
@@ -301,7 +301,7 @@ false,
 0
 
       
-    );
+    ); */
   }
 
 
@@ -456,7 +456,7 @@ false,
   }
 
   OnSubmit() {
-    this._sitioService.update(this.sitio._id, this.sitio).subscribe(
+    this._sitioService.update(this.sitio._id!, this.sitio).subscribe(
       response => {
         if (response.status == 'success') {
           // this.status = 'success';
@@ -545,4 +545,91 @@ false,
   volverInicio() {
   this._router.navigate(['/home']); // Reemplaza '/home' por tu ruta real
 }
+
+guardarSitio() {
+    this._sitioService.crearSitio(this.sitio).subscribe(
+      response => {
+        if (response.status === 'success') {
+          this.status = 'success';
+          this.sitio = {}; // Reiniciar formulario si se desea
+
+          Swal.fire('Sitio Guardado', 'El sitio fue creado correctamente.', 'success');
+        } else {
+          this.status = 'error';
+          Swal.fire('Error', 'No se pudo guardar el sitio.', 'error');
+        }
+      },
+      error => {
+        console.error(error);
+        this.status = 'error';
+        Swal.fire('Error', 'Error en el servidor.', 'error');
+      }
+    );
+  }
+
+  actualizarSitio() {
+  if (!this.sitio._id) {
+    Swal.fire('Error', 'El ID del sitio no está disponible.', 'error');
+    return;
+  }
+
+  this._sitioService.actualizarSitio(this.sitio._id, this.sitio).subscribe(
+    response => {
+      if (response.status === 'success') {
+        this.status = 'success';
+        Swal.fire('Sitio Actualizado', 'Cambios guardados correctamente.', 'success');
+      } else {
+        this.status = 'error';
+        Swal.fire('Error', 'No se pudo actualizar el sitio.', 'error');
+      }
+    },
+    error => {
+      console.error(error);
+      this.status = 'error';
+      Swal.fire('Error', 'Error en el servidor.', 'error');
+    }
+  );
+}
+
+convertToDMS(decimal: number, isLat: boolean): string {
+  if (decimal === null || decimal === undefined) return '';
+
+  const abs = Math.abs(decimal);
+  const degrees = Math.floor(abs);
+  const minutesDecimal = (abs - degrees) * 60;
+  const minutes = Math.floor(minutesDecimal);
+  const seconds = ((minutesDecimal - minutes) * 60).toFixed(2);
+
+  const direction = isLat
+    ? (decimal >= 0 ? 'N' : 'S')
+    : (decimal >= 0 ? 'E' : 'W');
+
+  return `${degrees}° ${minutes}' ${seconds}" ${direction}`;
+}
+
+guardarCambios() {
+  console.log(this.sitio); // Podés quitarlo si ya no lo necesitás
+
+  this._sitioService.create(this.sitio).subscribe(
+    (response) => {
+      if (response.status == 'success') {
+        this.status = 'success';
+        this.sitio = response.sitio;
+
+        Swal.fire('Monumento Guardado', 'Los cambios se han guardado correctamente.', 'success');
+
+       // this._router.navigate(['/pag-ori']);
+      } else {
+        this.status = 'error';
+        Swal.fire('Error', 'Hubo un problema al guardar el monumento.', 'error');
+      }
+    },
+    (error) => {
+      console.error(error);
+      this.status = 'error';
+      Swal.fire('Error de conexión', 'No se pudo conectar con el servidor.', 'error');
+    }
+  );
+}
+
 }

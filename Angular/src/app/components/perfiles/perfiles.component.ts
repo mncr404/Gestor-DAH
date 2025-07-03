@@ -84,44 +84,9 @@ export class PerfilesComponent implements OnInit {
     this.listData.filter = this.searchKey.trim().toLowerCase();
   }
 
-  isSelected(selected:any){
 
-    console.log(selected);
-  
-   
-  }
 
-/* selectRow($event: any, dataSource: any) {
-  const acceso = true
-  this.registro.acceso = acceso;
-  this.registro._id = dataSource._id
-  this.registro.date = new Date() 
-  this.registro.nombre = dataSource.nombre
-  this.registro.correo = dataSource.email
-  this.registro.perfil = dataSource.perfil
-  this.registro.setena = dataSource.setena
-   
-    if ($event.checked) {
-      this._registroService.update(dataSource._id, this.registro).subscribe(
-        (response) => {
-          if (response.status == 'success') {
-            this.status = 'success';
-            this.registro = response.registroUpdated;
-            Swal.fire('Perfil Editado', 'Cambios Aplicados!', 'success');
-            this.traerPerfiles();
-  
-          } else {
-            this.status = 'error';
-          }
-        },
-        (error) => {
-          console.log(error);
-          this.status = 'error';
-        }
-      );
-     // console.log(dataSource._id);
-    }
-  } */
+
 
     selectRow($event: any, dataSource: any) {
       const acceso = true;
@@ -277,5 +242,13 @@ export class PerfilesComponent implements OnInit {
   
   
     }
+
+    get totalAprobados(): number {
+  return this.perfiles.filter(p => p.acceso === true).length;
+}
+
+get totalRechazados(): number {
+  return this.perfiles.filter(p => p.acceso === false).length;
+}
 
   }

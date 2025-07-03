@@ -117,8 +117,24 @@ export class SitioDetalleComponent implements OnInit {
   });
 }
 
+convertToDMS(decimal: number | null | undefined, isLat: boolean): string {
+  if (decimal === null || decimal === undefined || isNaN(Number(decimal))) {
+    return '';
+  }
 
-   
+  const abs = Math.abs(decimal);
+  const degrees = Math.floor(abs);
+  const minutesDecimal = (abs - degrees) * 60;
+  const minutes = Math.floor(minutesDecimal);
+  const seconds = ((minutesDecimal - minutes) * 60).toFixed(2);
+
+  const direction = isLat
+    ? (decimal >= 0 ? 'N' : 'S')
+    : (decimal >= 0 ? 'E' : 'W');
+
+  return `${degrees}° ${minutes}' ${seconds}" ${direction}`;
+}
+
 
     
   
