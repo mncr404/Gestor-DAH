@@ -6,6 +6,7 @@ export class Sitio{
         public numero_caso: String,
         public nombre_sitio: String,
         public clave_sitio: String,
+        public clave_norm: any,
         public clave_antigua: String,
         public cod_ucr: String,
         public estudio_impacto_ambiental: Boolean,
@@ -32,7 +33,6 @@ export class Sitio{
         public taller: Boolean,
         public tipo_monumento: String,
         public registrador: String,
-        
         public consultoria: Boolean,
         public fundacion: Boolean,
         public ice: Boolean,

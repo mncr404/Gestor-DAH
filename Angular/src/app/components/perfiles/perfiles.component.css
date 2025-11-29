@@ -96,4 +96,19 @@
   font-size: 16px;
 }
 
+
+.btn-reset {
+  color: #ff9800; /* Amber 500 */
+  background-color: rgba(255, 152, 0, 0.10);
+  transition: background-color .2s ease;
+}
+.btn-reset:hover,
+.btn-reset:focus {
+  background-color: rgba(255, 152, 0, 0.18);
+}
+.btn-reset[disabled] {
+  opacity: .6;
+  pointer-events: none;
+}
+
   

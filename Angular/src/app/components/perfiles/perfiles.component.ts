@@ -216,7 +216,7 @@ export class PerfilesComponent implements OnInit {
 
   }
 
-
+ 
   deny(user:any) {
       
       this.http.sendRejectionEmail("https://origenes.museocostarica.go.cr:3900/sendRejectionMail", user).subscribe(
@@ -251,4 +251,57 @@ get totalRechazados(): number {
   return this.perfiles.filter(p => p.acceso === false).length;
 }
 
+onResetPassword(user: any) {
+
+  Swal.fire({
+    title: '¿Resetear contraseña?',
+    text: `Se enviará una contraseña temporal al correo de ${user?.email}.`,
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Sí, resetear',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+
+    if (result.value) {
+
+      // Llamada al servicio que expone tu endpoint /admin/reset-password
+      this.authService.resetPassword(user.email).subscribe(
+        (response: any) => {
+
+          // Éxito
+          Swal.fire(
+            'Listo',
+            'La contraseña temporal fue enviada al correo del usuario.',
+            'success'
+          );
+
+          // Actualiza la tabla si quieres reflejar última acción/fecha
+          this.traerPerfiles();
+        },
+        (error: any) => {
+
+          // Error
+          console.error(error);
+          const msg = error?.error?.message || 'Ocurrió un error al restablecer la contraseña.';
+          Swal.fire(
+            'Error',
+            msg,
+            'error'
+          );
+        }
+      );
+
+    } else if (result.dismiss === Swal.DismissReason.cancel) {
+
+      Swal.fire(
+        'Cancelado',
+        'No se realizó ningún cambio.',
+        'error'
+      );
+
+    }
+
+  });
+
+}
   }

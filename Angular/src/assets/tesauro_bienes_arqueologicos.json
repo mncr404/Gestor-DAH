@@ -1,0 +1,291 @@
+
+{
+  "Gran Nicoya, subregión Guanacaste": {
+    "Orosi": [
+      "Complejo Loma B",
+      "Fase Naranjo",
+      "Sitio Méndez",
+      "Complejo Tronadora",
+      "Tronadora Inciso",
+      "Tajo Inciso Gubiado",
+      "Tigra Inciso Punteado",
+      "Tonjibe Beige",
+      "Complejo La Pochota"
+    ],
+    "Tempisque": [
+  "Ballena Inciso",
+  "Bocana Inciso Bicromo",
+  "Bretzel Rojo",
+  "Buchón Punteado",
+  "Chaparrita Rojo",
+  "Charco Negro sobre Rojo",
+  "Congo Punteado",
+  "Delirión Negro",
+  "Guácimo Inciso Bicromo",
+  "Guinea Inciso",
+  "Huila Punteado en Zonas",
+  "Las Palmas Rojo sobre Beige",
+  "Los Hermanos Beige",
+  "Marbella Estampado en Zonas",
+  "Matazana Rojo sobre Café",
+  "Monte Cristo Beige",
+  "Mojica con Estampado de Concha",
+  "Pozón Acanalado",
+  "Rosales Esgrafiado en Zonas",
+  "Schettel Inciso Zonado",
+  "Tempate Rojo sobre Café",
+  "Tola Tricromo",
+  "Tres Esquinas Beige",
+  "Urruela Rojo",
+  "Zelaya Pintado"
+],
+    "Bagaces": [
+  "Cangel Negro sobre Rojo",
+  "Carrillo Policromo",
+  "Chancho Rojo",
+  "Chávez Blanco sobre Rojo",
+  "Cóbano Negro sobre Rojo",
+  "Corozal",
+  "Cortes Negro sobre Rojo",
+  "Galo Policromo",
+  "Huerta Inciso",
+  "Jayal Café",
+  "Lavanderos de Reborde Lateral",
+  "León Punteado",
+  "Mansión Rojo",
+  "Potosí Aplicado",
+  "Sarnoso Tosco",
+  "Tamino Inciso",
+  "Velasco de Bandas Negras"
+],
+    "Sapoa-Ometepe": [
+      "Complejo El Bosque",
+      "Complejo Guayabo",
+      "Complejo Las Huacas",
+      "Complejo Los Malacos",
+      "Complejo Sapoá",
+      "Complejo Tempate",
+      "Complejo Zapote",
+      "Fase Sapoá",
+      "Subfase Avancari",
+      "Subfase El Bosque",
+      "Subfase Filadelfia",
+      "Subfase Guayabo",
+      "Subfase La Guinea",
+      "Subfase Monteverde",
+      "Subfase Palmares",
+      "Subfase Peñas Blancas",
+      "Subfase San Pedro",
+      "Subfase Santa Ana",
+      "Subfase Tilarán",
+      "Subfase Zapote",
+      "Otras subfases"
+    ],
+    "Ometepe": [
+      "Copalacaste",
+      "El Carmen",
+      "Finca Barret",
+      "Hacienda Tempate",
+      "Las Huacas",
+      "Los Malacos",
+      "Sardinal de Carrillo",
+      "Sitio Martínez",
+      "Villa Esperanza",
+      "Otros"
+    ]
+  },
+  "Región Central; subregiones Central, Llanuras del Norte y Caribe Central": {
+
+  "Barva": [
+    "Complejo Barva",
+    "Complejo Los Sueños",
+    "Zetillal Estampado de Concha",
+    "Complejo Burío",
+    "Complejo Cariblanco",
+    "Complejo Reventazón?"
+  ],
+
+  "Pavas": [
+    "Chácara Tricromo",
+    "Complejo Ujarrás",
+    "Guarco Monocromo",
+    "Huitite Rojo",
+    "Molino Acanalado",
+    "Naborío Acanalado",
+    "Quirazú Inciso Ancho",
+    "Sabana Bicromo",
+    "Sabana Tricromo",
+    "Virilla Bicromo"
+  ],
+
+  "Curridabat": [
+    "Chitaría Inciso",
+    "Cocorí Ordinario",
+    "Istarú Ordinario",
+    "Itco Inciso",
+    "Jicotea Inciso",
+    "Lajas Bicromo",
+    "Taras Fino",
+    "Tivives Bicromo",
+    "Tivives Inciso Punzonado",
+    "Túnel Beige",
+    "Yacuré Bicromo"
+  ],
+
+  "Fase Colorado": [
+    "Burú Blanco",
+    "Coterré Miniatura",
+    "Pavo Inciso",
+    "Uruca Inciso",
+    "Surá Blanco y Morado",
+    "Targuá",
+    "Tuete Morado"
+  ],
+
+  "La Unión/Heredia/Madera": [
+    "La Ribera",
+    "Llorente",
+    "San Isidro"
+  ],
+
+  "Cartago": [
+    "Angostura Beige",
+    "Antigua Tosco",
+    "Atirro Beige",
+    "Bonilla Inciso",
+    "Chitaría Inciso",
+    "Guápiles Borde Rojo",
+    "Guayabo Rosado",
+    "Metrópoli Tricromo",
+    "Pitahaya Franja Blanca",
+    "Poró Inciso",
+    "Tres Ríos",
+    "Tuis Fino/Tuis Negativo (grupo)",
+    "Turrialba Bicromo"
+  ],
+
+  "La Montaña": [
+    "Atlántico Negro Relleno de Rojo (grupo)",
+    "Complejo La Montaña",
+    "La Montaña Flotado (grupo)",
+    "La Montaña Rojo Fugitivo sobre Crema",
+    "Complejo Chaparrón",
+    "Chaparrón Rojo Zonado sobre Café"
+  ],
+
+  "El Bosque": [
+    "El Bosque Rojo",
+    "El Bosque Rojo sobre Agamuzado (grupo)",
+    "El Bosque Naranja Púrpura (grupo)",
+    "Ticabán Trípode (grupo)"
+  ],
+
+  "La Selva": [
+    "África Trípode (grupo)",
+    "Anita Fino Púrpura (grupo)",
+    "Guácimo Rojo sobre Agamuzado (grupo)",
+    "Lajas Yacuare (grupo)",
+    "La Selva Naranja-Púrpura Pulido (grupo)",
+    "Figuras Santa Clara (grupo)",
+    "Figuras Turrialba",
+    "Roxana Morado Brillante sobre Anaranajado (grupo)",
+    "Selva Arenoso Aplicado (grupo)",
+    "Selva Café (grupo)",
+    "Selva Café Monocromo Brillante",
+    "Turrialba Tosco",
+    "Zoila Rojo (grupo)"
+  ],
+
+  "Complejo Madera": [
+    "Mila Rojo-Naranja Esgrafiado",
+    "Tuis Negativo",
+    "Mercedes Línea Blanca (grupo)"
+  ],
+
+  "La Cabaña": [
+    "Bere Rojo",
+    "La Cabaña-Pavones (grupo)",
+    "La Cabaña Modelado (grupo)",
+    "Cartago Línea Roja",
+    "Cot Línea Negra (grupo)",
+    "Garrobo Rojo Inciso",
+    "Irazú Línea Amarilla (grupo)",
+    "Parismina Fino (grupo)",
+    "Parismina Tosco (grupo)",
+    "Pilón Café Aplicado",
+    "Reventazón Crema Fina Lavada? (grupo)",
+    "La Sonia Bandas Rojizas",
+    "Tayutic Inciso/Esgrafiado (grupo)"
+  ]
+},
+  "Región Gran Chiriquí; subregiones Caribe Sur y Diquís": {
+  "Sinancrá": [
+    "Complejo Curré",
+    "Complejo Darizara",
+    "Complejo Black Creek"
+  ],
+
+  "Aguas Buenas": [
+    "Barriles Zonado",
+    "Bicromo en Zonas",
+    "Bugaba Grabado",
+    "Cerro Punta Anaranajado",
+    "Complejo Abrojo",
+    "Complejo La Concepción",
+    "Corral Rojo",
+    "Guarumal Inciso",
+    "Isla Palenque Marrón (Quebradas Tosco)",
+    "Modo 14",
+    "Modo 22",
+    "Modo 31",
+    "Modo 39",
+    "Moravia Rojo",
+    "Solano Inciso",
+    "Solano Monocromo",
+    "Quebradas",
+    "Quebradas Tosco"
+  ],
+
+  "Chiriquí": [
+    "Arayo de Líneas Pulidas",
+    "Balsa Pulido",
+    "Banco Línea Roja",
+    "Buenos Aires Policromo",
+    "Burica Blanco sobre Rojo",
+    "Cangrejal Línea Roja",
+    "Carbonera Aplicado",
+    "Cavada Aplicado con Bandas Rojas",
+    "Ceiba Rojo Café",
+    "Centeno de Bandas Rojas",
+    "Chánguena Negro sobre Rojo",
+    "Danta Monocromo",
+    "Engobe Rojo",
+    "Horconcitos Bandas Rojas",
+    "Linarte de Líneas Rojas en Zonas",
+    "Modo 4",
+    "Modo 7",
+    "Modo 8",
+    "Modo 17",
+    "Modo 27",
+    "Modo 72",
+    "Modo 75",
+    "Tipos Negativos",
+    "Ocra Policromo",
+    "Pan de Azúcar",
+    "Panteón Lineado Blanco",
+    "Papayal Grabado",
+    "Quebradas Baúles Peinado",
+    "San Miguel Galleta",
+    "Sangría Rojo Fino",
+    "Seúl Grabado",
+    "Silena Alado",
+    "Térraba Banda Blanca",
+    "Turucaca Blanco sobre Rojo",
+    "Valbuena",
+    "Venancio Inciso de líneas paralelas",
+    "Villalba de Brochazos Rojo",
+    "Zapote de Bandas Rojas",
+    "Zoncho Rojo"
+  ]
+}
+}

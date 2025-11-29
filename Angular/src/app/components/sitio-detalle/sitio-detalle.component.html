@@ -436,6 +436,57 @@
         </div>
     </mat-tab>
 
+    <mat-tab>
+      <ng-template mat-tab-label>
+      <mat-icon class="mr-1 align-middle">category</mat-icon>
+      Objetos relacionados ({{ objetos?.length || 0 }})
+      </ng-template>
+  <div class="objetos-wrap">
+    <table mat-table [dataSource]="objetos" class="mat-elevation-z1 w-full">
+      <!-- Columna imagen -->
+      <ng-container matColumnDef="imagen">
+  <th mat-header-cell *matHeaderCellDef> Foto </th>
+  <td mat-cell *matCellDef="let obj">
+    <img *ngIf="obj.imagen_url; else noImg"
+         [src]="obj.imagen_url"
+         alt="Foto del objeto"
+         width="64" height="64"
+         loading="lazy"
+         class="rounded shadow-sm object-cover" />
+    <ng-template #noImg>
+      <mat-icon style="opacity:.5">image_not_supported</mat-icon>
+    </ng-template>
+  </td>
+</ng-container>
+      <!-- Columna nombre -->
+      <ng-container matColumnDef="nombre_artefacto">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let obj">{{ obj.nombre_artefacto }}</td>
+      </ng-container>
+
+      <!-- Columna tipo -->
+      <ng-container matColumnDef="tipo_materia">
+        <th mat-header-cell *matHeaderCellDef> Tipo de material </th>
+        <td mat-cell *matCellDef="let obj">{{ obj.tipo_materia || '—' }}</td>
+      </ng-container>
+
+      <!-- Columna estado -->
+      <ng-container matColumnDef="estado_de_conservacion">
+        <th mat-header-cell *matHeaderCellDef> Estado </th>
+        <td mat-cell *matCellDef="let obj">{{ obj.estado_de_conservacion || '—' }}</td>
+      </ng-container>
+
+      <!-- Render -->
+      <tr mat-header-row *matHeaderRowDef="cols"></tr>
+      <tr mat-row *matRowDef="let row; columns: cols"></tr>
+    </table>
+
+    <div *ngIf="!objetos?.length" class="text-center py-6 opacity-70">
+      No hay objetos relacionados a este monumento.
+    </div>
+  </div>
+</mat-tab>
+
   <!--  <mat-tab>
         <ng-template mat-tab-label>
             <mat-icon class="example-tab-icon">local_library</mat-icon>

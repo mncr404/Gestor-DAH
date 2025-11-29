@@ -40,7 +40,7 @@ import { MetalDetalleComponent } from "./components/metal-detalle/metal-detalle.
 import { MetalEditComponent } from "./components/metal-edit/metal-edit.component";
 import { MetalExcelComponent } from "./components/metal-excel/metal-excel.component";
 import { SearchLiticoComponent } from "./components/search-litico/search-litico.component";
-
+import { ObjetosListComponent } from "./components/objetos-list/objetos-list.component";
 import { SitioExcelComponent } from "./components/sitio-excel/sitio-excel.component";
 import { LoginComponent } from "./components/login/login.component";
 import { ForgotComponent } from "./components/forgot/forgot.component";
@@ -57,7 +57,8 @@ import { SearchCombMetComponent } from "./components/search-comb-met/search-comb
 import { PagDetalleLiteSitioComponent } from "./components/pag-detalle-lite-sitio/pag-detalle-lite-sitio.component";
 import { FichaOrigenesComponent } from "./components/ficha-origenes/ficha-origenes.component";
 import { PagLiteSitioNombreComponent } from "./components/pag-lite-sitio-nombre/pag-lite-sitio-nombre.component";
-
+import { PatrimoniaHomeComponent } from "./components/patrimonia-home/patrimonia-home.component";
+import { FichaObjetosComponent} from "./components/ficha-objetos/ficha-objetos.component";
 //Array de rutas 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' }, // <- ahora redirige al login
@@ -111,8 +112,9 @@ const appRoutes: Routes = [
     {path: 'buscarcombmet/:search', component : SearchCombMetComponent, canActivate: [AuthGuard]},
     {path: 'buscarcontexto/:search',component : SearchContextoComponent, canActivate: [AuthGuard]},
     {path: 'buscarlitico/:search', component: SearchLiticoComponent, canActivate: [AuthGuard]},
- 
-  
+    {path: 'objetos-list', component: ObjetosListComponent, canActivate: [AuthGuard]},
+    {path: 'patrimonia-home', component: PatrimoniaHomeComponent, canActivate: [AuthGuard]},
+    {path: 'ficha-objetos', component: FichaObjetosComponent, canActivate: [AuthGuard]},
     {path: '**', component : ErrorComponent}
 ];
 

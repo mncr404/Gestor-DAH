@@ -1,0 +1,102 @@
+<mat-sidenav-container class="patrimonia-shell">
+
+  <!-- SIDEBAR -->
+  <mat-sidenav mode="side" opened class="sidebar">
+    <div class="sidebar-header">
+      <img src="assets/logoMNCR.svg" alt="Museo Nacional de Costa Rica" class="logo" />
+      <div class="slogan">Inventario de bienes del MNCR</div>
+    </div>
+
+    <form [formGroup]="form" class="filters">
+      <div class="section-title">Búsqueda rápida</div>
+
+      <mat-form-field appearance="outline" class="field">
+        <mat-label>Tipo de colección</mat-label>
+        <mat-select formControlName="tipo_coleccion">
+          <mat-option [value]="''">Cualquiera</mat-option>
+          <mat-option *ngFor="let c of colecciones" [value]="c.value">{{ c.label }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="field">
+        <mat-label>Tipo de materia</mat-label>
+        <mat-select formControlName="tipo_materia">
+          <mat-option [value]="''">Cualquiera</mat-option>
+          <mat-option *ngFor="let m of materias" [value]="m.value">{{ m.label }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" class="btn-search" (click)="buscar()">
+        <mat-icon>search</mat-icon>&nbsp;Buscar
+      </button>
+
+      <div class="hr"></div>
+
+      <div class="sidebar-links">
+        <a routerLink="/objetos-list"><mat-icon>view_module</mat-icon> Ver objetos</a>
+        <a routerLink="/ficha-objetos"><mat-icon>add_circle</mat-icon> Registrar objeto</a>
+      </div>
+    </form>
+  </mat-sidenav>
+
+  <!-- CONTENIDO -->
+  <mat-sidenav-content class="content">
+    <!-- Header del sistema -->
+    <header class="system-header">
+      <img src="assets/patrimonia-logo.svg" alt="Patrimonia" class="logo-main" />
+      <h1>Bienvenido al Sistema <b>PATRIMONIA</b></h1>
+      <p class="system-desc">
+        En la base <b>Patrimonia</b> se registran los bienes arqueológicos e históricos
+        del Museo Nacional de Costa Rica, asociados a los sitios documentados en <b>Orígenes</b>.
+      </p>
+    </header>
+
+    <!-- Gráficos -->
+     <div class="charts-row">
+    <mat-card class="chart-card">
+      <mat-card-title>Distribución de Objetos por Tipo de Colección</mat-card-title>
+      <div class="chart-wrapper">
+        <ngx-charts-pie-chart
+          [view]="view"
+          [results]="chartData"
+          [scheme]="materialColorScheme"
+          [gradient]="false"
+          [legend]="false"
+          [labels]="true"
+          [doughnut]="true">
+        </ngx-charts-pie-chart>
+      </div>
+      <small class="note">Datos demostrativos. Pronto conectados a la API.</small>
+    </mat-card>
+
+    <mat-card class="chart-card">
+      <mat-card-title>Distribución de Objetos por Tipo de Materia</mat-card-title>
+      <div class="chart-wrapper">
+        <ngx-charts-pie-chart
+          [view]="view"
+          [results]="materialData"
+          [scheme]="materialColorScheme"
+          [gradient]="false"
+          [legend]="false"
+          [labels]="true"
+          [doughnut]="true">
+        </ngx-charts-pie-chart>
+      </div>
+      <small class="note">Datos demostrativos. Pronto conectados a la API.</small>
+    </mat-card>
+</div>
+    <!-- Leyenda inferior común -->
+    <div class="legend-bar">
+      <ul>
+        <li><span class="swatch ceramic"></span>Cerámica</li>
+        <li><span class="swatch stone"></span>Piedra</li>
+        <li><span class="swatch metal"></span>Metal</li>
+        <li><span class="swatch glass"></span>Vidrio</li>
+      </ul>
+    </div>
+  </mat-sidenav-content>  <!-- <- ESTE CIERRE FALTABA -->
+
+</mat-sidenav-container>
+
+
+

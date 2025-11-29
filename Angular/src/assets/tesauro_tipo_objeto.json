@@ -1,0 +1,2017 @@
+{
+  "Adorno": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Anzuelo": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Apéndice modificado": {
+  "categorias": [],
+  "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+},
+  "Aro": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Asiento": {
+    "categorias": [
+      "Cilíndrico",
+      "Bicónico",
+      "Tetrapode"
+    ],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Azadón": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Azuela": {
+    "categorias": [
+      "Lasqueada",
+      "Pulida"
+    ],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Banda": {
+    "categorias": [],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Barril": {
+    "categorias": [
+      "Cilíndrico",
+      "Con forma de tonel"
+    ],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Base de espejo de pirita": {
+    "categorias": [
+      "Circular",
+      "Rectangular"
+    ],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Bezote": {
+    "categorias": [],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Botella": {
+    "categorias": [],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Botón": {
+    "categorias": [],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Buril": {
+    "categorias": [],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Cascabel": {
+    "categorias": [
+      "Esférico",
+      "Periforme"
+    ],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Colador": {
+    "categorias": [],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+"Colgante/Dije": {
+  "categorias": [
+    "Antropomorfo",
+    "Antropofozoomorfo/Quimera",
+    "Aviformo",
+    "Zoomorfo",
+    "Otros"
+  ],
+  "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+},
+  "Columna": {
+    "categorias": [],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Copa": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Cuchillo": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+"Cuenta/Conjunto de cuentas": {
+  "categorias": [
+    "Cilíndrica",
+    "Discoidal",
+    "Globular",
+    "Tubular",
+    "Laminar",
+    "Otros",
+    "Collar",
+    "Brazalete",
+    "Tobillera"
+  ],
+  "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+},
+  "Disco": {
+    "categorias": [
+      "Circular",
+      "Rectangular"
+    ],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Embudo": {
+    "categorias": [],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Escudilla": {
+    "categorias": [],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Escultura": {
+    "categorias": [],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Espiga": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Esfera": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Espejo de pirita": {
+    "categorias": [],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+"Figura/Figurilla": {
+  "categorias": [
+    "Antropomorfa",
+    "Aviforma",
+    "Fitomorfa",
+    "Zoomorfa",
+    "Batracio",
+    "Antropofozoomorfa/Quimera"
+  ],
+   "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+},
+  "Guijarro de cuenca doble": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Hoja": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Inhalador/Aspirador": {
+    "categorias": [],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Incensario": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Instrumento hachoide": {
+    "categorias": [
+      "Cuña",
+      "Cincel/Gubia/Formón",
+      "Tajador",
+      "Hacha",
+      "Hacha doble acinturada",
+      "Hacha de mano"
+    ],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Instrumento Musical: Aerófonos": {
+    "categorias": [
+      "Flauta",
+      "Ocarina",
+      "Pito/Silbato"
+    ],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Instrumento Musical: Ideófonos": {
+    "categorias": [
+      "Maraca",
+      "Sonajero",
+      "Tambor de parche",
+      "Teponaztli"
+    ],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Instrumento para desgranar": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Instrumentos genéricos": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Jarrón": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Laja": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Lámina": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Lápida": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Lasca": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Machacador/ Despulpador": {
+    "categorias": [
+      "Cilíndrico",
+      "Circular",
+      "Ovalado",
+      "Rectangular"
+    ],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Mano de moler": {
+    "categorias": [
+      "Canto modificado",
+      "Cilíndrica",
+      "Cigarro",
+      "De Estribo",
+      "Expedita",
+      "Pan de Jabón",
+      "Tetraédrica"
+    ],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Martillo/ Percutor": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Maza": {
+    "categorias": [
+      "Esférica",
+      "Estrellada"
+    ],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Machacador de corteza": {
+    "categorias": [
+      "Cilíndrico",
+      "Rectangular",
+      "Redondeado"
+    ],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Metate*": {
+    "categorias": [
+      "Simple",
+      "Trípode",
+      "Tetrapode",
+      "De base anular",
+      "De cabeza vaciada",
+      "Bagaces",
+      "Huiscoyol o de protuberancias",
+      "De Marimba",
+      "De panel colgante"
+    ],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Mesa/ Redondel": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Molde": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Mortero": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Nariguera": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Navaja": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Núcleo": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Olla": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Orejera": {
+    "categorias": [
+      "Bicónica",
+      "Carrete",
+      "Cilíndrica/Tubular",
+      "Con Gancho",
+      "Con Tapa",
+      "Cónica",
+      "Filigrana",
+      "Media Luna",
+      "Tapón",
+      "Tapón Cerrado",
+      "Tapón Relleno",
+      "Tubular"
+    ],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Otros": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Peineta": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Pendientes": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Pepita": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Perforador": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Perlas": {
+    "categorias": [],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Pesa": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Petrograbado/ Petroglifo": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Pilar": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Pin/ Aguja": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Pipa": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Pistilo": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Placa": {
+    "categorias": [
+      "Simple",
+      "Con espiral doble"
+    ],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Plato": {
+    "categorias": [
+      "Sencillo",
+      "Budare",
+      "Sartén"
+    ],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Redondel": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Pulidor": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Punta de proyectil": {
+    "categorias": [
+      "Tipo Florencia",
+      "Tipo Clovis",
+      "Tipo Clovis Lanceolado",
+      "Tipo Cola de Pez",
+      "Tipo Restrepo",
+      "Otro"
+    ],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Punzón": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Raedera/ Raspador plano convexo": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Raspador": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Remate de bastón": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Rodela": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Salvilla": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Sello": {
+    "categorias": [
+      "Cilíndrico",
+      "Cónico",
+      "Rectangular"
+    ],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Tazón": {
+    "categorias": [],
+     "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Tecomate": {
+    "categorias": [],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Tesela": {
+    "categorias": [],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Tocado": {
+    "categorias": [],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Vasija": {
+    "categorias": [],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Vasija efigie": {
+    "categorias": [],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Vaso": {
+    "categorias": [],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Veneneras": {
+    "categorias": [],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  },
+  "Volante de huso/ Malacate": {
+    "categorias": [
+      "Cuenco",
+      "Horizonte",
+      "Pejibaye",
+      "Ceiba",
+      "Ciclo"
+    ],
+    "materiales": {
+    "Cerámico": [],
+    "Piedra": [
+      "Jade",
+      "Cuarzo",
+      "Basalto"
+    ],
+    "Metal": [
+      "Oro",
+      "Cobre",
+      "Guanina",
+      "Tumbaga"
+    ],
+    "Hueso": [],
+    "Concha": [],
+    "Madera": [],
+    "Otro": []
+  }
+  }
+}

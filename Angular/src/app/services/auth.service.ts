@@ -106,5 +106,8 @@ isAuthenticated(): boolean {
   return !!this.getToken(); // o tu lógica de sesión
 }
 
+resetPassword(email: string) {
+  return this.http.post(`${this.URL}/admin/reset-password`, { email });
+}
 
 }

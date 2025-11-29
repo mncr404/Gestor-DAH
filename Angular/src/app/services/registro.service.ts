@@ -56,4 +56,6 @@ export class RegistroService {
         return this._http.delete(this.url+'registro/'+id, {headers: headers});
 
     }
+
+    
 }

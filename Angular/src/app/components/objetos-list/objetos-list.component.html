@@ -1,0 +1,43 @@
+<div class="toolbar">
+  <mat-form-field appearance="outline" class="search">
+    <mat-icon matPrefix>home</mat-icon>
+    <input matInput [formControl]="search" placeholder="Buscar...">
+  </mat-form-field>
+  <button mat-raised-button color="primary" routerLink="/objetos/nuevo">
+    <mat-icon>add</mat-icon>&nbsp;Nuevo
+  </button>
+</div>
+
+<div class="grid" *ngIf="!loading; else loadingTpl">
+  <ng-container *ngIf="items?.length; else emptyTpl">
+    <div class="card" *ngFor="let o of items">
+      <div class="title">{{ o.nombre_monumento || 'Sin nombre' }}</div>
+      <div class="kv"><mat-icon>place</mat-icon>&nbsp;<span>Localización:</span>&nbsp;{{ o.localizacion_general || '—' }}</div>
+      <div class="kv"><mat-icon>category</mat-icon>&nbsp;<span>Materia:</span>&nbsp;{{ o.tipo_materia || '—' }}</div>
+      <div class="kv"><mat-icon>timeline</mat-icon>&nbsp;<span>Temporalidad:</span>&nbsp;{{ o.temporalidad_arqueologica || '—' }}</div>
+      <div class="kv"><mat-icon>verified</mat-icon>&nbsp;<span>Estado:</span>&nbsp;{{ o.estado_de_conservacion || '—' }}</div>
+      <div class="actions">
+        <a [routerLink]="['/objetos', o._id]">Leer más <mat-icon>open_in_new</mat-icon></a>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<mat-paginator [length]="total" [pageSize]="pageSize" [pageSizeOptions]="[12,24,48]" (page)="pageChange($event)">
+</mat-paginator>
+
+<ng-template #loadingTpl><div class="hint">Cargando...</div></ng-template>
+<ng-template #emptyTpl><div class="hint">No hay objetos para mostrar.</div></ng-template>
+
+<style>
+.toolbar { display:flex; gap:12px; align-items:center; margin:8px 0 12px; }
+.search { flex:1; }
+.grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:16px; }
+.card { border:1px solid #e5e7eb; border-radius:14px; padding:16px; background:#fff; box-shadow:0 1px 3px rgba(0,0,0,.06); }
+.title { font-size:20px; font-weight:700; margin-bottom:6px; }
+.kv { display:flex; align-items:center; gap:6px; margin:4px 0; }
+.kv span { font-weight:600; }
+.actions { margin-top:8px; }
+.hint { padding:24px; opacity:.7; }
+</style>
+

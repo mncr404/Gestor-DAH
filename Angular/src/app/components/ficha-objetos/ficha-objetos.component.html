@@ -1,0 +1,633 @@
+<!-- objetos-form.component.html -->
+<form [formGroup]="form" class="objetos-page">
+
+  <!-- Bloque de datos generales a TODO el ancho -->
+  <mat-card class="bloque generales">
+    <div class="titulo">
+      <h2>Datos Generales</h2>
+      <small>Ingrese la información básica del objeto</small>
+    </div>
+
+    <div class="grid-generales">
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre del Objeto</mat-label>
+        <input matInput formControlName="nombre_artefacto">
+        <button mat-icon-button matSuffix aria-label="Buscar ubicación">
+          <mat-icon>place</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Número Registro Artefacto</mat-label>
+        <input matInput formControlName="numero_registro_de_artefacto">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Clave Monumento</mat-label>
+        <input matInput formControlName="clave_monumento">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre Monumento</mat-label>
+        <input matInput formControlName="nombre_monumento">
+      </mat-form-field>
+    </div>
+  </mat-card>
+
+  <!-- SECCIONES EN DOS COLUMNAS -->
+  <div class="secciones-grid">
+    <!-- Columna izquierda -->
+    <div class="col seccion-activa">
+      <mat-accordion multi>
+
+        <mat-expansion-panel [expanded]="false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>Identificador del Bien</mat-panel-title>
+          </mat-expansion-panel-header>
+          <!-- === CAMPOS: Identificador del Bien === -->
+          <div class="campos-grid">
+         
+          <!-- Tipo Contexto -->
+          <mat-form-field appearance="outline">
+          <mat-label>Tipo Contexto</mat-label>
+         <mat-select formControlName="tipo_contexto">
+            <mat-option *ngFor="let o of OPT_TIPO_CONTEXTO" [value]="o.value">
+              {{ o.label }}
+            </mat-option>
+          </mat-select>
+          <mat-hint align="start">Seleccione el contexto del hallazgo</mat-hint>
+          <mat-error *ngIf="form.get('tipo_contexto')?.hasError('required')">
+            Este campo es obligatorio
+          </mat-error>
+          </mat-form-field>
+
+         <!-- Fecha de ingreso (Año, mes, día) -->
+          <mat-form-field appearance="outline">
+          <mat-label>Fecha de ingreso (Año, mes, día)</mat-label>
+          <input
+    matInput
+    [matDatepicker]="pickerIngreso"
+    formControlName="fecha_de_ingreso_date"
+    (dateChange)="syncFechaIngresoNumber($event.value)"
+    placeholder="Seleccione una fecha" />
+
+  <mat-datepicker-toggle matSuffix [for]="pickerIngreso"></mat-datepicker-toggle>
+  <mat-datepicker #pickerIngreso></mat-datepicker>
+
+  <mat-hint align="start">
+    Se guardará como AAAAMMDD para el backend.
+  </mat-hint>
+          </mat-form-field>
+
+          <!-- Tipo Colección -->
+          <mat-form-field appearance="outline">
+          <mat-label>Tipo Colección</mat-label>
+         <mat-select formControlName="tipo_coleccion">
+            <mat-option *ngFor="let o of OPT_TIPO_COLECCION" [value]="o.value">
+              {{ o.label }}
+            </mat-option>
+          </mat-select>
+          </mat-form-field>
+
+          <!-- Tipo Materia -->
+          <!-- Grupo (Orgánico / Inorgánico / Digital) -->
+            <mat-form-field appearance="outline">
+              <mat-label>Tipo de materia (grupo)</mat-label>
+              <mat-select formControlName="materia_grupo"
+                          (selectionChange)="form.patchValue({ materia_subtipo: null })">
+                <mat-option *ngFor="let g of OPT_MATERIA | keyvalue" [value]="g.key">
+                    {{ g.key }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+<!-- Subtipo (depende del grupo) -->
+            <mat-form-field appearance="outline">
+              <mat-label>Tipo de materia (subtipo)</mat-label>
+              <mat-select formControlName="materia_subtipo" [disabled]="!materiaSubtipos.length">
+                <mat-option *ngFor="let s of materiaSubtipos" [value]="s">{{ s }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+
+          <!-- Número Anterior Artefacto -->
+          <mat-form-field appearance="outline">
+          <mat-label>Número Anterior Artefacto</mat-label>
+          <input matInput formControlName="numero_anterior_artefacto" placeholder="Ingrese el número anterior">
+          </mat-form-field>
+          <!-- Tipo Ingreso -->
+          <mat-form-field appearance="outline">
+            <mat-label>Tipo Ingreso</mat-label>
+           <mat-select formControlName="tipo_ingreso">
+            <mat-option *ngFor="let o of OPT_TIPO_INGRESO" [value]="o.value">
+              {{ o.label }}
+            </mat-option>
+          </mat-select>
+          </mat-form-field>
+          <!-- === LOCALIZACIÓN (GENERAL) === -->
+<div class="campos-grid">
+  <!-- Depósito (texto libre) -->
+  <mat-form-field appearance="outline">
+    <mat-label>Depósito</mat-label>
+    <input matInput formControlName="deposito" placeholder="Nombre o código del depósito">
+  </mat-form-field>
+
+  <!-- Mobiliario -->
+  <mat-form-field appearance="outline">
+    <mat-label>Mobiliario</mat-label>
+    <mat-select formControlName="mobiliario"
+                (selectionChange)="form.patchValue({ contenedor: null, unidad_minima: null }); updateLocalizacionGeneral()">
+      <mat-option *ngFor="let m of OPT_MOBILIARIO" [value]="m">{{ m }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Código/Sección (ej. A-1-18-I-Y) -->
+  <mat-form-field appearance="outline">
+    <mat-label>Código/Sección (ej. A-1-18-I-Y)</mat-label>
+    <input matInput formControlName="ubicacion_codigo" (input)="updateLocalizacionGeneral()">
+  </mat-form-field>
+
+  <!-- Contenedor (depende de Mobiliario) -->
+  <mat-form-field appearance="outline">
+    <mat-label>Contenedor</mat-label>
+    <mat-select formControlName="contenedor"
+                [disabled]="!form.get('mobiliario')?.value"
+                (selectionChange)="form.patchValue({ unidad_minima: null }); updateLocalizacionGeneral()">
+      <mat-option *ngFor="let c of OPT_CONTENEDOR" [value]="c">{{ c }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Unidad mínima (depende de Contenedor) -->
+  <mat-form-field appearance="outline">
+    <mat-label>Unidad mínima</mat-label>
+    <mat-select formControlName="unidad_minima"
+                [disabled]="!form.get('contenedor')?.value"
+                (selectionChange)="updateLocalizacionGeneral()">
+      <mat-option *ngFor="let u of OPT_UNIDAD_MINIMA" [value]="u">{{ u }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Preview / valor combinado que se guardará -->
+  <mat-form-field appearance="outline">
+    <mat-label>Localización (resumen)</mat-label>
+    <input matInput formControlName="localizacion_general" readonly>
+    <mat-hint align="start">Se construye automáticamente a partir de las selecciones</mat-hint>
+  </mat-form-field>
+</div>
+        </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>Caracterización del bien</mat-panel-title>
+          </mat-expansion-panel-header>
+          <!-- Campos de Temporalidad -->
+          <!-- === CAMPOS: Caracterización del Bien === -->
+          <div class="campos-grid">
+            <!-- Tipo de objeto -->
+            <!-- Tipo de objeto (artefacto) -->
+<mat-form-field appearance="outline">
+  <mat-label>Tipo de objeto</mat-label>
+  <mat-select formControlName="artefacto">
+    <mat-option *ngFor="let a of artefactos" [value]="a">
+      {{ a }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!-- Categoría -->
+<mat-form-field appearance="outline">
+  <mat-label>Categoría</mat-label>
+  <mat-select formControlName="categoria" [disabled]="!categorias.length">
+    <mat-option *ngFor="let c of categorias" [value]="c">
+      {{ c }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!-- Material -->
+<mat-form-field appearance="outline">
+  <mat-label>Material</mat-label>
+  <mat-select formControlName="material" [disabled]="!materiales.length">
+    <mat-option *ngFor="let m of materiales" [value]="m">
+      {{ m }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!-- Subtipo de material (Metal, Piedra, etc.) -->
+<mat-form-field appearance="outline">
+  <mat-label>Tipo de material</mat-label>
+  <mat-select formControlName="material_subtipo" [disabled]="!subMateriales.length">
+    <mat-option *ngFor="let sm of subMateriales" [value]="sm">
+      {{ sm }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+            <!-- Descripción del artefacto -->
+            <mat-form-field appearance="outline">
+              <mat-label>Descripción del artefacto</mat-label>
+              <textarea matInput rows="3" formControlName="descripcion_del_artefacto" placeholder="Describa las características del artefacto"></textarea>
+            </mat-form-field>
+
+           
+<div class="medidas-wrapper">
+  <h4 class="titulo-medidas">Medidas del artefacto (cm / g)</h4>
+<div class="campos-grid">
+  <mat-form-field appearance="outline">
+    <mat-label>Largo (cm)</mat-label>
+    <input matInput type="number" formControlName="medida_largo_cm">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Fondo (cm)</mat-label>
+    <input matInput type="number" formControlName="medida_fondo_cm">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Grosor (cm)</mat-label>
+    <input matInput type="number" formControlName="medida_grosor_cm">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Ancho (cm)</mat-label>
+    <input matInput type="number" formControlName="medida_ancho_cm">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Alto (cm)</mat-label>
+    <input matInput type="number" formControlName="medida_alto_cm">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Diámetro (cm)</mat-label>
+    <input matInput type="number" formControlName="medida_diametro_cm">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Circunferencia (cm)</mat-label>
+    <input matInput type="number" formControlName="medida_circunferencia_cm">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Peso (g)</mat-label>
+    <input matInput type="number" formControlName="peso_gramos">
+  </mat-form-field>
+</div>
+</div>
+ <!-- === Clasificación bienes arqueológicos (Tesauro 2) === -->
+<div class="row gx-3">
+  <!-- Región -->
+  <div class="col-md-4">
+   <!-- Región -->
+<mat-form-field appearance="outline" class="w-100">
+  <mat-label>Región arqueológica</mat-label>
+  <mat-select formControlName="clasif_region"
+              [disabled]="!clasifRegiones || clasifRegiones.length === 0">
+    <mat-option *ngFor="let r of clasifRegiones" [value]="r">
+      {{ r }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!-- Subregión -->
+<mat-form-field appearance="outline" class="w-100">
+  <mat-label>Subregión / Área</mat-label>
+  <mat-select formControlName="clasif_subregion"
+              [disabled]="!clasifSubregiones || clasifSubregiones.length === 0">
+    <mat-option *ngFor="let s of clasifSubregiones" [value]="s">
+      {{ s }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!-- Complejo / Fase -->
+<mat-form-field appearance="outline" class="w-100">
+  <mat-label>Complejo / Fase</mat-label>
+  <mat-select formControlName="clasif_complejo"
+              [disabled]="!clasifComplejos || clasifComplejos.length === 0">
+    <mat-option *ngFor="let c of clasifComplejos" [value]="c">
+      {{ c }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+  </div>
+
+  
+</div>
+
+<!-- Preview de texto que se va al backend -->
+<mat-form-field appearance="outline" class="w-100 mt-2">
+  <mat-label>Clasificación bienes arqueológicos (cmpleto)</mat-label>
+  <input matInput formControlName="clasificacion_bienes_arqueologicos" readonly>
+  <mat-hint>Se arma automáticamente a partir de Región / Subregión / Complejo.</mat-hint>
+</mat-form-field>
+
+
+            <!-- Clasificación bienes históricos -->
+            <mat-form-field appearance="outline">
+              <mat-label>Clasificación bienes históricos</mat-label>
+              <input matInput formControlName="clasificacion_bienes_historicos" placeholder="Ejemplo: Colonial, Republicano...">
+            </mat-form-field>
+
+          <!-- Región arqueológica cultural -->
+<mat-form-field appearance="outline" class="w-100">
+  <mat-label>Procedencia por región cultural</mat-label>
+  <mat-select formControlName="proc_region_cultural">
+    <mat-option *ngFor="let r of procRegiones" [value]="r">
+      {{ r }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!-- Subregión -->
+<mat-form-field appearance="outline" class="w-100">
+  <mat-label>Subregión arqueológica cultural</mat-label>
+  <mat-select formControlName="proc_subregion_cultural"
+              [disabled]="!procSubregiones.length">
+    <mat-option *ngFor="let s of procSubregiones" [value]="s">
+      {{ s }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!-- (Opcional) texto completo que va al backend -->
+<mat-form-field appearance="outline" class="w-100 mt-2">
+  <mat-label>Procedencia por región cultural (completo)</mat-label>
+  <input matInput formControlName="procedencia_por_region_cultural" readonly>
+</mat-form-field>
+
+
+        <!-- Provincia -->
+<mat-form-field appearance="outline" class="w-100">
+  <mat-label>Provincia</mat-label>
+  <mat-select formControlName="div_provincia">
+    <mat-option *ngFor="let p of provincias" [value]="p.nombre">
+      {{ p.nombre }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!-- Cantón -->
+<mat-form-field appearance="outline" class="w-100">
+  <mat-label>Cantón</mat-label>
+  <mat-select formControlName="div_canton"
+              [disabled]="!cantones.length">
+    <mat-option *ngFor="let c of cantones" [value]="c.nombre">
+      {{ c.nombre }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!-- Distrito -->
+<mat-form-field appearance="outline" class="w-100">
+  <mat-label>Distrito</mat-label>
+  <mat-select formControlName="div_distrito"
+              [disabled]="!distritos.length">
+    <mat-option *ngFor="let d of distritos" [value]="d.nombre">
+      {{ d.nombre }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!-- Texto final que se envía al backend -->
+<mat-form-field appearance="outline" class="w-100 mt-2">
+  <mat-label>División geográfica (completo)</mat-label>
+  <input matInput formControlName="division_geografica" readonly>
+</mat-form-field>
+
+
+            <!-- Temporalidad arqueológica -->
+            <mat-form-field appearance="outline">
+              <mat-label>Temporalidad arqueológica</mat-label>
+              <input matInput formControlName="temporalidad_arqueologica" placeholder="Ejemplo: Periodo Medio, Periodo Tardío...">
+            </mat-form-field>
+
+            <!-- Temporalidad histórica -->
+            <mat-form-field appearance="outline">
+              <mat-label>Temporalidad histórica</mat-label>
+              <input matInput formControlName="temporalidad_historica" placeholder="Ejemplo: Siglo XIX, Siglo XX...">
+            </mat-form-field>
+          </div>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>Información Contextual</mat-panel-title>
+          </mat-expansion-panel-header>
+          <!-- Campos de Generalidades -->
+          <!-- === CAMPOS: Información Contextual === -->
+          <div class="campos-grid">
+            <!-- Organización trabajo campo -->
+            <mat-form-field appearance="outline">
+              <mat-label>Organización trabajo campo</mat-label>
+              <input matInput formControlName="organizacion_trabajo_campo" placeholder="Ingrese el nombre de la organización o proyecto de campo">
+            </mat-form-field>
+
+            <!-- Unidad de recolección -->
+            <mat-form-field appearance="outline">
+              <mat-label>Unidad de recolección</mat-label>
+              <input matInput formControlName="unidad_de_recoleccion" placeholder="Ejemplo: Unidad 3, Pozo 5, Cuadro A">
+            </mat-form-field>
+
+            <!-- Unidad arquitectónica -->
+            <mat-form-field appearance="outline">
+              <mat-label>Unidad arquitectónica</mat-label>
+              <input matInput formControlName="unidad_arquitectonica" placeholder="Ejemplo: Estructura 1, Muro 2...">
+            </mat-form-field>
+
+              <!-- Nivel -->
+              <mat-form-field appearance="outline">
+                <mat-label>Nivel</mat-label>
+                <input matInput type="number" formControlName="nivel" placeholder="Ejemplo: 1.2">
+              </mat-form-field>
+
+            <!-- Profundidad -->
+            <mat-form-field appearance="outline">
+              <mat-label>Profundidad</mat-label>
+              <input matInput type="number" formControlName="profundidad" placeholder="Ejemplo: 35.5">
+            </mat-form-field>
+
+            <!-- Nombre proyecto -->
+            <mat-form-field appearance="outline">
+              <mat-label>Nombre proyecto</mat-label>
+              <input matInput formControlName="nombre_proyecto" placeholder="Ejemplo: Proyecto Arqueológico Guanacaste 2024">
+            </mat-form-field>
+
+          <!-- Nombre investigador -->
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre investigador</mat-label>
+            <input matInput formControlName="nombre_investigador" placeholder="Ingrese el nombre del investigador responsable">
+          </mat-form-field>
+
+          <!-- Año de recuperación -->
+          <mat-form-field appearance="outline">
+            <mat-label>Año de recuperación</mat-label>
+            <input matInput type="number" formControlName="ano_de_recuperacion" placeholder="Ejemplo: 1985">
+          </mat-form-field>
+
+      <!-- Documentos asociados al bien -->
+        <mat-form-field appearance="outline">
+          <mat-label>Documentos asociados al bien</mat-label>
+          <input matInput formControlName="documentos_asociados_al_bien" placeholder="Listado o referencia de documentos">
+        </mat-form-field>
+
+          <!-- Observaciones -->
+          <mat-form-field appearance="outline">
+            <mat-label>Observaciones</mat-label>
+            <textarea matInput rows="3" formControlName="observaciones" placeholder="Anote observaciones o comentarios relevantes"></textarea>
+          </mat-form-field>
+        </div>
+
+        </mat-expansion-panel>
+
+      </mat-accordion>
+    </div>
+
+    <!-- Columna derecha -->
+    <div class="col seccion-activa">
+      <mat-accordion multi>
+
+        <mat-expansion-panel [expanded]="false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>Estado del bien</mat-panel-title>
+          </mat-expansion-panel-header>
+          <!-- Campos de Estado del bien -->
+          <!-- === CAMPOS: Estado del Bien === -->
+          <div class="campos-grid">
+            <!-- Estado de conservación -->
+            <mat-form-field appearance="outline">
+              <mat-label>Estado de conservación</mat-label>
+              <input matInput formControlName="estado_de_conservacion" placeholder="Ejemplo: Bueno, Regular, Deteriorado...">
+            </mat-form-field>
+
+            <!-- Intervención -->
+            <mat-form-field appearance="outline">
+              <mat-label>Intervención</mat-label>
+              <input matInput formControlName="intervencion" placeholder="Describa la intervención realizada o sugerida">
+            </mat-form-field>
+
+            <!-- Diagnóstico del estado del bien -->
+            <mat-form-field appearance="outline">
+              <mat-label>Diagnóstico del estado del bien</mat-label>
+              <textarea matInput rows="3" formControlName="diagnostico_del_estado_del_bien"
+                        placeholder="Detalles sobre el estado de conservación, daños o tratamientos requeridos"></textarea>
+            </mat-form-field>
+
+          <!-- Enviar a conservación -->
+          <mat-form-field appearance="outline">
+            <mat-label>Enviar a conservación</mat-label>
+            <input matInput formControlName="enviar_a_conservacion" placeholder="Sí / No / Pendiente">
+          </mat-form-field>
+        </div>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>Movimiento del bien</mat-panel-title>
+          </mat-expansion-panel-header>
+          <!-- Campos de Trabajo de Campo -->
+          <!-- === CAMPOS: Movimiento del bien === -->
+          <div class="campos-grid">
+            <!-- Préstamo -->
+            <mat-form-field appearance="outline">
+              <mat-label>Préstamo</mat-label>
+              <input matInput formControlName="prestamo" placeholder="Ejemplo: No / Activo / Devuelto / En trámite">
+            </mat-form-field>
+            <!-- Destino del bien -->
+            <mat-form-field appearance="outline">
+              <mat-label>Observaciones (movimiento)</mat-label>
+              <textarea matInput rows="3" formControlName="observaciones_movimiento" placeholder="Detalles del movimiento o préstamo"></textarea>
+            </mat-form-field>
+            
+          </div>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>Registro y Verificación</mat-panel-title>
+          </mat-expansion-panel-header>
+          <!-- Upload de imágenes/documentos -->
+          <!-- === CAMPOS: Registro y Verificación === -->
+        <div class="campos-grid">
+          <!-- Nombre registrador -->
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre registrador</mat-label>
+            <input matInput formControlName="nombre_registrador" placeholder="Ejemplo: Ana Pérez">
+          </mat-form-field>
+
+          <!-- Fecha registro -->
+          <mat-form-field appearance="outline">
+            <mat-label>Fecha registro</mat-label>
+            <input matInput type="number" formControlName="fecha_registro" placeholder="Ejemplo: 20241110">
+          </mat-form-field>
+
+          <!-- Nombre digitador -->
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre digitador</mat-label>
+            <input matInput formControlName="nombre_digitador" placeholder="Ejemplo: Carlos Mora">
+          </mat-form-field>
+
+          <!-- Fecha digitación -->
+          <mat-form-field appearance="outline">
+            <mat-label>Fecha digitación</mat-label>
+            <input matInput type="number" formControlName="fecha_digitacion" placeholder="Ejemplo: 20241115">
+          </mat-form-field>
+
+          <!-- Nombre del verificador -->
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre del verificador</mat-label>
+            <input matInput formControlName="nombre_del_verificador" placeholder="Ejemplo: María Fernández">
+          </mat-form-field>
+
+            <!-- Fecha de verificación -->
+            <mat-form-field appearance="outline">
+              <mat-label>Fecha de verificación</mat-label>
+              <input matInput type="number" formControlName="fecha_de_verificacion" placeholder="Ejemplo: 20241120">
+            </mat-form-field>
+
+            <!-- Resultado de la verificación -->
+            <mat-form-field appearance="outline">
+              <mat-label>Resultado de la verificación</mat-label>
+              <input matInput formControlName="resultado_de_la_verificacion" placeholder="Ejemplo: Aprobado / Revisión pendiente">
+            </mat-form-field>
+
+          <!-- Observaciones de la verificación -->
+          <mat-form-field appearance="outline">
+            <mat-label>Observaciones de la verificación</mat-label>
+            <textarea matInput rows="3" formControlName="observaciones_de_las_verificacion"
+                      placeholder="Notas adicionales sobre el proceso de verificación"></textarea>
+          </mat-form-field>
+
+            <!-- Nombre del curador -->
+            <mat-form-field appearance="outline">
+              <mat-label>Nombre del curador</mat-label>
+              <input matInput formControlName="nombre_del_curador" placeholder="Ejemplo: José Rodríguez">
+            </mat-form-field>
+
+            <!-- Fecha curatorial -->
+            <mat-form-field appearance="outline">
+              <mat-label>Fecha curatorial</mat-label>
+              <input matInput type="number" formControlName="fecha_curatorial" placeholder="Ejemplo: 20241205">
+            </mat-form-field>
+
+         
+          </div>
+
+        </mat-expansion-panel>
+
+      </mat-accordion>
+    </div>
+  </div>
+
+  <!-- Barra de acciones fija al final -->
+  <div class="acciones">
+    <!-- <button mat-stroked-button type="button" (click)="onCancelar()">Cancelar</button> -->
+    <button mat-flat-button color="primary" type="submit">Guardar</button>
+  </div>
+</form>
+

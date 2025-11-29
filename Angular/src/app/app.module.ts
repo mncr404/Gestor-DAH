@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import {AgmCoreModule} from '@agm/core';
@@ -100,7 +101,10 @@ import { DashboardEstadisticasComponent } from './components/dashboard-estadisti
 import { MatDividerModule } from '@angular/material/divider';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-
+import { ObjetosListComponent } from './components/objetos-list/objetos-list.component';
+import { SharedUiModule } from './shared-ui/shared-ui.module';
+import { PatrimoniaHomeComponent } from './components/patrimonia-home/patrimonia-home.component';
+import { FichaObjetosComponent } from './components/ficha-objetos/ficha-objetos.component';
 
 
 @NgModule({
@@ -172,7 +176,10 @@ import { MatNativeDateModule } from '@angular/material/core';
     PopupOrigenesComponent,
     PopupPerfilComponent,
     DashboardComponent,
-    DashboardEstadisticasComponent
+    DashboardEstadisticasComponent,
+    ObjetosListComponent,
+    PatrimoniaHomeComponent,
+    FichaObjetosComponent
     
   ],
   
@@ -213,9 +220,10 @@ import { MatNativeDateModule } from '@angular/material/core';
       ...env.auth,
     }),   */
     BrowserAnimationsModule,
+    SharedUiModule,
     GoogleChartsModule.forRoot()
   ],
-  providers: [appRoutingProviders, ExporterService, AuthGuard, {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true}],
+  providers: [appRoutingProviders, ExporterService, AuthGuard, {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true}, { provide: MAT_DATE_LOCALE, useValue: 'es-CR' }],
  
   bootstrap: [AppComponent],
 

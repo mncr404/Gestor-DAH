@@ -1,0 +1,125 @@
+/* objetos-form.component.scss */
+.objetos-page {
+  display: grid;
+  gap: 16px;
+}
+
+.bloque.generales {
+  grid-column: 1 / -1; /* ocupa todo el ancho */
+  padding: 16px;
+}
+
+.titulo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+
+  h2 { margin: 0; font-weight: 600; }
+  small { color: #6b7280; }
+}
+
+/* Grid de campos de “Datos Generales” */
+.grid-generales {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+
+  @media (max-width: 1280px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Dos columnas para las secciones */
+.secciones-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr; /* se pliega a una columna */
+  }
+}
+
+/* Que el header de cada panel quede clarito y compacto */
+mat-expansion-panel-header {
+  padding: 0 12px;
+  min-height: 44px !important;
+}
+
+.acciones {
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+  padding: 12px 0;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  border-top: 1px solid #eee;
+}
+
+.campos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.seccion-activa {
+  background-color: #faf9f6; /* beige muy suave */
+  border-radius: 6px;
+  padding: 3px;
+   /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); 
+
+  @media (prefers-color-scheme: dark) {
+    background-color: #2e2e2e;
+  }  */
+}
+
+mat-expansion-panel {
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  transition: background-color 0.2s ease-in-out;
+
+  &.mat-expanded {
+    background-color: #f8f6f3; /* marfil neutro */
+  }
+}
+
+mat-expansion-panel-header {
+  background-color: #f0ece8;
+  border-left: 4px solid #c6a97e; /* tono dorado/ocre institucional */
+}
+
+.secciones-grid .col:last-child {
+  background-color: #eae7e2; /* tono cálido grisáceo */
+}
+
+/* === Encabezados de las secciones === */
+mat-expansion-panel-header {
+  font-weight: 600; /* Negrita moderada */
+  font-size: 15px;
+  color: #2c2c2c;
+  background-color: #f3efeb !important; /* Beige suave */
+  border-left: 4px solid #c4a46d; /* Línea dorada institucional */
+}
+
+/* Efecto hover sutil */
+mat-expansion-panel-header:hover {
+  background-color: #ebe6e1 !important;
+}
+
+/* Panel abierto (activo) */
+mat-expansion-panel.mat-expanded mat-expansion-panel-header {
+  background-color: #eae5df !important;
+  color: #000;
+}
+
+/* Para que el contenido interior mantenga el mismo fondo */
+mat-expansion-panel {
+  background-color: #f8f6f3;
+  border: 1px solid #e2ddd7;
+  border-radius: 8px;
+}

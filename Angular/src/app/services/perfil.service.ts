@@ -26,7 +26,7 @@ export class PerfilService {
         return this._http.put(this.url+'registro/'+id, params,{headers: headers});
     }
 
-   
+  
 
     getPerfiles(last:any = null):Observable<any>{
         var perfiles = 'registros';
