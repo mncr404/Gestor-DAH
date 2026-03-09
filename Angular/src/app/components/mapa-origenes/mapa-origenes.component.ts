@@ -5,6 +5,9 @@ import { Router, ActivatedRoute, Params} from '@angular/router';
 import { DataService} from 'src/app/services/data.service';
 import { ExporterService } from 'src/app/services/exporter';
 import Swal from 'sweetalert2';
+import * as L from 'leaflet';
+import 'leaflet.markercluster';
+import { AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-mapa-origenes',
@@ -12,11 +15,13 @@ import Swal from 'sweetalert2';
   styleUrls: ['./mapa-origenes.component.css'],
   providers : [SitioService]
 })
-export class MapaOrigenesComponent implements OnInit {
+export class MapaOrigenesComponent implements OnInit, AfterViewInit {
 
   public lat;
   public lng;
   public zoom!: number;
+  map!: L.Map;
+  markersLayer!: any;
   public mapTypeId!: any;
   public searchString!: any;
   public searchNombre!: any;
@@ -40,6 +45,28 @@ export class MapaOrigenesComponent implements OnInit {
   };
 
   origenes!: any [];
+
+  ngAfterViewInit(): void {
+    this.initMap();
+  }
+
+  initMap(): void {
+  this.map = L.map('map').setView([this.lat || 9.7489, this.lng || -83.7534], this.zoom || 7);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(this.map);
+
+  this.markersLayer = (L as any).markerClusterGroup().addTo(this.map);
+
+  this.map.on('zoomend', () => {
+    this.renderMarkers();
+  });
+
+  setTimeout(() => {
+    this.map.invalidateSize();
+  }, 200);
+}
 
   constructor(
     private _sitioService: SitioService,
@@ -99,6 +126,10 @@ getMarkerLabel(nombre: string | null | undefined): any {
     });
   }
 
+  volverInicioMapa(): void {
+  this._router.navigate(['/pag-ori']);
+}
+
   getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
@@ -117,12 +148,100 @@ getMarkerLabel(nombre: string | null | undefined): any {
     }
   }
 
+/*   renderMarkers(): void {
+  if (!this.map || !this.markersLayer) return;
+
+  this.markersLayer.clearLayers();
+
+  if (!this.sitios || !this.sitios.length) return;
+
+  this.sitios.forEach((sitio: any) => {
+    const lat = Number(sitio.y || sitio.latitud);
+    const lng = Number(sitio.x || sitio.longitude || sitio.longitud);
+
+    if (!lat || !lng) return;
+
+    const marker = L.marker([lat, lng]);
+
+    const popupHtml = `
+      <div style="min-width:220px;">
+        <h3 style="margin:0 0 8px 0;">Nombre: <b>${sitio.nombre_sitio || '-'}</b></h3>
+        <p style="margin:0 0 6px 0;">Clave: ${sitio.clave_sitio || '-'}</p>
+        <p style="margin:0 0 6px 0;">Área Estimada: ${sitio.area_estimada || '-'} mts</p>
+        <a href="/pag-ori/sitio/${sitio._id}">Ficha Completa</a>
+        <br><br>
+        <a href="http://origenes.museocostarica.go.cr/informes/${sitio.clave_sitio || ''}/" target="_blank">Informes</a>
+      </div>
+    `;
+
+    marker.bindPopup(popupHtml);
+    marker.addTo(this.markersLayer);
+  });
+} */
+renderMarkers(): void {
+  if (!this.map || !this.markersLayer) return;
+
+  this.markersLayer.clearLayers();
+
+  if (!this.sitios || !this.sitios.length) return;
+
+  const currentZoom = this.map.getZoom();
+
+  this.sitios.forEach((sitio: any) => {
+    const lat = Number(sitio.y || sitio.latitude || sitio.latitud);
+    const lng = Number(sitio.x || sitio.Logitude || sitio.longitude || sitio.longitud);
+
+    if (!lat || !lng) return;
+
+    const marker = L.marker([lat, lng]);
+
+    const popupHtml = `
+      <div style="min-width:220px;">
+        <h3 style="margin:0 0 8px 0;">Nombre: <b>${sitio.nombre_sitio || '-'}</b></h3>
+        <p style="margin:0 0 6px 0;">Clave: ${sitio.clave_sitio || '-'}</p>
+        <p style="margin:0 0 6px 0;">Área Estimada: ${sitio.area_estimada || '-'} mts</p>
+        <a href="/pag-ori/sitio/${sitio._id}" target="_blank">🔎 Ver ficha completa</a>
+        <br><br>
+        <a href="http://origenes.museocostarica.go.cr/informes/${sitio.clave_sitio || ''}/" target="_blank">📄 Informes</a>
+      </div>
+    `;
+
+    marker.bindPopup(popupHtml);
+
+    if (sitio.nombre_sitio && currentZoom >= 14) {
+      marker.bindTooltip(String(sitio.nombre_sitio), {
+        permanent: true,
+        direction: 'top',
+        offset: [0, -10],
+        className: 'site-label'
+      });
+    }
+
+    this.markersLayer.addLayer(marker);
+  });
+}
+
+limpiarMapaBusqueda(): void {
+  this.sitios = [];
+  this.selectedProvincia = null;
+  this.selectedCanton = null;
+  this.selectedDistrito = null;
+  this.searchNombre = '';
+
+  if (this.markersLayer) {
+    this.markersLayer.clearLayers();
+  }
+
+  if (this.map) {
+    this.map.setView([9.7489, -83.7534], 7);
+  }
+}
    
   showAll(){
     this.dataService.getAll().subscribe(
       (data:any)=>{
-        this.provincias = data,
-        console.log(this.provincias)
+        this.provincias = data
+        
       }
     )
   }
@@ -135,28 +254,8 @@ getMarkerLabel(nombre: string | null | undefined): any {
     this.excelService.exportToExcel(this.sitios, 'my_export');
   }
 
-/*   onSelect(provincia_id:any){
-    this.dataService.getAll().subscribe((res:any)=>{
-      
-      this.cantones = res['cantones'].filter(
-        (res:any)=> res.provincia_id == provincia_id!.value,
-       
-      )
-     
-    
-    })
-  } */
 
- /*  onSelectCanton(canton_id:any){
-    this.dataService.getAll().subscribe((res:any)=>{
-      this.distritos = res['distritos'].filter(
-        (res:any)=> res.canton_id == canton_id!.value
-      ),
-      console.log(this.distritos);
-    })
-  } */
-  
-  goSearch(provincia_id: any) {
+/*   goSearch(provincia_id: any) {
 
     if(provincia_id == 1){
       this.prov = 'San José'
@@ -186,10 +285,13 @@ getMarkerLabel(nombre: string | null | undefined): any {
       response => {
         if (response.sitio) {
           this.sitios = response.sitio;
+          console.log(response.sitio);
 
         } else {
           this.sitios = [];
+          
         }
+        this.renderMarkers();
       },
       error => {
         console.log(error);
@@ -197,7 +299,7 @@ getMarkerLabel(nombre: string | null | undefined): any {
 
       }
     );
-  }
+  } */
 
   goSearchNombre(){
     var search = this.searchNombre
@@ -221,7 +323,7 @@ getMarkerLabel(nombre: string | null | undefined): any {
 
 
 
-goSearchCanton(canton_id : any) {
+/* goSearchCanton(canton_id : any) {
 
   if(canton_id == 1){
     this.cant = '^San Jose$'
@@ -481,6 +583,7 @@ goSearchCanton(canton_id : any) {
 
       } else {
         this.sitios = [];
+        this.renderMarkers();
       }
     },
     error => {
@@ -489,9 +592,9 @@ goSearchCanton(canton_id : any) {
 
     }
   );
-}
+} */
 
-goSearchDistrito(distrito_id: any) {
+/* goSearchDistrito(distrito_id: any) {
 
 
 
@@ -1973,6 +2076,7 @@ goSearchDistrito(distrito_id: any) {
         console.log(response.sitio)
       } else {
         this.sitios = [];
+        this.renderMarkers();
       }
     },
     error => {
@@ -1991,7 +2095,7 @@ goSearchDistrito(distrito_id: any) {
 
     }
   );
-}
+} */
 
  onSelect(event: Event): void {
     const selected = (event.target as HTMLSelectElement).value;
@@ -2014,7 +2118,7 @@ goSearchDistrito(distrito_id: any) {
       });
     }
 
-    buscarSitios(): void {
+  /*   buscarSitios(): void {
       const provincia = this.selectedProvincia?.title || "";
       const canton = this.selectedCanton?.title || "";
       const distrito = this.selectedDistrito?.title || "";
@@ -2058,8 +2162,55 @@ goSearchDistrito(distrito_id: any) {
           console.error("Error al buscar sitios:", error);
         }
       );
-    }
+    } */
 
+    buscarSitios(): void {
+  const provincia = this.selectedProvincia?.title || "";
+  const canton = this.selectedCanton?.title || "";
+  const distrito = this.selectedDistrito?.title || "";
+
+  const payload = { provincia, canton, distrito };
+  console.log("Payload enviado:", payload);
+
+  this._sitioService.buscarSitios(payload).subscribe(
+    (res: any) => {
+      if (!res.sitio || res.sitio.length === 0) {
+        Swal.fire({
+          icon: 'info',
+          title: 'Sin resultados',
+          text: 'No se encontraron sitios con los criterios seleccionados.'
+        });
+        this.sitios = [];
+        this.renderMarkers();
+        return;
+      }
+
+      this.sitios = res.sitio;
+
+      // centrar en el primer resultado usando x/y
+      const primerSitio = this.sitios[0];
+      const lat = Number(primerSitio.y || primerSitio.latitude || primerSitio.latitude);
+      const lng = Number(primerSitio.x || primerSitio.Logitude || primerSitio.longitude || primerSitio.longitude);
+
+      if (lat && lng) {
+        this.lat = lat;
+        this.lng = lng;
+        this.map.setView([lat, lng], 10);
+      }
+
+      this.renderMarkers();
+
+      // Limpiar los selects después de búsqueda exitosa
+      this.selectedProvincia = null;
+      this.selectedCanton = null;
+      this.selectedDistrito = null;
+      this.searchNombre = '';
+    },
+    (error) => {
+      console.error("Error al buscar sitios:", error);
+    }
+  );
+}
 
 
 }

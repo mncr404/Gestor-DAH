@@ -1,42 +1,4 @@
 
-<!-- 
- 
-
-  <div id="formContent">
-    
-    <h2 class="active"> Acceso </h2>
-    
-    <h2 class="inactive underlineHover" mat-raised-button (click)="openDialog()">Registro </h2> 
-    
-   
-
-    <div class="fadeIn first">
-      <img src="assets/images/logogestor2.png" alt="User Icon" />
-    </div>
-<br>
-   <div>
-
-    <form (submit)="signIn()">
-      <input type="text" [(ngModel)]="user.email" name="email" class="form-control" placeholder="Email" required autofocus>
-      <input type="password" type="password" [(ngModel)]="user.password" name="password" class="form-control" placeholder="Password" required>
-      <input type="text" id="token" class="form-control" *ngIf="this.logFlag" name="token" autocomplete="off"
-      #token="ngModel" [(ngModel)]="user.token" placeholder="Token de Autenticación"
-      title="Ingrese el Token que recibió en el correo registrado" required>
-      <input type="submit" class="fadeIn fourth" *ngIf="this.tfaFlag" value="Log In">
-      <form (submit)="signInTFA()">
-        <input type="submit" class="fadeIn fourth" *ngIf="this.logFlag" value="Log In">
-      </form>
-      
-    </form>
-  </div>
-
-    <div class="mb-3">
-      <a routerLink="/forgot">Olvidó su contraseña?</a>
-    </div>
-  
-  </div>
-</div> -->
-
 <div class="login-container">
   <mat-card class="login-card">
 

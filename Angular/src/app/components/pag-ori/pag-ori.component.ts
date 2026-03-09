@@ -5,8 +5,11 @@ import { Globals } from 'src/app/services/globals';
 import { ChartType } from 'angular-google-charts';
 import { AuthService } from 'src/app/services/auth.service';
 import { RegistroService } from 'src/app/services/registro.service';
-
-
+import { ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
+import { SidebarComponent } from '../sidebar/sidebar.component'; // ajustá ruta
+import { MatDialog } from '@angular/material/dialog';
+import { AdvancedFiltersHelpDialogComponent } from '../advanced-filters-help-dialog/advanced-filters-help-dialog.component';
 @Component({
   selector: 'app-pag-ori',
   templateUrl: './pag-ori.component.html',
@@ -26,26 +29,7 @@ export class PagOriComponent implements OnInit {
   public user!: any;
   public acceso!: any;
   
-/*   chartData = {
-
-    myType : ChartType.PieChart,
-  mytitle : "Distribución de Monumentos por Provincia",
-  myData : [
-    ['San José', 591],
-    ['Alajuela', 567],
-    ['Cartago', 520],
-    ['Heredia', 201],
-    ['Guanacaste', 1255],
-    ['Puntarenas', 1658],
-    ['Limón', 306]
-  ],
-  columnNames : ['Provincia', 'Cantidad'],
-  options : {    
-     is3D:true
-  },
-  width : 600,
-  height : 400    
-}; */
+  @ViewChild(SidebarComponent) sidebarComp!: SidebarComponent;
   
 datosProvincias = [
   { name: 'San José', value: 591 },
@@ -67,6 +51,7 @@ colorScheme = {
   
 
   constructor(
+    private dialog: MatDialog,
     private _SitioService: SitioService,
     public authService : AuthService,
     public _registroService: RegistroService
@@ -83,6 +68,10 @@ colorScheme = {
 
   ngOnInit() {
 
+    const dismissed = localStorage.getItem('ori_help_advanced_filters_dismissed');
+  if (!dismissed) {
+    this.openAdvancedHelp(true);
+  }
     this._SitioService.getSitios(true).subscribe(
       response => { 
         if(response.sitio){
@@ -123,6 +112,21 @@ colorScheme = {
 
   }
 
+  openAdvancedHelp(isAuto = false) {
+  const ref = this.dialog.open(AdvancedFiltersHelpDialogComponent, {
+    width: '520px',
+    maxWidth: '92vw',
+    disableClose: false,
+    data: { isAuto }
+  });
+
+  ref.afterClosed().subscribe((result: any) => {
+    if (result?.dontShowAgain) {
+      localStorage.setItem('ori_help_advanced_filters_dismissed', '1');
+    }
+  });
+}
+
   searchPerfil(searstring:any){
     this._registroService.search(searstring).subscribe(
       response => {
@@ -145,6 +149,22 @@ colorScheme = {
       }
     );
   }
+
+  advancedFilters = { tipoProyecto: [], tipoMonumento: [] };
+
+onAdvancedFiltersChange(f: any) { this.advancedFilters = { ...f }; }
+onClearAdvancedFilters() { this.advancedFilters = { tipoProyecto: [], tipoMonumento: [] }; }
+
+onApplyAdvancedFilters(drawer: MatSidenav) {
+  // 1) cerrar el drawer
+  drawer.close();
+
+  // 2) ejecutar búsqueda desde el sidebar
+  // (esto navega a /pag-lite-sitios con los queryParams ya armados)
+  if (this.sidebarComp?.buscarSitios) {
+    this.sidebarComp.buscarSitios();
+  }
+}
 
 
 }

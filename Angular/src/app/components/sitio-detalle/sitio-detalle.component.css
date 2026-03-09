@@ -112,3 +112,25 @@ mat-icon {
 
 .object-cover { object-fit: cover; }
 .objetos-table img { border-radius: 8px; }
+
+
+.region-block {
+  margin: 12px 0;
+}
+
+.region-block h4 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #444;
+  text-align: center;
+}
+
+.region-block p {
+  margin: 6px 0;
+}
+
+.check-icon {
+  color: #8a6a3f !important; /* café museo */
+}
+

@@ -1,69 +1,43 @@
 <app-header></app-header>
-
-<!-- <div class= "center">
-    
-<section id="content">
-
-        
-        <div id="disclaimer">
-            <p style="font-size:140%;" text-align="justify;">En la Base ORIGENES están incluidos todos los monumentos arqueológicos registrados
-                desde 1870 a la fecha. Sin embargo, no se excluye el hallazgo de más monumentos al realizar movimientos de tierra,
-                pues en este momento no se cuenta con una prospección sistemática a nivel nacional.
-                Se insta a los consultores en arqueología a proceder con el estudio D1, de acuerdo con la normativa de la Secretaría Tecnica Nacional -SETENA-.</p>
-                
-                 <div *ngIf="administrador == false && registrado == false" >
-                    <p style="font-size:120%;" text-align="justify;"> <strong>Si usted es Profesional en Arqueología, habilítese <a class="nav-link" [routerLink]="['/politicasUso']" [routerLinkActive]= "['active']">aquí...</a></strong></p>
-                </div> 
-                 <div *ngIf="registrado == true">
-                    <p style="font-size:120%;" text-align="justify;"> <strong>Su solicitud de acceso ampliado está en estudio</strong></p>
-                </div> 
-                
-            </div>
-
-        <hr>
-        
-           
-             <div id="map"><google-chart 
-                [title]="chartData.mytitle"
-                [type]="chartData.myType" 
-                [data]="chartData.myData" 
-                [columns]="chartData.columnNames" 
-                [options]="chartData.options" 
-                [width]="chartData.width"
-                [height]="chartData.height">
-                </google-chart>
-                </div> 
-
-                
-        
-       
-    </section>
-  
-    <app-sidebar
-    [titulo]="'sitio'">
-</app-sidebar>
-</div> -->
-
-
-<div class="inicio-container center">
+<!-- <div class="inicio-container center">
   <section id="content">
 
-    <div id="disclaimer" class="intro-box">
+     <div id="disclaimer" class="intro-box">
       <h1 class="intro-titulo">Bienvenido a la Base de Datos ORÍGENES</h1>
-
-      <p class="intro-texto">
+     <p class="intro-texto">
         En la base ORÍGENES están incluidos todos los monumentos arqueológicos registrados desde 1870 a la fecha.
         Sin embargo, no se excluye el hallazgo de más monumentos al realizar movimientos de tierra, pues en este momento no se cuenta con una prospección sistemática a nivel nacional.
         Se insta a los consultores en arqueología a proceder con el estudio D1, de acuerdo con la normativa de la Secretaría Técnica Nacional Ambiental <strong>SETENA</strong>.
       </p>
+    <div *ngIf="administrador == false && registrado == false" class="aviso-acceso">
 
-      <div *ngIf="administrador == false && registrado == false" class="aviso-acceso">
-        <p><strong>¿Es profesional en Arqueología?</strong> Puede habilitarse en el sistema 
-        <a class="enlace-politica" [routerLink]="['/politicasUso']" [routerLinkActive]="['active']">aquí...</a></p>
-      </div>
+  <p>
+    <strong>¿Es profesional en Arqueología?</strong>
+    Revise los requisitos del perfil y luego solicite habilitación.
+  </p>
+
+  <div class="acciones-acceso">
+   
+    <a 
+      class="btn-outline"
+      href="assets/docs/registro.pdf"
+      target="_blank"
+      rel="noopener"
+    >
+      Ver requisitos (PDF)
+    </a>
 
   
-    </div>
+    <a 
+      class="btn-primary"
+      [routerLink]="['/politicasUso']"
+      routerLinkActive="active"
+    >
+      Solicitar habilitación
+    </a>
+  </div>
+</div>
+</div>
 
     <hr>
 
@@ -84,13 +58,106 @@
           [legendTitle]="''">
         </ngx-charts-pie-chart>
       </div>
-      
-
- 
-
+  
   </section>
 
   <app-sidebar [titulo]="'sitio'"></app-sidebar>
-</div>
+</div> -->
 
 
+
+<mat-sidenav-container class="ori-sidenav-container">
+
+  <!-- DRAWER (Filtros Avanzados) -->
+  <mat-sidenav #filtersDrawer mode="over" position="end" class="ori-drawer">
+    <app-monumentos-filtros-drawer
+      [filters]="advancedFilters"
+      (filtersChange)="onAdvancedFiltersChange($event)"
+      (apply)="onApplyAdvancedFilters(filtersDrawer)"
+      (clear)="onClearAdvancedFilters(); onApplyAdvancedFilters(filtersDrawer)"
+      (close)="filtersDrawer.close()">
+    </app-monumentos-filtros-drawer>
+  </mat-sidenav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <mat-sidenav-content>
+    <div class="inicio-container center">
+
+      <div class="ori-layout">
+
+        <!-- MAIN -->
+        <section id="content" class="ori-main">
+
+          <div id="disclaimer" class="intro-box">
+            <h1 class="intro-titulo">Bienvenido a la Base de Datos ORÍGENES</h1>
+
+            <p class="intro-texto">
+              En la base ORÍGENES están incluidos todos los monumentos arqueológicos registrados desde 1870 a la fecha.
+              Sin embargo, no se excluye el hallazgo de más monumentos al realizar movimientos de tierra, pues en este momento no se cuenta con una prospección sistemática a nivel nacional.
+              Se insta a los consultores en arqueología a proceder con el estudio D1, de acuerdo con la normativa de la Secretaría Técnica Nacional Ambiental <strong>SETENA</strong>.
+            </p>
+
+            <div *ngIf="administrador == false && registrado == false" class="aviso-acceso">
+              <p>
+                <strong>¿Es profesional en Arqueología?</strong>
+                Revise los requisitos del perfil y luego solicite habilitación.
+              </p>
+
+              <div class="acciones-acceso">
+                <a
+                  class="btn-outline"
+                  href="assets/docs/registro.pdf"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Ver requisitos (PDF)
+                </a>
+
+                <a
+                  class="btn-primary"
+                  [routerLink]="['/politicasUso']"
+                  routerLinkActive="active"
+                >
+                  Solicitar habilitación
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="grafico-container">
+            <h2 class="grafico-titulo">Distribución de Monumentos por Provincia</h2>
+
+            <ngx-charts-pie-chart
+              [results]="datosProvincias"
+              [view]="view"
+              [scheme]="colorScheme"
+              [doughnut]="true"
+              [legend]="true"
+              [labels]="true"
+              [explodeSlices]="false"
+              [gradient]="true"
+              [animations]="true"
+              [legendPosition]="'right'"
+              [legendTitle]="''">
+            </ngx-charts-pie-chart>
+          </div>
+
+        </section>
+
+        <!-- SIDEBAR -->
+        <aside class="ori-sidebar">
+          <app-sidebar
+            [titulo]="'sitio'"
+            [advancedFilters]="advancedFilters"
+            (openFilters)="filtersDrawer.open()"
+            (openHelp)="openAdvancedHelp()">
+          </app-sidebar>
+        </aside>
+
+      </div>
+    </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

@@ -1,26 +1,4 @@
-/* #map {
-    display:inline-block
-}
 
-a:link, a:visited {
-    background-color: white;
-    color: black;
-    border: 2px solid blue;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-  }
-  
-  a:hover, a:active {
-    background-color: blue;
-    color: white;
-  }
-
-  #logoori{
-    float: left;
-    margin-left: 20px;
-  } */
 
   .inicio-container {
     padding: 20px;
@@ -123,4 +101,74 @@ input[type="text"] {
   border: 1px solid #ccc;
 }
 
-  
+.aviso-acceso{
+  background:#fff4d6;
+  border-left:6px solid #f0b429;
+  padding:18px 16px;
+  border-radius:10px;
+  margin-top:18px;
+}
+
+.acciones-acceso{
+  margin-top:12px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.btn-outline{
+  border:1px solid #2c5aa0;
+  color:#2c5aa0;
+  padding:8px 14px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.btn-outline:hover{
+  background:#eef4ff;
+}
+
+.btn-primary{
+  background:#2c5aa0;
+  color:white;
+  padding:8px 14px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.btn-primary:hover{
+  background:#244b86;
+}
+
+
+/* nuevo  */
+
+.ori-sidenav-container{
+  min-height: calc(100vh - 0px);
+  background: #fff;
+}
+
+.ori-layout{
+  display: grid;
+  grid-template-columns: minmax(760px, 1fr) 380px; /* main + sidebar fijo */
+  gap: 32px;
+  align-items: start;
+}
+
+.ori-main{
+  min-width: 0;
+}
+
+.ori-sidebar{
+  width: 380px;     /* fuerza ancho real */
+  min-width: 380px; /* evita compresión */
+}
+
+.ori-drawer{
+  width: 420px;
+  padding: 18px 18px 24px;
+  background: #fff;
+}

@@ -1,6 +1,45 @@
-#logogob {
-    width: 15%;
-    font-size: 20px;
-    float: center;
-    margin-top: 10px;
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 30px 20px;
+  background: transparent; /* no bloque gris full width */
+}
+
+.footer-card {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  padding: 25px 30px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 14px;
+  color: #5a5a5a;
+  margin-bottom: 20px;
+}
+
+.footer-text a {
+  color: #9c7a2b; /* dorado institucional */
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+}
+
+.footer-logos img {
+  max-width: 600px;   /* 🔥 limita el tamaño */
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.footer-meta {
+  font-size: 12px;
+  color: #888;
 }

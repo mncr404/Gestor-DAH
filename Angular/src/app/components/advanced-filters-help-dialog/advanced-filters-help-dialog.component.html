@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Filtros avanzados (nuevo)</h2>
+
+<mat-dialog-content>
+  <p>Ahora podés refinar la búsqueda por <strong>Tipo de Proyecto</strong> y <strong>Tipo de Monumento</strong>.</p>
+
+  <ol class="pasos">
+    <li>Abrí <strong>Filtros avanzados</strong>.</li>
+    <li>Seleccioná una o varias opciones.</li>
+    <li>Presioná <strong>Aplicar</strong> (la búsqueda corre automáticamente).</li>
+  </ol>
+
+  <p class="nota">Arriba verás los <strong>chips</strong> con los filtros activos y la cantidad de resultados.</p>
+
+  <mat-checkbox [(ngModel)]="dontShowAgain">No mostrar de nuevo</mat-checkbox>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button color="primary" (click)="close()">Entendido</button>
+</mat-dialog-actions>

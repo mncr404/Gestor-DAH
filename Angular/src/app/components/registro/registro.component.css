@@ -1,3 +1,4 @@
+/* 
 .login-container {
   display: flex;
   justify-content: center;
@@ -8,9 +9,9 @@
 
 .login-card {
   width: 100%;
-  max-width: 420px;
+  max-width: 400px;
   padding: 2rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   border-radius: 16px;
 }
 
@@ -45,7 +46,172 @@
   margin-bottom: 1rem;
 }
 
-.tooltip-wide {
-  max-width: 350px;
-  white-space: normal;
+.action-btn {
+  margin-top: 1rem;
 }
+
+.forgot-password {
+  margin-top: 1rem;
+  text-align: center;
+}
+ */
+
+ /* Fondo general */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* look más institucional */
+  background: radial-gradient(1200px 600px at 50% 20%, #ffffff 0%, #f3f6fb 55%, #eef2f7 100%);
+  padding: 24px;
+}
+
+/* Tarjeta */
+.login-card {
+  width: 100%;
+  max-width: 440px;
+  padding: 28px 28px 22px;
+  border-radius: 16px;
+
+  /* Sombra más suave (premium) */
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.10),
+    0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* Encabezado tipo tabs */
+.tabs-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.tabs-header h2 {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: .2px;
+}
+
+/* Activo / Inactivo */
+.active-tab {
+  color: #e36b00; /* naranja institucional */
+  font-weight: 700;
+  padding-bottom: 8px;
+  border-bottom: 3px solid #e36b00;
+}
+
+.inactive-tab {
+  color: #7a8594;
+  font-weight: 600;
+  cursor: pointer;
+  padding-bottom: 8px;
+  border-bottom: 3px solid transparent;
+  transition: all 0.15s ease-in-out;
+}
+
+.inactive-tab:hover {
+  color: #2c3e50;
+  border-bottom-color: rgba(227, 107, 0, 0.35);
+}
+
+/* Logo */
+.logo-container {
+  text-align: center;
+  margin: 6px 0 18px;
+}
+
+.logo-container img {
+  width: 200px;
+  max-width: 78%;
+  height: auto;
+  display: inline-block;
+}
+
+/* Inputs */
+.full-width {
+  width: 100%;
+}
+
+/* Espaciado entre fields (Angular Material a veces queda muy pegado) */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+/* Botones */
+.action-btn {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.action-btn button {
+  width: 100%;
+  height: 44px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  border-radius: 10px;
+}
+
+/* Link forgot */
+.forgot-password {
+  text-align: center;
+  margin-top: 14px;
+}
+
+.forgot-password a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #2c5aa0;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 420px) {
+  .login-card {
+    padding: 22px 18px 18px;
+    border-radius: 14px;
+  }
+}
+
+.tabs-header{
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inactive-tab:hover{
+  color:#2c3e50;
+  border-bottom: 3px solid rgba(227,107,0,.25);
+}
+
+.login-container::before {
+  background-position: 80% center; /* lo mueve a la derecha */
+  background-size: 65%;
+  opacity: 0.06;
+}
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  background-color: #eef2f7;
+
+  /* Logo gigante de fondo */
+  background-image: url('/assets/images/logogo.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 75%;
+  opacity: 1;
+}
+

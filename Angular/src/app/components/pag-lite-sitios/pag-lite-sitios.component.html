@@ -14,6 +14,37 @@
     </button>
   </mat-form-field>
 </div>
+<!-- Loader -->
+
+<div class="resumen-filtros">
+  <div>
+    <div class="total">
+      <strong>{{ totalResultados }}</strong> resultados
+    </div>
+
+    <div class="chips">
+      <span class="chip" *ngIf="filtrosActivos.nombre">
+        Nombre/Clave: {{ filtrosActivos.nombre }}
+      </span>
+
+      <span class="chip" *ngFor="let u of filtrosActivos.ubicacion">
+        {{ u.label }}: {{ u.value }}
+      </span>
+
+      <span class="chip" *ngFor="let p of filtrosActivos.tipoProyecto">
+        Proyecto: {{ p }}
+      </span>
+
+      <span class="chip" *ngFor="let m of filtrosActivos.tipoMonumento">
+        Monumento: {{ m }}
+      </span>
+    </div>
+  </div>
+
+  <button class="btn btn-outline-secondary" (click)="limpiarFiltros()">
+    Limpiar filtros
+  </button>
+</div>
 
 <!-- Tarjetas de resultados -->
 <div class="tarjetas-container" *ngIf="listData">

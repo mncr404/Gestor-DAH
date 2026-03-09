@@ -1,81 +1,186 @@
-agm-map {
-    width: 650px;
-    height: 400px;
-    display: inline-block;
+.center {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 16px 24px;
 }
 
-/* label {
-    display: block !important;
-    margin: 5px !important;
-    padding-right: 300px !important;
+.busqueda-layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  width: 100%;
 }
 
-.boton{
-    font-size:10px;
-    border-style: solid;
-    border:1px solid black;
-    width:42px;
-    height:26px;
-   } */
+.map-panel {
+  flex: 1 1 auto;
+  min-width: 0;
+}
 
-   .busqueda-mapa {
-    background: #fff;
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    max-width: 320px;
-  }
-  
-  .busqueda-titulo {
-    font-weight: bold;
-    color: #3f51b5;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  
-  .busqueda-fila {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .busqueda-fila select,
-  .busqueda-fila input {
-    flex: 1;
-    padding: 0.4rem;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-  }
-  
+.sidebar-panel {
+  width: 420px;
+  flex: 0 0 420px;
+}
 
-  .instrucciones-busqueda {
-    background-color: #e8f0fe;
-    border-left: 5px solid #3f51b5;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 6px;
-    color: #1a237e;
-    font-size: 0.95rem;
-  }
-  
-  .instrucciones-busqueda p {
-    margin: 0.4rem 0;
-  }
-  
-  .icono-info {
-    vertical-align: middle;
-    color: #3f51b5;
-    margin-right: 0.5rem;
-  }
+#sidebar {
+  width: 100%;
+}
 
-  .map-container {
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 800px; /* o el ancho que gustes */
-    margin: 1rem auto; /* 🔹 CENTRADO horizontal */
-    overflow: hidden;
-  }
-  
-  
+#search {
+  width: 100%;
+}
+
+.map-container {
+  width: 100%;
+  height: 500px;
+  max-height: 500px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+:host ::ng-deep .leaflet-container img {
+  max-width: none !important;
+  max-height: none !important;
+}
+
+:host ::ng-deep .leaflet-container {
+  background: #f5f5f5;
+}
+
+:host ::ng-deep .site-label {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #d6d6d6;
+  border-radius: 4px;
+  color: #333;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 6px;
+  box-shadow: none;
+}
+
+.search-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.filtro-bloque {
+  margin-bottom: 18px;
+}
+
+.bloque-titulo {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a237e;
+  text-align: left;
+}
+
+.busqueda-fila {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.busqueda-fila label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.busqueda-fila select,
+.busqueda-fila input {
+  width: 100%;
+  min-height: 40px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  background: #fff;
+}
+
+.busqueda-fila select:focus,
+.busqueda-fila input:focus {
+  outline: none;
+  border-color: #3f51b5;
+  box-shadow: 0 0 0 3px rgba(63, 81, 181, 0.12);
+}
+
+.acciones-busqueda {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.btn-buscar,
+.btn-limpiar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 8px;
+  padding: 8px 14px;
+}
+
+.resumen-busqueda {
+  margin-top: 14px;
+  padding: 12px;
+  background: #f4f7fb;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.instrucciones-busqueda {
+  background-color: #eef4ff;
+  border-left: 5px solid #3f51b5;
+  padding: 14px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  color: #1a237e;
+  font-size: 0.95rem;
+}
+
+.instrucciones-busqueda p {
+  margin: 0.35rem 0;
+}
+
+.icono-info {
+  color: #3f51b5;
+  margin-bottom: 6px;
+}
+
+.busqueda-titulo {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  color: #1f3c88;
+  margin: 24px 0 18px;
+  letter-spacing: 0.3px;
+  position: relative;
+}
+
+.busqueda-titulo::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 4px;
+  background: #d4a017;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.contador{
+  color:#1f3c88;
+  font-size:18px;
+}

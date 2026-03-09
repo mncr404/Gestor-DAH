@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { CeramicService } from 'src/app/services/ceramic.service';
 import { ContextoService } from 'src/app/services/contexto.service';
@@ -12,6 +12,7 @@ import { RegistroService } from 'src/app/services/registro.service';
 import Swal from 'sweetalert2';
 
 
+
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -20,6 +21,8 @@ import Swal from 'sweetalert2';
 })
 export class SidebarComponent implements OnInit {
   
+  @Output() openFilters = new EventEmitter<void>();
+  @Output() openHelp = new EventEmitter<void>();
   public searchString!: string;
   public searchString2!: string;
   public searchString3!: string;
@@ -49,6 +52,10 @@ export class SidebarComponent implements OnInit {
   sitios: any[] = [];
 
   @Input() titulo!: string;
+  @Input() advancedFilters: { tipoProyecto: string[]; tipoMonumento: string[] } = {
+  tipoProyecto: [],
+  tipoMonumento: []
+};
 
   constructor(
     private _ceramicService: CeramicService,
@@ -84,13 +91,12 @@ export class SidebarComponent implements OnInit {
         }
 
         if (this.title == '[{"email":"jbrenes@museocostarica.go.cr"}]' || this.title =='[{"email":"jtapia@museocostarica.go.cr"}]'){
-          // this.administrador = true;
+        
           this.registrado = true;
           console.log(this.registrado)
-          //this.arqueo = true
+     
         } 
-     /*    else if (this.title == '[{"email":"jtapia@museocostarica.go.cr"}]'){
-        this.administrador = true;*/
+ 
        
        else{
         this.administrador = false;
@@ -186,8 +192,6 @@ export class SidebarComponent implements OnInit {
   }
 
 
-
-
   onSelect(event: Event): void {
     const selected = (event.target as HTMLSelectElement).value;
     const provinciaId = this.selectedProvincia?.id;
@@ -216,15 +220,23 @@ export class SidebarComponent implements OnInit {
       const canton = this.selectedCanton?.title || "";
       const distrito = this.selectedDistrito?.title || "";
     
-      const payload = { provincia, canton, distrito };
-      console.log("Payload a enviar:", payload);
+      const tipoProyecto = this.advancedFilters?.tipoProyecto ?? [];
+      const tipoMonumento = this.advancedFilters?.tipoMonumento ?? [];
+
+      const payload: any = { provincia, canton, distrito, tipoProyecto, tipoMonumento };
+      
     
-      this._sitioService.buscarSitios(payload).subscribe(
-        (res: any) => {
-          console.log("Sitios encontrados:", res.sitio);
-        // Redirige usando queryParams
-      this._router.navigate(['/pag-lite-sitios'], {
-        queryParams: { provincia, canton, distrito }
+     this._sitioService.buscarSitios(payload).subscribe(
+  (res: any) => {
+    // Navegación con queryParams (arrays incluidos)
+    this._router.navigate(['/pag-lite-sitios'], {
+      queryParams: {
+        provincia: provincia || null,
+        canton: canton || null,
+        distrito: distrito || null,
+        tipoProyecto: tipoProyecto.length ? tipoProyecto : null,
+        tipoMonumento: tipoMonumento.length ? tipoMonumento : null,
+      }
       });
     },
         (error) => {

@@ -205,6 +205,17 @@
                 </button>
               </div>
               <br> 
+              <!-- BOTÓN FILTROS AVANZADOS -->
+<div class="busqueda-fila mt-2">
+  <button class="btn btn-outline-secondary btn-filtros" (click)="openFilters.emit()">
+    <mat-icon>tune</mat-icon>
+    Filtros avanzados
+  </button>
+   <button class="btn btn-link ayuda" (click)="openHelp.emit()">
+    <span class="badge-nuevo">Nuevo</span>
+    <mat-icon>help_outline</mat-icon>
+  </button>
+</div>
            
             <hr>
            <div *ngIf="administrador == true">

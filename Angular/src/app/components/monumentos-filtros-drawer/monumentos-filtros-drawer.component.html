@@ -1,0 +1,53 @@
+<div class="drawer-header">
+  <div>
+    <h3>Filtros avanzados</h3>
+    <div class="sub">Refinar búsqueda</div>
+  </div>
+
+  <button mat-icon-button (click)="close.emit()" aria-label="Cerrar">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+
+<mat-divider></mat-divider>
+
+<mat-accordion multi>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Tipo de Proyecto</mat-panel-title>
+      <mat-panel-description>{{ filters.tipoProyecto.length }} seleccionados</mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-selection-list
+      [ngModel]="filters.tipoProyecto"
+      (ngModelChange)="onTipoProyectoChange($event)">
+      <mat-list-option *ngFor="let o of tipoProyectoOptions" [value]="o.key">
+        {{ o.label }}
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Tipo de Monumento</mat-panel-title>
+      <mat-panel-description>{{ filters.tipoMonumento.length }} seleccionados</mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-selection-list
+      [ngModel]="filters.tipoMonumento"
+      (ngModelChange)="onTipoMonumentoChange($event)">
+      <mat-list-option *ngFor="let o of tipoMonumentoOptions" [value]="o.key">
+        {{ o.label }}
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-expansion-panel>
+
+</mat-accordion>
+
+<div class="drawer-actions">
+  <button mat-stroked-button (click)="onClear()">Limpiar</button>
+  <button mat-raised-button color="primary" (click)="apply.emit()" [disabled]="!hasAnySelection">
+  Aplicar
+</button>
+</div>

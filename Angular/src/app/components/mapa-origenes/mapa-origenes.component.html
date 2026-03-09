@@ -2,10 +2,8 @@
 
 <h3 class="busqueda-titulo">Búsqueda de Monumentos</h3>
 
-<a [routerLink]="['/pag-ori']" data-toggle="tooltip" data-placement="top" title="Regresar" class = "btn btn-outline-warning">
-    <mat-icon>home</mat-icon>    
-  </a> 
-<div class="center">
+
+<!-- <div class="center">
     <p>Cantidad de Monumentos Encontrados : <b>{{sitios.length}}</b></p>
   
     <aside id="sidebar">
@@ -18,43 +16,7 @@
               </div>
                
                <hr>
-                
-                <!-- <div class="busqueda-fila">
-                    
-                    <select [(ngModel)]= "selectedProvincia.id" (change)="onSelect($event.target)">
-                        <option value="0">--Seleccione Provincia</option>
-                        <option *ngFor="let provincia of provincias?.provincias" [value]="provincia.id">{{provincia.title}}</option>
-                        
-                    </select>
-                    
-                        <button mat-icon-button matTooltip="Buscar Provincia" (click)="goSearch(selectedProvincia.id)">
-                            <mat-icon>search</mat-icon>
-                    </button> 
-                    
-              </div>
-            <br>
-                <div class="busqueda-fila">
-                    <select [(ngModel)]= "selectedCanton.id" (change)="onSelectCanton($event.target)">
-                        <option value="0">--Seleccione Cantón--</option>
-                        <option *ngFor="let canton of cantones" [value]="canton.id">{{canton.title}}</option>
-                    </select>
-                    <button mat-icon-button matTooltip="Busca por Cantón" (click)="goSearchCanton(selectedCanton.id)">
-                        <mat-icon>search</mat-icon>
-                    </button> 
-                    
-                </div>
-            <br>
-
-                <div class="busqueda-fila">
-                    <select [(ngModel)]= "selectedDistrito.id">
-                        <option value="0">--Seleccione Distrito--</option>
-                        <option *ngFor="let distrito of distritos" [value]="distrito.id">{{distrito.title}}</option>
-                    </select>
-                    <button mat-icon-button matTooltip="Busca por Distrito" (click)="goSearchDistrito(selectedDistrito.id)">
-                        <mat-icon>search</mat-icon>
-                    </button>
-                </div> -->  
-            <!-- PROVINCIA -->
+           
 <div class="busqueda-fila">
     <select [(ngModel)]="selectedProvincia" (change)="onSelect($event)">
       <option [ngValue]="null">--Seleccione Provincia--</option>
@@ -64,7 +26,7 @@
     </select>
   </div>
   
-  <!-- CANTÓN -->
+
   <div class="busqueda-fila">
     <select [(ngModel)]="selectedCanton" (change)="onSelectCanton($event)">
       <option [ngValue]="null">--Seleccione Cantón--</option>
@@ -73,8 +35,7 @@
       </option>
     </select>
   </div>
-  
-  <!-- DISTRITO -->
+
   <div class="busqueda-fila">
     <select [(ngModel)]="selectedDistrito">
       <option [ngValue]="null">--Seleccione Distrito--</option>
@@ -83,8 +44,7 @@
       </option>
     </select>
   </div>
-  
-  <!-- BOTÓN DE BÚSQUEDA -->
+
   <div class="busqueda-fila mt-2">
     <button class="btn btn-primary" (click)="buscarSitios()">
       <mat-icon>search</mat-icon> Buscar
@@ -105,10 +65,7 @@
 <hr>
 <h3>Exportar Búsqueda a Excel</h3>
  <div class ="container">
- <!--   <button mat-raised-button color="primary" (click)="exportAsXLSX()">Todo
-        <mat-icon>trending_down</mat-icon>
-    </button>
-   &nbsp;  -->
+
     <button mat-raised-button color="primary" (click)="exportAsXLSXFiltered()">
         Exportar a Excel <mat-icon>file_download</mat-icon>
     </button>
@@ -120,26 +77,196 @@
 </aside>
     
 <div class="map-container">
-    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [mapTypeId]="mapTypeId" (zoomChange)="onZoomChange($event)">
-        <agm-marker *ngFor="let sitio of sitios" [latitude]="sitio.latitude" [longitude]="sitio.longitude"
-        [label]="zoom > 10 && sitio.nombre_sitio ? { text: sitio.nombre_sitio.toString(), color: 'white', fontSize: '14px', fontWeight: 'bold' } : ''"
-        [agmFitBounds]="true">
-            
-            <agm-info-window>
-                <h3>Nombre:<b>{{sitio.nombre_sitio}}</b></h3>
-                <p>Clave: {{sitio.clave_sitio}}</p>
-                
-                <p>Área Estimada: {{sitio.area_estimada}} mts</p>
-                <!-- <img src="http://origenes.museocostarica.go.cr/sitios/{{sitio.image}}" alt="Image" width="300" height="250"> <br> -->
-                <a [routerLink]="['/pag-ori/sitio', sitio._id]">Ficha Completa</a>
-                <br>
-                <!-- <a src="http://origenes.museocostarica.go.cr/mapas/Serp/index.html">Polígono</a> 
-                 <a [href]= "'http://origenes.museocostarica.go.cr/mapas/' + sitio.clave_sitio + '/index.html'" target="_blank">Poligono</a> -->
-                <br>
-                <a [href]= "'http://origenes.museocostarica.go.cr/informes/' + sitio.clave_sitio + '/'" target="_blank">Informes</a>
+  <div id="map"></div>
 
-            </agm-info-window>
-        </agm-marker>
-    </agm-map>
-</div>   
+</div> 
+
+
+</div> -->
+
+
+<div class="center">
+  
+
+  <div class="busqueda-layout">
+
+    <div class="map-panel">
+      <div class="map-container">
+        <div id="map"></div>
+      </div>
+    </div>
+
+ <!--    <aside id="sidebar" class="sidebar-panel">
+      <div id="search">
+
+        <div class="instrucciones-busqueda">
+          <mat-icon class="icono-info">info</mat-icon>
+          <p><strong>Puede buscar en cada uno de los niveles de la División Política de Costa Rica</strong></p>
+          <p><strong>Además puede buscar por nombre o clave del Monumento</strong></p>
+        </div>
+
+        <hr>
+
+        <div class="busqueda-fila">
+          <select [(ngModel)]="selectedProvincia" (change)="onSelect($event)">
+            <option [ngValue]="null">--Seleccione Provincia--</option>
+            <option *ngFor="let provincia of provincias" [ngValue]="provincia">
+              {{ provincia.title }}
+            </option>
+          </select>
+        </div>
+
+        <div class="busqueda-fila">
+          <select [(ngModel)]="selectedCanton" (change)="onSelectCanton($event)">
+            <option [ngValue]="null">--Seleccione Cantón--</option>
+            <option *ngFor="let canton of cantones" [ngValue]="canton">
+              {{ canton.title }}
+            </option>
+          </select>
+        </div>
+
+        <div class="busqueda-fila">
+          <select [(ngModel)]="selectedDistrito">
+            <option [ngValue]="null">--Seleccione Distrito--</option>
+            <option *ngFor="let distrito of distritos" [ngValue]="distrito">
+              {{ distrito.title }}
+            </option>
+          </select>
+        </div>
+
+        <div class="busqueda-fila mt-2">
+          <button class="btn btn-primary" (click)="buscarSitios()">
+            <mat-icon>search</mat-icon> Buscar
+          </button>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="busqueda-fila">
+        <form #searchForm="ngForm" (ngSubmit)="goSearchNombre()">
+          <input type="text" placeholder="Nombre o Clave" name="search" [(ngModel)]="searchNombre"/>
+        </form>
+        <button mat-icon-button matTooltip="Buscar" (click)="goSearchNombre()">
+          <mat-icon>search</mat-icon>
+        </button>
+      </div>
+
+      <br>
+
+      <p>Total Monumentos Encontrados : <b>{{sitios.length}}</b></p>
+
+      <hr>
+
+      <h3>Exportar Búsqueda a Excel</h3>
+      <div class="container">
+        <button mat-raised-button color="primary" (click)="exportAsXLSXFiltered()">
+          Exportar a Excel <mat-icon>file_download</mat-icon>
+        </button>
+      </div>
+
+      <hr>
+    </aside> -->
+
+    <aside id="sidebar" class="sidebar-panel">
+  <div id="search" class="search-card">
+
+    <div class="instrucciones-busqueda">
+      <mat-icon class="icono-info">info</mat-icon>
+      <p><strong>Busque monumentos por ubicación o por nombre / clave</strong></p>
+      <p>Seleccione Provincia, Cantón y Distrito, o escriba un nombre o clave.</p>
+    </div>
+
+    <div class="filtro-bloque">
+      <h4 class="bloque-titulo">Búsqueda por ubicación</h4>
+
+      <div class="busqueda-fila">
+        <label for="provincia">Provincia</label>
+        <select id="provincia" [(ngModel)]="selectedProvincia" (change)="onSelect($event)">
+          <option [ngValue]="null">-- Seleccione Provincia --</option>
+          <option *ngFor="let provincia of provincias" [ngValue]="provincia">
+            {{ provincia.title }}
+          </option>
+        </select>
+      </div>
+
+      <div class="busqueda-fila">
+        <label for="canton">Cantón</label>
+        <select id="canton" [(ngModel)]="selectedCanton" (change)="onSelectCanton($event)">
+          <option [ngValue]="null">-- Seleccione Cantón --</option>
+          <option *ngFor="let canton of cantones" [ngValue]="canton">
+            {{ canton.title }}
+          </option>
+        </select>
+      </div>
+
+      <div class="busqueda-fila">
+        <label for="distrito">Distrito</label>
+        <select id="distrito" [(ngModel)]="selectedDistrito">
+          <option [ngValue]="null">-- Seleccione Distrito --</option>
+          <option *ngFor="let distrito of distritos" [ngValue]="distrito">
+            {{ distrito.title }}
+          </option>
+        </select>
+      </div>
+
+      <div class="acciones-busqueda">
+        <button class="btn btn-primary btn-buscar" (click)="buscarSitios()">
+          <mat-icon>search</mat-icon>
+          Buscar
+        </button>
+
+        <button class="btn btn-outline-secondary btn-limpiar" (click)="limpiarMapaBusqueda()">
+          <mat-icon>refresh</mat-icon>
+          Limpiar
+        </button>
+
+        <button class="btn btn-outline-warning btn-home" (click)="volverInicioMapa()">
+        <mat-icon>home</mat-icon>
+        Inicio
+        </button>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="filtro-bloque">
+      <h4 class="bloque-titulo">Búsqueda por nombre o clave</h4>
+
+      <div class="busqueda-fila">
+        <label for="nombreClave">Nombre o clave del monumento</label>
+        <input
+          id="nombreClave"
+          type="text"
+          placeholder="Ejemplo: Salas o G-365 Sa"
+          name="search"
+          [(ngModel)]="searchNombre"
+        />
+      </div>
+
+      <div class="acciones-busqueda">
+        <button class="btn btn-primary btn-buscar" (click)="goSearchNombre()">
+          <mat-icon>search</mat-icon>
+          Buscar por nombre
+        </button>
+      </div>
+    </div>
+
+    <div class="resumen-busqueda">
+      <p>Total Monumentos Encontrados : <b class="contador">{{sitios.length}}</b></p>
+    </div>
+
+    <hr>
+
+    <h4 class="bloque-titulo">Exportar búsqueda a Excel</h4>
+    <div class="container">
+      <button mat-raised-button color="primary" (click)="exportAsXLSXFiltered()">
+        Exportar a Excel <mat-icon>file_download</mat-icon>
+      </button>
+    </div>
+
+  </div>
+</aside>
+
+  </div>
 </div>

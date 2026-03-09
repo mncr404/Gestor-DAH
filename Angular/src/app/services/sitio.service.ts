@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Globals } from "./globals";
 
-
 @Injectable()
 
 export class SitioService {
@@ -41,13 +40,6 @@ export class SitioService {
 
         return this._http.put(this.url+'sitio/'+id, params,{headers: headers});
     }
-
-    /* create(sitio: any):Observable<any>{
-        let params = JSON.stringify(sitio);
-        let headers = new HttpHeaders().set('Content-Type', 'application/json');
-
-        return this._http.post(this.url+'save/',params, {headers:headers});
-    } */
 
     getSitios(last:any = null):Observable<any>{
         var sitios = 'sitios';

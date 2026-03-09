@@ -98,13 +98,18 @@ import { PopupOrigenesComponent } from './components/popup-origenes/popup-origen
 import { PopupPerfilComponent } from './components/popup-perfil/popup-perfil.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DashboardEstadisticasComponent } from './components/dashboard-estadisticas/dashboard-estadisticas.component';
-import { MatDividerModule } from '@angular/material/divider';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
 import { ObjetosListComponent } from './components/objetos-list/objetos-list.component';
 import { SharedUiModule } from './shared-ui/shared-ui.module';
 import { PatrimoniaHomeComponent } from './components/patrimonia-home/patrimonia-home.component';
 import { FichaObjetosComponent } from './components/ficha-objetos/ficha-objetos.component';
+import { MonumentosFiltrosDrawerComponent } from './components/monumentos-filtros-drawer/monumentos-filtros-drawer.component';
+import { AdvancedFiltersHelpDialogComponent } from './components/advanced-filters-help-dialog/advanced-filters-help-dialog.component';
+
 
 
 @NgModule({
@@ -179,7 +184,10 @@ import { FichaObjetosComponent } from './components/ficha-objetos/ficha-objetos.
     DashboardEstadisticasComponent,
     ObjetosListComponent,
     PatrimoniaHomeComponent,
-    FichaObjetosComponent
+    FichaObjetosComponent,
+    MonumentosFiltrosDrawerComponent,
+    AdvancedFiltersHelpDialogComponent
+    
     
   ],
   
@@ -201,6 +209,8 @@ import { FichaObjetosComponent } from './components/ficha-objetos/ficha-objetos.
     NgxChartsModule,
     MatSelectModule,
     MomentModule,
+    MatSidenavModule,
+    MatListModule,
     MatCheckboxModule,
     MatDatepickerModule,
     MatNativeDateModule,

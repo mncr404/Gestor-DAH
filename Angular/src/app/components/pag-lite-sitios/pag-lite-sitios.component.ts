@@ -30,6 +30,12 @@ export class PagLiteSitiosComponent implements OnInit {
   public arqueo: boolean;
   public user!: any;
   public acceso!: string;
+  loading: boolean = false;
+
+  private asArray(v: any): string[] {
+  if (!v) return [];
+  return Array.isArray(v) ? v : [v];
+}
   
 
   provincia: string = '';
@@ -57,8 +63,109 @@ export class PagLiteSitiosComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   searchKey!: string;
 
+totalResultados = 0;
+
+filtrosActivos: {
+  ubicacion: { label: string; value: string }[];
+  tipoProyecto: string[];
+  tipoMonumento: string[];
+  nombre?: string;
+} = { ubicacion: [], tipoProyecto: [], tipoMonumento: [] };
+
+private toArray(v: any): string[] {
+  if (!v) return [];
+  return Array.isArray(v) ? v : [v];
+}
+
+// Opcional: mapa bonito para labels
+private labelProyecto: Record<string, string> = {
+  regional: 'Regional',
+  subregional: 'Subregional',
+  evaluacion: 'Evaluación',
+  peritaje: 'Peritaje',
+  estudio_impacto_ambiental: 'Impacto Ambiental',
+  monitoreo_movi_tierras: 'Monitoreo Tierras',
+  exacavacion_aislada: 'Excavación Aislada',
+  rescate: 'Rescate',
+  inspeccion: 'Inspección',
+  trabajo_graduacion: 'Trabajo Graduación'
+};
+
+private labelMonumento: Record<string, string> = {
+  funerario: 'Funerario',
+  habitacion: 'Habitación',
+  arquitectonico: 'Arquitectónico',
+  abrigo_cueva_caverna: 'Abrigo/Cueva/Caverna',
+  materiales_dispersos: 'Materiales Dispersos',
+  basurero: 'Basurero',
+  petroglifo: 'Petroglifo',
+  camino: 'Camino',
+  salina: 'Salina',
+  conchero: 'Conchero',
+  taller: 'Taller'
+};
+
+private pretty(keys: string[], map: Record<string,string>) {
+  return keys.map(k => map[k] ?? k);
+}
   ngOnInit() {
+
     const correoUsuario = localStorage.getItem('email');
+  if (correoUsuario) {
+    this.searchPerfil(correoUsuario);
+  }
+
+  this._route.queryParams.subscribe(params => {
+
+    const nombre = params['nombre'];
+    const provincia = params['provincia'];
+    const canton = params['canton'];
+    const distrito = params['distrito'];
+    const tipoProyecto = this.toArray(params['tipoProyecto']);
+    const tipoMonumento = this.toArray(params['tipoMonumento']);
+
+    const hasParams =
+      nombre ||
+      provincia || canton || distrito ||
+      tipoProyecto.length > 0 ||
+      tipoMonumento.length > 0;
+
+    // 🧠 Si NO hay params en la URL, intentamos cargar desde localStorage
+    if (!hasParams) {
+      const guardados = localStorage.getItem('filtrosBusqueda');
+      if (guardados) {
+        const filtros = JSON.parse(guardados);
+
+        this._router.navigate([], {
+          relativeTo: this._route,
+          queryParams: filtros,
+          replaceUrl: true
+        });
+
+        return; // 🔴 IMPORTANTE: evitar búsqueda con vacío
+      }
+    }
+
+    // 🎯 A partir de aquí SIEMPRE hay filtros definitivos
+
+    if (nombre) {
+      localStorage.setItem('filtrosBusqueda', JSON.stringify({ nombre }));
+      this.buscarPorNombre(nombre);
+      return;
+    }
+
+    const filtros = {
+      provincia: provincia || '',
+      canton: canton || '',
+      distrito: distrito || '',
+      tipoProyecto,
+      tipoMonumento
+    };
+
+    localStorage.setItem('filtrosBusqueda', JSON.stringify(filtros));
+    this.buscarSitios(filtros);
+  });
+/*     const correoUsuario = localStorage.getItem('email');
     console.log("Correo del usuario:", correoUsuario);
     if (correoUsuario) {
       this.searchPerfil(correoUsuario);
@@ -69,16 +176,32 @@ export class PagLiteSitiosComponent implements OnInit {
       const provincia = params['provincia'];
       const canton = params['canton'];
       const distrito = params['distrito'];
+      const tipoProyecto = this.asArray(params['tipoProyecto']);
+      const tipoMonumento = this.asArray(params['tipoMonumento']);
+
+      // ✅ Construir resumen de filtros activos para mostrar en la UI
+this.filtrosActivos = {
+  ubicacion: [],
+  tipoProyecto: this.pretty(tipoProyecto, this.labelProyecto),
+  tipoMonumento: this.pretty(tipoMonumento, this.labelMonumento),
+  nombre: nombre || ''
+};
+
+if (provincia) this.filtrosActivos.ubicacion.push({ label: 'Provincia', value: provincia });
+if (canton) this.filtrosActivos.ubicacion.push({ label: 'Cantón', value: canton });
+if (distrito) this.filtrosActivos.ubicacion.push({ label: 'Distrito', value: distrito });
   
       if (nombre) {
         // Buscar por nombre si se especifica en los query params
         localStorage.setItem('filtrosBusqueda', JSON.stringify({ nombre }));
         this.buscarPorNombre(nombre);
-      } else if (provincia || canton || distrito) {
+      } else if (provincia || canton || distrito || tipoProyecto.length || tipoMonumento.length) {
         const filtros = {
           provincia: provincia || '',
           canton: canton || '',
-          distrito: distrito || ''
+          distrito: distrito || '',
+          tipoProyecto,
+          tipoMonumento
         };
   
         this.provincia = filtros.provincia;
@@ -109,16 +232,20 @@ export class PagLiteSitiosComponent implements OnInit {
         }
     }
       }
-    });
+    }); */
   }
+
+  
 
   buscarPorNombre(nombre: string): void {
     this._sitioService.searchNombre(nombre).subscribe(
       (res: any) => {
         this.sitios = res.sitio;
+        this.totalResultados = this.sitios?.length ?? 0;
         this.listData = new MatTableDataSource(this.sitios); // ✅ aquí es donde faltaba
         this.listData.sort = this.sort; // opcional si querés usar ordenamiento
         this.listData.paginator = this.paginator; // opcional si usás paginación
+     
         console.log("✔️ Sitios encontrados por nombre:", this.sitios);
       },
       (error) => {
@@ -135,14 +262,18 @@ export class PagLiteSitiosComponent implements OnInit {
   
   
 
-  buscarSitios(filtros: { provincia: string, canton: string, distrito: string }) {
+  buscarSitios(filtros: any) {
+    
+
     this._sitioService.buscarSitios(filtros).subscribe(
       res => {
         if (res.sitio) {
           this.sitios = res.sitio;
+          this.totalResultados = this.sitios?.length ?? 0;
           this.listData = new MatTableDataSource(res.sitio);
           this.listData.sort = this.sort;
           this.listData.paginator = this.paginator;
+          
         } else {
           this.sitios = [];
         }
@@ -187,6 +318,15 @@ export class PagLiteSitiosComponent implements OnInit {
     }
   }
   
+  limpiarFiltros() {
+  localStorage.removeItem('filtrosBusqueda');
+  this._router.navigate([], {
+    relativeTo: this._route,
+    queryParams: {},
+    replaceUrl: true
+  });
+  this._router.navigate(['/pag-ori']);
+}
 
   }
 

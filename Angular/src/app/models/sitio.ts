@@ -9,6 +9,7 @@ export class Sitio{
         public clave_norm: any,
         public clave_antigua: String,
         public cod_ucr: String,
+  
         public estudio_impacto_ambiental: Boolean,
         public monitoreo_mov_tierras: Boolean,
         public evaluacion: Boolean,
@@ -42,7 +43,7 @@ export class Sitio{
         public ucr: Boolean,
         public institucion: String,
         public hallazgo: String,
-        public fecha_registro: String,
+        public fecha_registro: string,
         public links: any,
         public provincia: String,
         public canton: String,
@@ -207,7 +208,192 @@ export class Sitio{
         public doc_web: String,
         public doc_fecha_digita: String,
         public doc_descripcion_material: String,
-        public doc_cantidad: number 
+        public doc_cantidad: number,
+        public x: number,
+        public y: number,
+        // ✅ SIGMA (Información general)
+  public descripcion_del_monumento?: string,
+  public banco_unificado?: number | string,
+  public area_estimada_del_monumento_m2?: number | string,
+  public reserva_arqueologica_m2?: number | string,
+  public persona_investigadora?: string,
+ 
+
+  public consecutivo_informes?: number | string,
+  public consecutivo_diarios_campo?: number | string,
+  public consecutivo_mapas?: number | string,
+  public observaciones?: string,
+  // ✅ SIGMA - Tab Registro (opcional)
+public persona_registradora?: string,
+public fecha_de_registro?: string, // o Date si lo manejas como Date
+
+public denuncia?: boolean,
+public reporte?: boolean,
+public proyecto_investigacion?: boolean,
+public nombre_proyecto?: string,
+
+public fundacion_anastasio_alfaro?: boolean,
+public otra_institucion?: string,
+// ✅ TAB Localización (SIGMA)
+public direccion_del_monumento?: string,
+public distancia_carretera_principal?: number | string,
+public plano_catastro?: string,
+public area_conservacion?: string,
+public area_silvestre_protegida?: string,
+public distancia_rio?: number | string,
+public quebrada_cercana?: string,
+public distancia_quebrada?: number | string,
+public altitud_msnm?: number | string,
+// TAB 3 - Localización / Contacto (SIGMA)
+// Contacto
+public propietario?: string,
+public telefono_propietario?: string,
+public correo_propietario?: string,
+public arrendatario?: string,
+public telefono_arrendatario?: string,
+public correo_arrendatario?: string,
+public informante?: string,
+public telefono_informante?: string,
+public correo_informante?: string,
+// --- TAB Tipo de sitio (SIGMA) ---
+public terrestre?: boolean,
+
+public patrimonio_cultural_subacuatico?: boolean,
+public taller_litico?: boolean,
+// Tipo de patrimonio sumergido
+public asentamientos_sumergidos?: boolean,
+
+public pecios?: boolean,
+public sitios_explotacion_marina?: boolean,
+public trampa_pesca?: boolean,
+
+// Texto libre
+public otro_tipo_monumento?: string, // si lo vas a mostrar
+public no_determinado?: boolean,     // si existe en tu data
+
+// COMPONENTES
+public unicomponente?: boolean,
+public bicomponente?: boolean,
+public multicomponente?: boolean,
+
+// CRONOLOGÍA
+public c12000_8000_ac?: boolean,
+public c8000_4000_ac?: boolean,
+public c4000_1500_ac?: boolean,
+public c1500_300_ac?: boolean,
+public c2000_500_ac?: boolean,
+public c500_ac_300_dc?: boolean,
+public c300_800_dc?: boolean,
+public c800_1350_dc?: boolean,
+public c1350_1550_dc?: boolean,
+public c800_1550_dc?: boolean,
+public c1550_1821_dc?: boolean,
+public c1821_1950_dc?: boolean,
+public otra_temporalidad?: string,
+
+// DATACIÓN
+public datacion_ceramica?: boolean,
+public datacion_litica?: boolean,
+public datacion_radiocarbono?: boolean,
+public datacion_termoluminiscencia?: boolean,
+public resultados_fechamientos?: string,
+public otros_tipos_dataciones?: string,
+// FASES
+public orosi?: boolean,
+public tempisque?: boolean,
+public bagaces?: boolean,
+public sapoa?: boolean,
+public ometep?: boolean,
+public la_montana?: boolean,
+public el_bosque?: boolean,
+public la_selva?: boolean,
+public la_cabana?: boolean,
+public barva?: boolean,
+public pavas?: boolean,
+public curridabat?: boolean,
+public cartago?: boolean,
+public ron_ron?: boolean,
+public platanar?: boolean,
+public venecia?: boolean,
+public jaco?: boolean,
+public los_suenos?: boolean,
+public sinancra?: boolean,
+public aguas_buenas?: boolean,
+public chiriqui?: boolean,
+public ometepe?: boolean,
+public recoleccion_superficie?: boolean,
+public recorrido_propiedad?: boolean,
+public calco_petroglifo?: boolean,
+public cala_estratigrafica?: boolean,
+public limpieza_estructura?: boolean,
+public sondeo_cateo?: boolean,
+public prospeccion_asistematica?: boolean,
+public prospeccion_sistematica?: boolean,
+public recoleccion_arbitraria?: boolean,
+public recoleccion_probabilistica?: boolean,
+public bosquejo?: boolean,
+public planimetrico?: boolean,
+public topografico?: boolean,
+public otra_clase_levantamiento?: string,
+public descripcion_metodologica?: string,
+public ecofacto?: boolean,
+public teja?: boolean,
+public artefacto_ceramico?: boolean,
+public artefacto_metalico?: boolean,
+public artefacto_litico?: boolean,
+public artefacto_organico?: boolean,
+public cobre_guanina_pirita?: boolean,
+public espejos_de_pirita?: boolean,
+public piedra_verde?: boolean,
+public restos_humanos?: boolean,
+public otros_materiales_excavados?: string,
+public arte_rupestre?: boolean,
+public estructura_funeraria?: boolean,
+public estructura_habitacional?: boolean,
+public estructura_vial?: boolean,
+public estructura_demarcatoria?: boolean,
+public pecto?: boolean,
+
+public otra_evidencia_inmueble?: string,
+
+// Estado de conservación
+public perturbado?: boolean,
+
+// Tipo de vegetación
+public bosque?: boolean,
+public cultivo_agricola?: boolean,
+public matorral?: boolean,
+public plantacion_forestal?: boolean,
+public sin_vegetacion?: boolean,
+public tacotal?: boolean,
+public otra_vegetacion?: string,
+
+// Cobertura espacial
+public poco_denso?: boolean,
+public semidenso?: boolean,
+public denso?: boolean,
+public muy_denso?: boolean,
+
+// Pendiente
+public plano?: boolean,
+public poco_acentuado?: boolean,
+public ligeramente_acentuado?: boolean,
+public acentuado?: boolean,
+public muy_acentuado?: boolean,
+
+// Uso del suelo
+public agricola?: boolean,
+public area_protegida?: boolean,
+public deportivo?: boolean,
+public ganadero?: boolean,
+public industrial?: boolean,
+public minero?: boolean,
+public portuario?: boolean,
+public sin_uso?: boolean,
+public silvicola?: boolean,
+public turismo?: boolean,
+public urbano?: boolean,
+public otro_uso_suelo?: string,
 
     ){}
 }

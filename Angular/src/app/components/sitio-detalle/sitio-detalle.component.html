@@ -9,7 +9,7 @@
   
     <span class="acciones-admin" *ngIf="administrador && sitio">
       <a [routerLink]="['/sitio-editar/sitio', sitio._id]" mat-icon-button matTooltip="Editar Sitio">
-        <mat-icon color="primary">edit</mat-icon>
+        <mat-icon color="check-icon">edit</mat-icon>
       </a>
     </span>
   </div>
@@ -23,19 +23,15 @@
           </ng-template>
 
    
-<div class="grid-container">
+<!-- <div class="grid-container">
 
             <mat-card class="card-info"> 
             <mat-card-subtitle>Identificación</mat-card-subtitle>
-    
-                
-
                     <mat-card-content *ngIf="sitio">
                         <p><strong>Nombre Monumento:</strong> {{sitio.nombre_sitio}}</p>
                         <p><strong>Clave:</strong> {{sitio.clave_sitio}}</p>
                         <p><strong>Código UCR:</strong> {{sitio.cod_ucr}} </p>
-                        <p><strong>Clave Antigua:</strong> {{sitio.clave_antigua}} </p>             
-                    
+                        <p><strong>Clave Antigua:</strong> {{sitio.clave_antigua}} </p>                 
                </mat-card-content>
         </mat-card>
 
@@ -45,39 +41,39 @@
                     <p><b>Estudio Impacto Ambiental:</b></p>
 
 <p><b>Monitoreo Movimiento Tierras:</b>
-  <mat-icon *ngIf="sitio.monitoreo_mov_tierras" color="primary">check_circle</mat-icon>
+  <mat-icon *ngIf="sitio.monitoreo_mov_tierras" color="check-icon">check_circle</mat-icon>
 </p>
 
 <p><b>Evaluación:</b>
-  <mat-icon *ngIf="sitio.evaluacion" color="primary">check_circle</mat-icon>
+  <mat-icon *ngIf="sitio.evaluacion" color="check-icon">check_circle</mat-icon>
 </p>
 
 <p><b>Peritaje:</b>
-  <mat-icon *ngIf="sitio.peritaje" color="primary">check_circle</mat-icon>
+  <mat-icon *ngIf="sitio.peritaje" color="check-icon">check_circle</mat-icon>
 </p>
 
 <p><b>Excavación Aislada:</b>
-  <mat-icon *ngIf="sitio.excavacion_aislada" color="primary">check_circle</mat-icon>
+  <mat-icon *ngIf="sitio.excavacion_aislada" color="check-icon">check_circle</mat-icon>
 </p>
 
 <p><b>Rescate:</b>
-  <mat-icon *ngIf="sitio.rescate" color="primary">check_circle</mat-icon>
+  <mat-icon *ngIf="sitio.rescate" color="check-icon">check_circle</mat-icon>
 </p>
 
 <p><b>Inspección:</b>
-  <mat-icon *ngIf="sitio.inspeccion" color="primary">check_circle</mat-icon>
+  <mat-icon *ngIf="sitio.inspeccion" color="check-icon">check_circle</mat-icon>
 </p>
 
 <p><b>Trabajo Final Graduación:</b>
-  <mat-icon *ngIf="sitio.trabajo_graduacion" color="primary">check_circle</mat-icon>
+  <mat-icon *ngIf="sitio.trabajo_graduacion" color="check-icon">check_circle</mat-icon>
 </p>
 
 <p><b>Investigación Regional:</b>
-  <mat-icon *ngIf="sitio.regional" color="primary">check_circle</mat-icon>
+  <mat-icon *ngIf="sitio.regional" color="check-icon">check_circle</mat-icon>
 </p>
 
 <p><b>Investigación SubRegional:</b>
-  <mat-icon *ngIf="sitio.subregional" color="primary">check_circle</mat-icon>
+  <mat-icon *ngIf="sitio.subregional" color="check-icon">check_circle</mat-icon>
 </p>
 
 
@@ -97,47 +93,47 @@
                 <mat-card-content *ngIf="sitio">  
 
                    <p><b>Abrigo, Cueva o Caverna:</b>
-  <mat-icon *ngIf="sitio.abrigo_cueva_caverna" color="accent">check_circle</mat-icon>
+  <mat-icon *ngIf="sitio.abrigo_cueva_caverna" color="check-icon">check_circle</mat-icon>
 </p>
 
 <p><b>Habitación:</b>
-  <mat-icon *ngIf="sitio.habitacion" color="accent">check_circle</mat-icon>
+  <mat-icon *ngIf="sitio.habitacion" color="check-icon">check_circle</mat-icon>
 </p>
 
 <p><b>Arquitectónico:</b>
-  <mat-icon *ngIf="sitio.arquitectonico" color="accent">check_circle</mat-icon>
+  <mat-icon *ngIf="sitio.arquitectonico" color="check-icon">check_circle</mat-icon>
 </p>
 
 <p><b>Materiales Dispersos:</b>
-  <mat-icon *ngIf="sitio.materiales_dispersos" color="accent">check_circle</mat-icon>
+  <mat-icon *ngIf="sitio.materiales_dispersos" color="check-icon">check_circle</mat-icon>
 </p>
 
 <p><b>Basurero:</b>
-  <mat-icon *ngIf="sitio.basurero" color="accent">check_circle</mat-icon>
+  <mat-icon *ngIf="sitio.basurero" color="check-icon">check_circle</mat-icon>
 </p>
 
 <p><b>Petroglifos:</b>
-  <mat-icon *ngIf="sitio.petroglifo" color="accent">check_circle</mat-icon>
+  <mat-icon *ngIf="sitio.petroglifo" color="check-icon">check_circle</mat-icon>
 </p>
 
 <p><b>Camino:</b>
-  <mat-icon *ngIf="sitio.camino" color="accent">check_circle</mat-icon>
+  <mat-icon *ngIf="sitio.camino" color="check-icon">check_circle</mat-icon>
 </p>
 
 <p><b>Salina:</b>
-  <mat-icon *ngIf="sitio.salina" color="accent">check_circle</mat-icon>
+  <mat-icon *ngIf="sitio.salina" color="check-icon">check_circle</mat-icon>
 </p>
 
 <p><b>Conchero:</b>
-  <mat-icon *ngIf="sitio.conchero" color="accent">check_circle</mat-icon>
+  <mat-icon *ngIf="sitio.conchero" color="check-icon">check_circle</mat-icon>
 </p>
 
 <p><b>Taller Lítico:</b>
-  <mat-icon *ngIf="sitio.taller" color="accent">check_circle</mat-icon>
+  <mat-icon *ngIf="sitio.taller" color="check-icon">check_circle</mat-icon>
 </p>
 
 <p><b>Funerario:</b>
-  <mat-icon *ngIf="sitio.funerario" color="accent">check_circle</mat-icon>
+  <mat-icon *ngIf="sitio.funerario" color="check-icon">check_circle</mat-icon>
 </p>
 
 
@@ -146,11 +142,121 @@
                 
             </mat-card-content>
         </mat-card>
-    </div>
+    </div> -->
+    
+    <div class="grid-container">
+
+  <!-- 1) Identificación -->
+  <mat-card class="card-info">
+    <mat-card-subtitle>Identificación</mat-card-subtitle>
+    <mat-card-content *ngIf="sitio">
+      <p><strong>Nombre Monumento:</strong> {{ sitio.nombre_sitio || '—' }}</p>
+      <p><strong>Clave:</strong> {{ sitio.clave_sitio || '—' }}</p>
+      <p><strong>Código UCR:</strong> {{ sitio.cod_ucr || '—' }}</p>
+      <p><strong>Clave Antigua:</strong> {{ sitio.clave_antigua || '—' }}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- 2) Administrativo (SIGMA info general) -->
+  <mat-card class="card-info">
+    <mat-card-subtitle>Administrativo</mat-card-subtitle>
+    <mat-card-content *ngIf="sitio">
+      <p><strong>Banco unificado:</strong> {{ sitio.banco_unificado ?? '—' }}</p>
+      <p><strong>Expediente SETENA:</strong> {{ sitio.expediente_setena || '—' }}</p>
+      <p><strong>Persona investigadora:</strong> {{ sitio.persona_investigadora || '—' }}</p>
+
+      <p><strong>Consecutivo informes:</strong> {{ sitio.consecutivo_informes ?? '—' }}</p>
+      <p><strong>Consecutivo diarios de campo:</strong> {{ sitio.consecutivo_diarios_campo ?? '—' }}</p>
+      <p><strong>Consecutivo mapas:</strong> {{ sitio.consecutivo_mapas ?? '—' }}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- 3) Áreas -->
+  <mat-card class="card-info">
+    <mat-card-subtitle>Áreas</mat-card-subtitle>
+    <mat-card-content *ngIf="sitio">
+      <p>
+        <strong>Área estimada del monumento (m²):</strong>
+        {{ sitio.area_estimada_del_monumento_m2 ?? sitio.area_estimada ?? '—' }}
+      </p>
+      <p>
+        <strong>Reserva arqueológica (m²):</strong>
+        {{ sitio.reserva_arqueologica_m2 ?? '—' }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- 4) Tipo de Proyecto (igual que tienes) -->
+<!--   <mat-card class="card-info full-width">
+    <mat-card-subtitle>Tipo de Proyecto</mat-card-subtitle>
+    <mat-card-content *ngIf="sitio">
+
+      <p><b>Monitoreo Movimiento Tierras:</b>
+        <mat-icon *ngIf="sitio.monitoreo_mov_tierras" color="check-icon">check_circle</mat-icon>
+      </p>
+
+      <p><b>Evaluación:</b>
+        <mat-icon *ngIf="sitio.evaluacion" color="check-icon">check_circle</mat-icon>
+      </p>
+
+      <p><b>Peritaje:</b>
+        <mat-icon *ngIf="sitio.peritaje" color="check-icon">check_circle</mat-icon>
+      </p>
+
+      <p><b>Excavación Aislada:</b>
+        <mat-icon *ngIf="sitio.excavacion_aislada" color="check-icon">check_circle</mat-icon>
+      </p>
+
+      <p><b>Rescate:</b>
+        <mat-icon *ngIf="sitio.rescate" color="check-icon">check_circle</mat-icon>
+      </p>
+
+      <p><b>Inspección:</b>
+        <mat-icon *ngIf="sitio.inspeccion" color="check-icon">check_circle</mat-icon>
+      </p>
+
+      <p><b>Trabajo Final Graduación:</b>
+        <mat-icon *ngIf="sitio.trabajo_graduacion" color="check-icon">check_circle</mat-icon>
+      </p>
+
+      <p><b>Investigación Regional:</b>
+        <mat-icon *ngIf="sitio.regional" color="check-icon">check_circle</mat-icon>
+      </p>
+
+      <p><b>Investigación SubRegional:</b>
+        <mat-icon *ngIf="sitio.subregional" color="check-icon">check_circle</mat-icon>
+      </p>
+
+    </mat-card-content>
+  </mat-card> -->
+
+ 
+
+  <!-- 6) Descripción (texto largo) -->
+  <mat-card class="card-info full-width">
+    <mat-card-subtitle>Descripción del Monumento</mat-card-subtitle>
+    <mat-card-content *ngIf="sitio">
+      <p style="white-space: pre-wrap;">
+        {{ sitio.descripcion_del_monumento || sitio.hallazgo || '—' }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- 7) Observaciones (texto largo) -->
+  <mat-card class="card-info full-width">
+    <mat-card-subtitle>Observaciones</mat-card-subtitle>
+    <mat-card-content *ngIf="sitio">
+      <p style="white-space: pre-wrap;">
+        {{ sitio.observaciones || '—' }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+</div>
 
     </mat-tab>
 
-    <mat-tab>
+   <!--  <mat-tab>
 
         <ng-template mat-tab-label>
             <mat-icon class="example-tab-icon">info</mat-icon>
@@ -165,29 +271,29 @@
                         <p><strong>Registrador:</strong>  {{sitio.registrador}}</p>
                         <hr/>
                         <p><b>Consultoría:</b>
-                            <mat-icon *ngIf="sitio.consultoria" color="accent">check_circle</mat-icon>
+                            <mat-icon *ngIf="sitio.consultoria" color="check-icon">check_circle</mat-icon>
                           </p>
                           
                           <p><b>Fundación Anastasio Alfaro, MNCR:</b>
-                            <mat-icon *ngIf="sitio.fundacion" color="accent">check_circle</mat-icon>
+                            <mat-icon *ngIf="sitio.fundacion" color="check-icon">check_circle</mat-icon>
                           </p>
                           
                           <p><b>Instituto Costarricense de Electricidad (ICE):</b>
-                            <mat-icon *ngIf="sitio.ice" color="accent">check_circle</mat-icon>
+                            <mat-icon *ngIf="sitio.ice" color="check-icon">check_circle</mat-icon>
                           </p>
                           
                           <p><b>Literatura:</b></p>
                           
                           <p><b>Museo Nacional de Costa Rica:</b>
-                            <mat-icon *ngIf="sitio.mncr" color="accent">check_circle</mat-icon>
+                            <mat-icon *ngIf="sitio.mncr" color="check-icon">check_circle</mat-icon>
                           </p>
                           
                           <p><b>Parques Nacionales:</b>
-                            <mat-icon *ngIf="sitio.parques_nacionales" color="accent">check_circle</mat-icon>
+                            <mat-icon *ngIf="sitio.parques_nacionales" color="check-icon">check_circle</mat-icon>
                           </p>
                           
                           <p><b>Universidad de Costa Rica:</b>
-                            <mat-icon *ngIf="sitio.ucr" color="accent">check_circle</mat-icon>
+                            <mat-icon *ngIf="sitio.ucr" color="check-icon">check_circle</mat-icon>
                           </p>
                           
                        
@@ -198,16 +304,160 @@
                 </mat-card-content>
             </mat-card>
         </div>
-    </mat-tab>
+    </mat-tab> -->
 
     <mat-tab>
+  <ng-template mat-tab-label>
+    <mat-icon class="example-tab-icon">info</mat-icon>
+    Registro
+  </ng-template>
+
+  <div class="grid-container">
+
+    <!-- A) Generales -->
+    <mat-card class="card-info">
+      <mat-card-subtitle>Generales</mat-card-subtitle>
+      <mat-card-content *ngIf="sitio">
+        <p><strong>Persona registradora:</strong>
+          {{ sitio.persona_registradora || sitio.registrador || '—' }}
+        </p>
+
+       <p>
+        <strong>Fecha de registro:</strong>
+          {{ (sitio.fecha_de_registro || sitio.fecha_registro) | date:'dd/MM/yyyy' || '-' }}
+      </p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- B) Motivo de registro -->
+    <mat-card class="card-info">
+      <mat-card-subtitle>Motivo de registro</mat-card-subtitle>
+      <mat-card-content *ngIf="sitio">
+
+        <!-- Si en SIGMA vienen booleans, se verán; si no, no estorban -->
+        <p><b>Denuncia:</b>
+          <mat-icon *ngIf="sitio.denuncia" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Reporte:</b>
+          <mat-icon *ngIf="sitio.reporte" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Proyecto de investigación:</b>
+          <mat-icon *ngIf="sitio.proyecto_investigacion" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><strong>Nombre del proyecto:</strong>
+          {{ sitio.nombre_proyecto || '—' }}
+        </p>
+
+        <hr/>
+        <!-- fallback: tu campo viejo -->
+        <p><strong>Hallazgo / comentario:</strong>
+          {{ sitio.hallazgo || '—' }}
+        </p>
+
+      </mat-card-content>
+    </mat-card>
+
+    <!-- C) Institución -->
+    <mat-card class="card-info">
+      <mat-card-subtitle>Institución</mat-card-subtitle>
+      <mat-card-content *ngIf="sitio">
+
+        <p><b>Museo Nacional de Costa Rica:</b>
+          <mat-icon *ngIf="sitio.mncr" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Universidad de Costa Rica:</b>
+          <mat-icon *ngIf="sitio.ucr" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Instituto Costarricense de Electricidad (ICE):</b>
+          <mat-icon *ngIf="sitio.ice" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Fundación Anastasio Alfaro:</b>
+          <mat-icon *ngIf="sitio.fundacion || sitio.fundacion_anastasio_alfaro" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Consultoría:</b>
+          <mat-icon *ngIf="sitio.consultoria" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Parques Nacionales:</b>
+          <mat-icon *ngIf="sitio.parques_nacionales" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Literatura:</b>
+          <mat-icon *ngIf="sitio.literatura" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><strong>Otra institución:</strong>
+          {{ sitio.otra_institucion || '—' }}
+        </p>
+
+      </mat-card-content>
+    </mat-card>
+
+    <!-- D) Tipo de proyecto (MOVER desde Tab 1 a aquí) -->
+    <mat-card class="card-info">
+      <mat-card-subtitle>Tipo de proyecto</mat-card-subtitle>
+      <mat-card-content *ngIf="sitio">
+
+        <p><b>Estudio Impacto Ambiental:</b>
+          <mat-icon *ngIf="sitio.estudio_impacto_ambiental" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Monitoreo Movimiento Tierras:</b>
+          <mat-icon *ngIf="sitio.monitoreo_mov_tierras" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Evaluación:</b>
+          <mat-icon *ngIf="sitio.evaluacion" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Peritaje:</b>
+          <mat-icon *ngIf="sitio.peritaje" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Excavación Aislada:</b>
+          <mat-icon *ngIf="sitio.excavacion_aislada" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Rescate:</b>
+          <mat-icon *ngIf="sitio.rescate" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Inspección:</b>
+          <mat-icon *ngIf="sitio.inspeccion" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Trabajo Final Graduación:</b>
+          <mat-icon *ngIf="sitio.trabajo_graduacion" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Investigación Regional:</b>
+          <mat-icon *ngIf="sitio.regional" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Investigación SubRegional:</b>
+          <mat-icon *ngIf="sitio.subregional" color="check-icon">check_circle</mat-icon>
+        </p>
+
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+ </mat-tab>
+   <!-- <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon class="example-tab-icon">public</mat-icon>
           Localización
         </ng-template>
       
         <div class="grid-container">
-          <!-- Localización -->
+          
           <mat-card class="card-info">
             <mat-card-subtitle>Localización</mat-card-subtitle>
             <mat-card-content *ngIf="sitio">
@@ -223,12 +473,12 @@
               <p><b>Zona de Vida:</b> {{sitio.zona_vida}}</p>
               <p><b>Altitud:</b> {{sitio.altitud}} msnm</p>
               <p><b>Territorio Indígena:</b>
-                <mat-icon *ngIf="sitio.territorio_indigena" color="accent">check_circle</mat-icon>
+                <mat-icon *ngIf="sitio.territorio_indigena" color="check-icon">check_circle</mat-icon>
               </p>
             </mat-card-content>
           </mat-card>
       
-          <!-- Coordenadas -->
+          
           <mat-card class="card-info">
             <mat-card-subtitle>Coordenadas</mat-card-subtitle>
             <mat-card-content *ngIf="sitio">
@@ -242,14 +492,6 @@
       
               <mat-divider></mat-divider>
       
-              <!-- <p>
-                <mat-icon>explore</mat-icon>
-                <b>Latitud:</b> {{sitio.grad_lat}}° {{sitio.min_lat}}' {{sitio.seg_lat}}"
-              </p>
-              <p>
-                <mat-icon>explore</mat-icon>
-                <b>Longitud:</b> {{sitio.grad_long}}° {{sitio.min_long}}' {{sitio.seg_log}}"
-              </p> -->
          <p *ngIf="sitio.latitude !== undefined">
         <mat-icon>explore</mat-icon>
           <b>Latitud:</b> {{ convertToDMS(sitio.latitude, true) }}
@@ -261,51 +503,363 @@
         </p>
 
 <p><b>Localización GPS:</b>
-  <mat-icon *ngIf="sitio.localizacion_gps" color="primary">check_circle</mat-icon>
+  <mat-icon *ngIf="sitio.localizacion_gps" color="check-icon">check_circle</mat-icon>
 </p>
 </mat-card-content>
 </mat-card>
 </div>
+</mat-tab> -->
+
+<mat-tab>
+  <ng-template mat-tab-label>
+    <mat-icon class="example-tab-icon">public</mat-icon>
+    Localización
+  </ng-template>
+
+  <div class="grid-container">
+
+    <!-- A) Ubicación administrativa -->
+    <mat-card class="card-info">
+      <mat-card-subtitle>Ubicación</mat-card-subtitle>
+      <mat-card-content *ngIf="sitio">
+        <p><b>Provincia:</b> {{ sitio.provincia || '—' }}</p>
+        <p><b>Cantón:</b> {{ sitio.canton || '—' }}</p>
+        <p><b>Distrito:</b> {{ sitio.distrito || '—' }}</p>
+
+        <hr/>
+
+        <p><b>Dirección:</b> {{ sitio.direccion_del_monumento || sitio.direccion || '—' }}</p>
+        <p><b>Plano Catastro:</b> {{ sitio.plano_catastro || '—' }}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- B) Entorno / referencias -->
+    <mat-card class="card-info">
+      <mat-card-subtitle>Entorno</mat-card-subtitle>
+      <mat-card-content *ngIf="sitio">
+        <p><b>Distancia carretera principal:</b> {{ sitio.distancia_carretera_principal || '—' }}</p>
+
+        <p><b>Territorio Indígena:</b> {{ sitio.territorio_indigena || '—' }}</p>
+        <p><b>Área de conservación:</b> {{ sitio.area_conservacion || '—' }}</p>
+        <p><b>Área silvestre protegida:</b> {{ sitio.area_silvestre_protegida || '—' }}</p>
+
+        <p><b>Zona de Vida:</b> {{ sitio.zona_vida || '—' }}</p>
+
+        <hr/>
+
+        <p><b>Río cercano:</b> {{ sitio.rio_cercano || '—' }}</p>
+        <p><b>Distancia río:</b> {{ sitio.distancia_rio || '—' }}</p>
+
+        <p><b>Quebrada cercana:</b> {{ sitio.quebrada_cercana || '—' }}</p>
+        <p><b>Distancia quebrada:</b> {{ sitio.distancia_quebrada || '—' }}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- C) Altitud -->
+    <mat-card class="card-info">
+      <mat-card-subtitle>Altitud</mat-card-subtitle>
+      <mat-card-content *ngIf="sitio">
+        <p><b>Altitud (msnm):</b> {{ sitio.altitud_msnm || sitio.altitud || '—' }}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- D) Información de contacto -->
+    <mat-card class="card-info">
+      <mat-card-subtitle>Información de contacto</mat-card-subtitle>
+      <mat-card-content *ngIf="sitio">
+        <p><b>Propietario:</b> {{ sitio.propietario || '—' }}</p>
+        <p><b>Teléfono propietario:</b> {{ sitio.telefono_propietario || '—' }}</p>
+        <p><b>Correo propietario:</b> {{ sitio.correo_propietario || '—' }}</p>
+
+        <hr/>
+
+        <p><b>Arrendatario:</b> {{ sitio.arrendatario || '—' }}</p>
+        <p><b>Teléfono arrendatario:</b> {{ sitio.telefono_arrendatario || '—' }}</p>
+        <p><b>Correo arrendatario:</b> {{ sitio.correo_arrendatario || '—' }}</p>
+
+        <hr/>
+
+        <p><b>Informante:</b> {{ sitio.informante || '—' }}</p>
+        <p><b>Teléfono informante:</b> {{ sitio.telefono_informante || '—' }}</p>
+        <p><b>Correo informante:</b> {{ sitio.correo_informante || '—' }}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- E) Coordenadas -->
+    <mat-card class="card-info">
+      <mat-card-subtitle>Coordenadas</mat-card-subtitle>
+      <mat-card-content *ngIf="sitio">
+        <p><b>Lambert O-E:</b> {{ sitio.lambert_oe || '—' }}</p>
+        <p><b>Lambert N-S:</b> {{ sitio.lambert_ns || '—' }}</p>
+
+        <hr/>
+
+        <p><b>CRTM05 N:</b> {{ sitio.crtm05_n || '—' }}</p>
+        <p><b>CRTM05 E:</b> {{ sitio.crtm05_e || '—' }}</p>
+
+        <hr/>
+
+        <p><b>Localización GPS:</b>
+          <mat-icon *ngIf="sitio.localizacion_gps" color="check-icon">check_circle</mat-icon>
+        </p>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</mat-tab>
+
+<mat-tab>
+  <ng-template mat-tab-label>
+    <mat-icon class="example-tab-icon">category</mat-icon>
+    Tipo de sitio
+  </ng-template>
+
+  <div class="grid-container">
+
+    <!-- A) Terrestre + Tipo de sitio -->
+    <mat-card class="card-info">
+      <mat-card-subtitle>Tipo de sitio</mat-card-subtitle>
+
+      <mat-card-content *ngIf="sitio">
+        <p><b>Terrestre:</b>
+          <mat-icon *ngIf="sitio.terrestre" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <hr/>
+
+        <p><b>Abrigo, Cueva o Caverna:</b>
+          <mat-icon *ngIf="sitio.abrigo_cueva_caverna" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Arquitectónico:</b>
+          <mat-icon *ngIf="sitio.arquitectonico" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Basurero:</b>
+          <mat-icon *ngIf="sitio.basurero" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Camino:</b>
+          <mat-icon *ngIf="sitio.camino" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Conchero:</b>
+          <mat-icon *ngIf="sitio.conchero" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Funerario:</b>
+          <mat-icon *ngIf="sitio.funerario" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Habitación:</b>
+          <mat-icon *ngIf="sitio.habitacion" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Materiales dispersos:</b>
+          <mat-icon *ngIf="sitio.materiales_dispersos" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Petroglifo:</b>
+          <mat-icon *ngIf="sitio.petroglifo" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Salina:</b>
+          <mat-icon *ngIf="sitio.salina" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Taller lítico:</b>
+          <mat-icon *ngIf="sitio.taller_litico || sitio.taller" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>No determinado:</b>
+          <mat-icon *ngIf="sitio.no_determinado" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Otro tipo de monumento:</b> {{ sitio.otro_tipo_monumento || '—' }}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- B) Patrimonio subacuático -->
+    <mat-card class="card-info">
+      <mat-card-subtitle>Patrimonio cultural subacuático</mat-card-subtitle>
+
+      <mat-card-content *ngIf="sitio">
+        <p><b>Patrimonio cultural subacuático:</b>
+          <mat-icon *ngIf="sitio.patrimonio_cultural_subacuatico" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <hr/>
+
+        <p><b>Asentamientos sumergidos:</b>
+          <mat-icon *ngIf="sitio.asentamientos_sumergidos" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Paisajes culturales sumergidos:</b>
+          <mat-icon *ngIf="sitio.paisajes_culturales_sumergidos" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Pecios:</b>
+          <mat-icon *ngIf="sitio.pecios" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Sitios de explotación marina:</b>
+          <mat-icon *ngIf="sitio.sitios_explotacion_marina" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Trampa de pesca:</b>
+          <mat-icon *ngIf="sitio.trampa_pesca" color="check-icon">check_circle</mat-icon>
+        </p>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
 </mat-tab>
 
     <mat-tab>
-        <ng-template mat-tab-label>
-          <mat-icon class="example-tab-icon">today</mat-icon>
-          Temporalidad
-        </ng-template>
-      
-        <div class="grid-container">
-          <mat-card class="card-info"> 
-            <mat-card-content *ngIf="sitio">
-              <mat-card-subtitle>Período / Fase</mat-card-subtitle>
-              <p><b>Composición:</b> {{sitio.composicion_cronologica}}</p>
-              <hr />
-              <div *ngFor="let periodo of periodosConFase">
-                <p>
-                  <b>{{ periodo.label }}:</b>
-                  <mat-icon *ngIf="sitio[periodo.check]" color="primary">check_circle</mat-icon>
-                  <span *ngIf="sitio[periodo.campo]">({{ sitio[periodo.campo] }})</span>
-                </p>
-              </div>
-      
-            </mat-card-content>
-          </mat-card>
-      
-          <mat-card class="card-info">
-            <mat-card-content *ngIf="sitio">
-              <mat-card-subtitle>Datación</mat-card-subtitle>
-              <p><b>Lítica:</b> <mat-icon *ngIf="sitio.litica_dat" color="accent">check_circle</mat-icon></p>
-              <p><b>Radio Carbono:</b> <mat-icon *ngIf="sitio.radiocarbono_dat" color="accent">check_circle</mat-icon></p>
-              <p><b>Cerámica:</b> <mat-icon *ngIf="sitio.ceramica_dat" color="accent">check_circle</mat-icon></p>
-              <hr />
-              <p><b>Fechamiento Radiométrico:</b> {{sitio.fechamiento_adiometrico}}</p>
-              <p><b>Otros:</b> {{sitio.otros_da}}</p>
-            </mat-card-content>
-          </mat-card>
-        </div>
-      </mat-tab>
-      
+  <ng-template mat-tab-label>
+    <mat-icon class="example-tab-icon">today</mat-icon>
+    Temporalidad
+  </ng-template>
 
+  <div class="grid-container">
+
+    <!-- COMPONENTES -->
+    <mat-card class="card-info">
+      <mat-card-subtitle>Componentes</mat-card-subtitle>
+      <mat-card-content *ngIf="sitio">
+        <p><b>Unicomponente:</b>
+          <mat-icon *ngIf="sitio.unicomponente" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Bicomponente:</b>
+          <mat-icon *ngIf="sitio.bicomponente" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Multicomponente:</b>
+          <mat-icon *ngIf="sitio.multicomponente" color="check-icon">check_circle</mat-icon>
+        </p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- TIPO DE DATACIÓN -->
+    <mat-card class="card-info">
+      <mat-card-subtitle>Tipo de datación</mat-card-subtitle>
+      <mat-card-content *ngIf="sitio">
+        <p><b>Cerámica:</b>
+          <mat-icon *ngIf="sitio.datacion_ceramica" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Lítica:</b>
+          <mat-icon *ngIf="sitio.datacion_litica" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Radiocarbono:</b>
+          <mat-icon *ngIf="sitio.datacion_radiocarbono" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Termoluminiscencia:</b>
+          <mat-icon *ngIf="sitio.datacion_termoluminiscencia" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <hr />
+
+        <p><b>Otros tipos de datación:</b> {{ sitio.otros_tipos_dataciones || '—' }}</p>
+        <p><b>Resultados de fechamientos:</b></p>
+        <p class="texto-largo">{{ sitio.resultados_fechamientos || '—' }}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- CRONOLOGÍA -->
+    <mat-card class="card-info">
+      <mat-card-subtitle>Cronología</mat-card-subtitle>
+      <mat-card-content *ngIf="sitio">
+
+        <p><b>12000 - 8000 a.C:</b>
+          <mat-icon *ngIf="sitio.c12000_8000_ac" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>8000 - 4000 a.C:</b>
+          <mat-icon *ngIf="sitio.c8000_4000_ac" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>4000 - 1500 a.C:</b>
+          <mat-icon *ngIf="sitio.c4000_1500_ac" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>1500 - 300 a.C:</b>
+          <mat-icon *ngIf="sitio.c1500_300_ac" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>2000 - 500 a.C:</b>
+          <mat-icon *ngIf="sitio.c2000_500_ac" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>500 a.C - 300 d.C:</b>
+          <mat-icon *ngIf="sitio.c500_ac_300_dc" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>300 - 800 d.C:</b>
+          <mat-icon *ngIf="sitio.c300_800_dc" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>800 - 1350 d.C:</b>
+          <mat-icon *ngIf="sitio.c800_1350_dc" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>1350 - 1550 d.C:</b>
+          <mat-icon *ngIf="sitio.c1350_1550_dc" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>800 - 1550 d.C:</b>
+          <mat-icon *ngIf="sitio.c800_1550_dc" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>1550 - 1821 d.C:</b>
+          <mat-icon *ngIf="sitio.c1550_1821_dc" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>1821 - 1950 d.C:</b>
+          <mat-icon *ngIf="sitio.c1821_1950_dc" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <hr />
+
+        <p><b>Otra temporalidad:</b> {{ sitio.otra_temporalidad || '—' }}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- FASES POR REGIÓN -->
+    <mat-card class="card-info full-width">
+      <mat-card-content *ngIf="sitio">
+    <mat-card-subtitle>Fases por región</mat-card-subtitle>
+
+    <div class="region-block">
+      <h4>Gran Nicoya</h4>
+      <p><b>Orosí:</b> <mat-icon *ngIf="sitio.orosi" color="check-icon">check_circle</mat-icon></p>
+      <p><b>Tempisque:</b> <mat-icon *ngIf="sitio.tempisque" color="check-icon">check_circle</mat-icon></p>
+      <p><b>Bagaces:</b> <mat-icon *ngIf="sitio.bagaces" color="check-icon">check_circle</mat-icon></p>
+      <p><b>Sapoa:</b> <mat-icon *ngIf="sitio.sapoa" color="check-icon">check_circle</mat-icon></p>
+      <p><b>Ometepe:</b> <mat-icon *ngIf="sitio.ometepe" color="check-icon">check_circle</mat-icon></p>
+    </div>
+
+    <hr />
+
+    <div class="region-block">
+      <h4>Central</h4>
+      <p><b>La Montaña:</b> <mat-icon *ngIf="sitio.la_montana" color="check-icon">check_circle</mat-icon></p>
+      <p><b>El Bosque:</b> <mat-icon *ngIf="sitio.el_bosque" color="check-icon">check_circle</mat-icon></p>
+      <p><b>La Selva:</b> <mat-icon *ngIf="sitio.la_selva" color="check-icon">check_circle</mat-icon></p>
+      <p><b>La Cabaña:</b> <mat-icon *ngIf="sitio.la_cabana" color="check-icon">check_circle</mat-icon></p>
+      <p><b>Barva:</b> <mat-icon *ngIf="sitio.barva" color="check-icon">check_circle</mat-icon></p>
+      <p><b>Pavas:</b> <mat-icon *ngIf="sitio.pavas" color="check-icon">check_circle</mat-icon></p>
+      <p><b>Curridabat:</b> <mat-icon *ngIf="sitio.curridabat" color="check-icon">check_circle</mat-icon></p>
+      <p><b>Cartago:</b> <mat-icon *ngIf="sitio.cartago" color="check-icon">check_circle</mat-icon></p>
+      <p><b>Ron Ron:</b> <mat-icon *ngIf="sitio.ron_ron" color="check-icon">check_circle</mat-icon></p>
+      <p><b>Platanar:</b> <mat-icon *ngIf="sitio.platanar" color="check-icon">check_circle</mat-icon></p>
+      <p><b>Venecia:</b> <mat-icon *ngIf="sitio.venecia" color="check-icon">check_circle</mat-icon></p>
+      <p><b>Jacó:</b> <mat-icon *ngIf="sitio.jaco" color="check-icon">check_circle</mat-icon></p>
+      <p><b>Los Sueños:</b> <mat-icon *ngIf="sitio.los_suenos" color="check-icon">check_circle</mat-icon></p>
+    </div>
+
+    <hr />
+
+    <div class="region-block">
+      <h4>Gran Chiriquí</h4>
+      <p><b>Sinancra:</b> <mat-icon *ngIf="sitio.sinancra" color="check-icon">check_circle</mat-icon></p>
+      <p><b>Aguas Buenas:</b> <mat-icon *ngIf="sitio.aguas_buenas" color="check-icon">check_circle</mat-icon></p>
+      <p><b>Chiriquí:</b> <mat-icon *ngIf="sitio.chiriqui" color="check-icon">check_circle</mat-icon></p>
+    </div>
+  </mat-card-content>
+    </mat-card>
+
+  </div>
+</mat-tab>
+      
+<!-- 
       <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon class="example-tab-icon">filter_hdr</mat-icon>
@@ -317,27 +871,27 @@
             <mat-card-content *ngIf="sitio">
               <mat-card-subtitle>Actividades de Campo</mat-card-subtitle>
       
-              <p><b>Excavación:</b> <mat-icon *ngIf="sitio.excavacion_aislada" color="primary">check_circle</mat-icon></p>
-              <p><b>Levantamiento Cartográfico:</b> <mat-icon *ngIf="sitio.lev_cartografico" color="primary">check_circle</mat-icon></p>
-              <p><b>Recolección de Superficie:</b> <mat-icon *ngIf="sitio.rec_superficie" color="primary">check_circle</mat-icon></p>
-              <p><b>Recorrido por Propiedad:</b> <mat-icon *ngIf="sitio.rec_propiedad" color="primary">check_circle</mat-icon></p>
-              <p><b>Registro Fotográfico:</b> <mat-icon *ngIf="sitio.registro_fotografico" color="primary">check_circle</mat-icon></p>
+              <p><b>Excavación:</b> <mat-icon *ngIf="sitio.excavacion_aislada" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Levantamiento Cartográfico:</b> <mat-icon *ngIf="sitio.lev_cartografico" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Recolección de Superficie:</b> <mat-icon *ngIf="sitio.rec_superficie" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Recorrido por Propiedad:</b> <mat-icon *ngIf="sitio.rec_propiedad" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Registro Fotográfico:</b> <mat-icon *ngIf="sitio.registro_fotografico" color="check-icon">check_circle</mat-icon></p>
               <p><b>Trabajo de Campo:</b> {{sitio.trabajo_campo}}</p>
       
               <hr />
               <p><b>Recolección:</b> {{sitio.recoleccion}}</p>
-              <p><b>Arbitraria:</b> <mat-icon *ngIf="sitio.arbitratia" color="accent">check_circle</mat-icon></p>
-              <p><b>Probabilística:</b> <mat-icon *ngIf="sitio.probabilistico" color="accent">check_circle</mat-icon></p>
+              <p><b>Arbitraria:</b> <mat-icon *ngIf="sitio.arbitratia" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Probabilística:</b> <mat-icon *ngIf="sitio.probabilistico" color="check-icon">check_circle</mat-icon></p>
               <p><b>Levantamiento Cartográfico:</b> {{sitio.levantamiento_cartografico}}</p>
       
               <hr />
               <p><b>Excavación:</b> {{sitio.excava}}</p>
-              <p><b>Cala Estratatigráfica:</b> <mat-icon *ngIf="sitio.cala_estratatigrafica" color="accent">check_circle</mat-icon></p>
-              <p><b>Horizontal:</b> <mat-icon *ngIf="sitio.horizontal" color="accent">check_circle</mat-icon></p>
-              <p><b>Limpieza de Perfiles:</b> <mat-icon *ngIf="sitio.limpieza_perfiles" color="accent">check_circle</mat-icon></p>
-              <p><b>Limpieza de Rasgos:</b> <mat-icon *ngIf="sitio.limpieza_razgos" color="accent">check_circle</mat-icon></p>
-              <p><b>Sondeo:</b> <mat-icon *ngIf="sitio.sondeo" color="accent">check_circle</mat-icon></p>
-              <p><b>Trinchera:</b> <mat-icon *ngIf="sitio.trinchera" color="accent">check_circle</mat-icon></p>
+              <p><b>Cala Estratatigráfica:</b> <mat-icon *ngIf="sitio.cala_estratatigrafica" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Horizontal:</b> <mat-icon *ngIf="sitio.horizontal" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Limpieza de Perfiles:</b> <mat-icon *ngIf="sitio.limpieza_perfiles" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Limpieza de Rasgos:</b> <mat-icon *ngIf="sitio.limpieza_razgos" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Sondeo:</b> <mat-icon *ngIf="sitio.sondeo" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Trinchera:</b> <mat-icon *ngIf="sitio.trinchera" color="check-icon">check_circle</mat-icon></p>
             </mat-card-content>
           </mat-card>
       
@@ -346,36 +900,173 @@
               <mat-card-subtitle>Materiales Recuperados</mat-card-subtitle>
               <hr />
       
-              <p><b>Arcilla Cocida:</b> <mat-icon *ngIf="sitio.arcilla_cocida" color="warn">check_circle</mat-icon></p>
-              <p><b>Carbón:</b> <mat-icon *ngIf="sitio.carbon" color="warn">check_circle</mat-icon></p>
-              <p><b>Cerámica:</b> <mat-icon *ngIf="sitio.ceramica" color="warn">check_circle</mat-icon></p>
-              <p><b>Cobre, Guanina o Pirita:</b> <mat-icon *ngIf="sitio.cobre" color="warn">check_circle</mat-icon></p>
-              <p><b>Concha:</b> <mat-icon *ngIf="sitio.concha" color="warn">check_circle</mat-icon></p>
-              <p><b>Esferas:</b> <mat-icon *ngIf="sitio.esferas" color="warn">check_circle</mat-icon></p>
-              <p><b>Estatuaria:</b> <mat-icon *ngIf="sitio.estatuaria" color="warn">check_circle</mat-icon></p>
-              <p><b>Fauna:</b> <mat-icon *ngIf="sitio.fauna" color="warn">check_circle</mat-icon></p>
-              <p><b>Flora:</b> <mat-icon *ngIf="sitio.flora" color="warn">check_circle</mat-icon></p>
-              <p><b>Hierro:</b> <mat-icon *ngIf="sitio.hierro" color="warn">check_circle</mat-icon></p>
-              <p><b>Lapidario:</b> <mat-icon *ngIf="sitio.lapidaria" color="warn">check_circle</mat-icon></p>
-              <p><b>Lítica:</b> <mat-icon *ngIf="sitio.litica" color="warn">check_circle</mat-icon></p>
-              <p><b>Loza:</b> <mat-icon *ngIf="sitio.loza" color="warn">check_circle</mat-icon></p>
-              <p><b>Madera o Fibra:</b> <mat-icon *ngIf="sitio.madera_fibra" color="warn">check_circle</mat-icon></p>
-              <p><b>Oro:</b> <mat-icon *ngIf="sitio.oro" color="warn">check_circle</mat-icon></p>
-              <p><b>Piedra Verde:</b> <mat-icon *ngIf="sitio.jade" color="warn">check_circle</mat-icon></p>
-              <p><b>Porcelana:</b> <mat-icon *ngIf="sitio.porcelana" color="warn">check_circle</mat-icon></p>
-              <p><b>Resina:</b> <mat-icon *ngIf="sitio.resina" color="warn">check_circle</mat-icon></p>
-              <p><b>Restos Humanos:</b> <mat-icon *ngIf="sitio.huesos_humanos" color="warn">check_circle</mat-icon></p>
-              <p><b>Tierra:</b> <mat-icon *ngIf="sitio.tierra" color="warn">check_circle</mat-icon></p>
-              <p><b>Vidrio:</b> <mat-icon *ngIf="sitio.vidrio" color="warn">check_circle</mat-icon></p>
+              <p><b>Arcilla Cocida:</b> <mat-icon *ngIf="sitio.arcilla_cocida" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Carbón:</b> <mat-icon *ngIf="sitio.carbon" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Cerámica:</b> <mat-icon *ngIf="sitio.ceramica" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Cobre, Guanina o Pirita:</b> <mat-icon *ngIf="sitio.cobre" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Concha:</b> <mat-icon *ngIf="sitio.concha" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Esferas:</b> <mat-icon *ngIf="sitio.esferas" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Estatuaria:</b> <mat-icon *ngIf="sitio.estatuaria" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Fauna:</b> <mat-icon *ngIf="sitio.fauna" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Flora:</b> <mat-icon *ngIf="sitio.flora" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Hierro:</b> <mat-icon *ngIf="sitio.hierro" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Lapidario:</b> <mat-icon *ngIf="sitio.lapidaria" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Lítica:</b> <mat-icon *ngIf="sitio.litica" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Loza:</b> <mat-icon *ngIf="sitio.loza" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Madera o Fibra:</b> <mat-icon *ngIf="sitio.madera_fibra" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Oro:</b> <mat-icon *ngIf="sitio.oro" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Piedra Verde:</b> <mat-icon *ngIf="sitio.jade" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Porcelana:</b> <mat-icon *ngIf="sitio.porcelana" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Resina:</b> <mat-icon *ngIf="sitio.resina" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Restos Humanos:</b> <mat-icon *ngIf="sitio.huesos_humanos" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Tierra:</b> <mat-icon *ngIf="sitio.tierra" color="check-icon">check_circle</mat-icon></p>
+              <p><b>Vidrio:</b> <mat-icon *ngIf="sitio.vidrio" color="check-icon">check_circle</mat-icon></p>
       
               <p><b>Materiales Recuperados:</b> {{sitio.materiales_recuperados}}</p>
             </mat-card-content>
           </mat-card>
         </div>
-      </mat-tab>
-      
-    
+      </mat-tab> -->
+      <mat-tab>
+  <ng-template mat-tab-label>
+    <mat-icon class="example-tab-icon">architecture</mat-icon>
+    Metodología
+  </ng-template>
 
+  <div class="grid-container">
+
+    <!-- Metodologia -->
+    <mat-card class="card-info">
+      <mat-card-content *ngIf="sitio">
+        <mat-card-subtitle>Metodología</mat-card-subtitle>
+
+        <p><b>Excavación:</b>
+          <mat-icon *ngIf="sitio.excavacion" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Levantamiento cartográfico:</b>
+          <mat-icon *ngIf="sitio.levantamiento_cartografico" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Recolección en superficie:</b>
+          <mat-icon *ngIf="sitio.recoleccion_superficie" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Recorrido de propiedad:</b>
+          <mat-icon *ngIf="sitio.recorrido_propiedad" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Calco de petroglifo:</b>
+          <mat-icon *ngIf="sitio.calco_petroglifo" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Registro fotográfico:</b>
+          <mat-icon *ngIf="sitio.registro_fotografico" color="check-icon">check_circle</mat-icon>
+        </p>
+
+      </mat-card-content>
+    </mat-card>
+
+    <!-- TIPO DE EXCAVACIÓN -->
+    <mat-card class="card-info">
+      <mat-card-content *ngIf="sitio">
+        <mat-card-subtitle>Tipo de excavación</mat-card-subtitle>
+
+        <p><b>Cala estratigráfica:</b>
+          <mat-icon *ngIf="sitio.cala_estratigrafica" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Horizontal:</b>
+          <mat-icon *ngIf="sitio.horizontal" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Limpieza de perfiles:</b>
+          <mat-icon *ngIf="sitio.limpieza_perfiles" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Limpieza de estructura:</b>
+          <mat-icon *ngIf="sitio.limpieza_estructura" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Sondeo / cateo:</b>
+          <mat-icon *ngIf="sitio.sondeo_cateo" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Trinchera:</b>
+          <mat-icon *ngIf="sitio.trinchera" color="check-icon">check_circle</mat-icon>
+        </p>
+
+      </mat-card-content>
+    </mat-card>
+
+    <!-- TIPO DE PROSPECCIÓN -->
+    <mat-card class="card-info">
+      <mat-card-content *ngIf="sitio">
+        <mat-card-subtitle>Tipo de prospección</mat-card-subtitle>
+
+        <p><b>Prospección asistemática:</b>
+          <mat-icon *ngIf="sitio.prospeccion_asistematica" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Prospección sistemática:</b>
+          <mat-icon *ngIf="sitio.prospeccion_sistematica" color="check-icon">check_circle</mat-icon>
+        </p>
+
+      </mat-card-content>
+    </mat-card>
+
+    <!-- TIPO DE RECOLECCIÓN -->
+    <mat-card class="card-info">
+      <mat-card-content *ngIf="sitio">
+        <mat-card-subtitle>Tipo de recolección</mat-card-subtitle>
+
+        <p><b>Arbitraria:</b>
+          <mat-icon *ngIf="sitio.recoleccion_arbitraria" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Probabilística:</b>
+          <mat-icon *ngIf="sitio.recoleccion_probabilistica" color="check-icon">check_circle</mat-icon>
+        </p>
+
+      </mat-card-content>
+    </mat-card>
+
+    <!-- TIPO DE LEVANTAMIENTO -->
+    <mat-card class="card-info">
+      <mat-card-content *ngIf="sitio">
+        <mat-card-subtitle>Tipo de levantamiento</mat-card-subtitle>
+
+        <p><b>Bosquejo:</b>
+          <mat-icon *ngIf="sitio.bosquejo" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Planimétrico:</b>
+          <mat-icon *ngIf="sitio.planimetrico" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Topográfico:</b>
+          <mat-icon *ngIf="sitio.topografico" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Otra clase de levantamiento:</b>
+          {{ sitio.otra_clase_levantamiento || '–' }}
+        </p>
+
+      </mat-card-content>
+    </mat-card>
+
+    <!-- DESCRIPCIÓN METODOLÓGICA -->
+    <mat-card class="card-info full-width">
+      <mat-card-content *ngIf="sitio">
+        <mat-card-subtitle>Descripción metodológica</mat-card-subtitle>
+        <p>{{ sitio.descripcion_metodologica || '–' }}</p>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</mat-tab>
+    
+<!-- 
     <mat-tab>
         <ng-template mat-tab-label>
             <mat-icon class="example-tab-icon">layers</mat-icon>
@@ -392,16 +1083,16 @@
                             <hr/>
                              <p><b>Estado Conservación</b></p> 
                           
-                             <p><b>Arado:</b> <mat-icon *ngIf="sitio.arado" color="accent">check_circle</mat-icon></p>
-                             <p><b>Biodeterioro:</b> <mat-icon *ngIf="sitio.biodeterioro" color="accent">check_circle</mat-icon></p>
-                             <p><b>Construcción:</b> <mat-icon *ngIf="sitio.construccion" color="accent">check_circle</mat-icon></p>
-                             <p><b>Erosión:</b> <mat-icon *ngIf="sitio.erosion" color="accent">check_circle</mat-icon></p>
-                             <p><b>Huaqueado:</b> <mat-icon *ngIf="sitio.huaqueado" color="accent">check_circle</mat-icon></p>
-                             <p><b>Mecanizado:</b> <mat-icon *ngIf="sitio.mecanizado" color="accent">check_circle</mat-icon></p>
-                             <p><b>Meteorización:</b> <mat-icon *ngIf="sitio.meteorizacion" color="accent">check_circle</mat-icon></p>
-                             <p><b>No Perturbado:</b> <mat-icon *ngIf="sitio.no_perturbado" color="accent">check_circle</mat-icon></p>
-                             <p><b>Pastoreo:</b> <mat-icon *ngIf="sitio.pastoreo" color="accent">check_circle</mat-icon></p>
-                             <p><b>Sembrado:</b> <mat-icon *ngIf="sitio.sembrado" color="accent">check_circle</mat-icon></p>
+                             <p><b>Arado:</b> <mat-icon *ngIf="sitio.arado" color="check-icon">check_circle</mat-icon></p>
+                             <p><b>Biodeterioro:</b> <mat-icon *ngIf="sitio.biodeterioro" color="check-icon">check_circle</mat-icon></p>
+                             <p><b>Construcción:</b> <mat-icon *ngIf="sitio.construccion" color="check-icon">check_circle</mat-icon></p>
+                             <p><b>Erosión:</b> <mat-icon *ngIf="sitio.erosion" color="check-icon">check_circle</mat-icon></p>
+                             <p><b>Huaqueado:</b> <mat-icon *ngIf="sitio.huaqueado" color="check-icon">check_circle</mat-icon></p>
+                             <p><b>Mecanizado:</b> <mat-icon *ngIf="sitio.mecanizado" color="check-icon">check_circle</mat-icon></p>
+                             <p><b>Meteorización:</b> <mat-icon *ngIf="sitio.meteorizacion" color="check-icon">check_circle</mat-icon></p>
+                             <p><b>No Perturbado:</b> <mat-icon *ngIf="sitio.no_perturbado" color="check-icon">check_circle</mat-icon></p>
+                             <p><b>Pastoreo:</b> <mat-icon *ngIf="sitio.pastoreo" color="check-icon">check_circle</mat-icon></p>
+                             <p><b>Sembrado:</b> <mat-icon *ngIf="sitio.sembrado" color="check-icon">check_circle</mat-icon></p>
                              
                            
                              
@@ -416,7 +1107,7 @@
                     
                         <p><b>Expediente Setena: </b> {{sitio.expediente_setena}}</p>
                         <hr/>
-                        <!-- <p  style="color:blue;"><b>Patrimonio Subacuático</b></p> -->
+                        
                        
                         <p><b>Patrimonio Subacuático:</b> {{sitio.patrimonio_acuatico}}</p>
 
@@ -434,16 +1125,180 @@
                 </mat-card-content>
             </mat-card>
         </div>
-    </mat-tab>
+    </mat-tab> -->
 
     <mat-tab>
+  <ng-template mat-tab-label>
+    <mat-icon class="example-tab-icon">category</mat-icon>
+    Materiales recuperados
+  </ng-template>
+
+  <div class="grid-container">
+
+    <!-- MATERIALES (columna izquierda) -->
+    <mat-card class="card-info">
+      <mat-card-content *ngIf="sitio">
+        <mat-card-subtitle>Materiales</mat-card-subtitle>
+
+        <p><b>Arcilla cocida:</b>
+          <mat-icon *ngIf="sitio.arcilla_cocida" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Carbón:</b>
+          <mat-icon *ngIf="sitio.carbon" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Cerámica:</b>
+          <mat-icon *ngIf="sitio.ceramica" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Concha:</b>
+          <mat-icon *ngIf="sitio.concha" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Ecofacto:</b>
+          <mat-icon *ngIf="sitio.ecofacto" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Fauna:</b>
+          <mat-icon *ngIf="sitio.fauna" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Flora:</b>
+          <mat-icon *ngIf="sitio.flora" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Hierro:</b>
+          <mat-icon *ngIf="sitio.hierro" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Lapidaria:</b>
+          <mat-icon *ngIf="sitio.lapidaria" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Loza:</b>
+          <mat-icon *ngIf="sitio.loza" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Resina:</b>
+          <mat-icon *ngIf="sitio.resina" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Teja:</b>
+          <mat-icon *ngIf="sitio.teja" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Tierra:</b>
+          <mat-icon *ngIf="sitio.tierra" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Vidrio:</b>
+          <mat-icon *ngIf="sitio.vidrio" color="check-icon">check_circle</mat-icon>
+        </p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- ARTEFACTOS / ESPECÍFICOS (columna derecha) -->
+    <mat-card class="card-info">
+      <mat-card-content *ngIf="sitio">
+        <mat-card-subtitle>Artefactos y específicos</mat-card-subtitle>
+
+        <p><b>Artefacto cerámico:</b>
+          <mat-icon *ngIf="sitio.artefacto_ceramico" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Artefacto metálico:</b>
+          <mat-icon *ngIf="sitio.artefacto_metalico" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Artefacto lítico:</b>
+          <mat-icon *ngIf="sitio.artefacto_litico" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <hr />
+
+        <p><b>Cobre / guanina / pirita:</b>
+          <mat-icon *ngIf="sitio.cobre_guanina_pirita" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Espejos de pirita:</b>
+          <mat-icon *ngIf="sitio.espejos_de_pirita" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Esferas:</b>
+          <mat-icon *ngIf="sitio.esferas" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Estatuaria:</b>
+          <mat-icon *ngIf="sitio.estatuaria" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Lítica:</b>
+          <mat-icon *ngIf="sitio.litica" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Madera / fibra:</b>
+          <mat-icon *ngIf="sitio.madera_fibra" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Oro:</b>
+          <mat-icon *ngIf="sitio.oro" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Piedra verde:</b>
+          <mat-icon *ngIf="sitio.piedra_verde" color="check-icon">check_circle</mat-icon>
+        </p>
+        <p><b>Restos humanos:</b>
+          <mat-icon *ngIf="sitio.restos_humanos" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <hr />
+
+        <p><b>Otros materiales excavados:</b> {{ sitio.otros_materiales_excavados || '–' }}</p>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</mat-tab>
+
+<mat-tab>
+  <ng-template mat-tab-label>
+    <mat-icon class="example-tab-icon">home_work</mat-icon>
+    Evidencia inmueble
+  </ng-template>
+
+  <div class="grid-container">
+
+    <!-- Checks -->
+    <mat-card class="card-info">
+      <mat-card-content *ngIf="sitio">
+        <mat-card-subtitle>Evidencia</mat-card-subtitle>
+
+        <p><b>Arte rupestre:</b>
+          <mat-icon *ngIf="sitio.arte_rupestre" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Estructura funeraria:</b>
+          <mat-icon *ngIf="sitio.estructura_funeraria" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Estructura habitacional:</b>
+          <mat-icon *ngIf="sitio.estructura_habitacional" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Estructura vial:</b>
+          <mat-icon *ngIf="sitio.estructura_vial" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Estructura demarcatoria:</b>
+          <mat-icon *ngIf="sitio.estructura_demarcatoria" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>Pecio:</b>
+          <mat-icon *ngIf="sitio.pecto" color="check-icon">check_circle</mat-icon>
+        </p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Otros -->
+    <mat-card class="card-info">
+      <mat-card-content *ngIf="sitio">
+        <mat-card-subtitle>Otros</mat-card-subtitle>
+
+        <p><b>Otra evidencia inmueble:</b></p>
+        <p>{{ sitio.otra_evidencia_inmueble || '–' }}</p>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</mat-tab>
+
+<!--    <mat-tab>
       <ng-template mat-tab-label>
       <mat-icon class="mr-1 align-middle">category</mat-icon>
       Objetos relacionados ({{ objetos?.length || 0 }})
       </ng-template>
   <div class="objetos-wrap">
     <table mat-table [dataSource]="objetos" class="mat-elevation-z1 w-full">
-      <!-- Columna imagen -->
+   
       <ng-container matColumnDef="imagen">
   <th mat-header-cell *matHeaderCellDef> Foto </th>
   <td mat-cell *matCellDef="let obj">
@@ -458,25 +1313,23 @@
     </ng-template>
   </td>
 </ng-container>
-      <!-- Columna nombre -->
+      
       <ng-container matColumnDef="nombre_artefacto">
         <th mat-header-cell *matHeaderCellDef> Nombre </th>
         <td mat-cell *matCellDef="let obj">{{ obj.nombre_artefacto }}</td>
       </ng-container>
 
-      <!-- Columna tipo -->
       <ng-container matColumnDef="tipo_materia">
         <th mat-header-cell *matHeaderCellDef> Tipo de material </th>
         <td mat-cell *matCellDef="let obj">{{ obj.tipo_materia || '—' }}</td>
       </ng-container>
 
-      <!-- Columna estado -->
+
       <ng-container matColumnDef="estado_de_conservacion">
         <th mat-header-cell *matHeaderCellDef> Estado </th>
         <td mat-cell *matCellDef="let obj">{{ obj.estado_de_conservacion || '—' }}</td>
       </ng-container>
 
-      <!-- Render -->
       <tr mat-header-row *matHeaderRowDef="cols"></tr>
       <tr mat-row *matRowDef="let row; columns: cols"></tr>
     </table>
@@ -485,81 +1338,137 @@
       No hay objetos relacionados a este monumento.
     </div>
   </div>
+</mat-tab> 
+ -->
+  
+<mat-tab>
+  <ng-template mat-tab-label>
+    <mat-icon class="example-tab-icon">layers</mat-icon>
+    Generalidades
+  </ng-template>
+
+  <div class="grid-container">
+
+    <!-- Estado de conservación -->
+    <mat-card class="card-info">
+      <mat-card-content *ngIf="sitio">
+        <mat-card-subtitle>Estado de conservación</mat-card-subtitle>
+
+        <p><b>Perturbado:</b>
+          <mat-icon *ngIf="sitio.perturbado" color="check-icon">check_circle</mat-icon>
+        </p>
+
+        <p><b>No perturbado:</b>
+          <mat-icon *ngIf="sitio.no_perturbado" color="check-icon">check_circle</mat-icon>
+        </p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Tipo de perturbación -->
+    <mat-card class="card-info">
+      <mat-card-content *ngIf="sitio">
+        <mat-card-subtitle>Tipo de perturbación</mat-card-subtitle>
+
+        <p><b>Arado:</b> <mat-icon *ngIf="sitio.arado" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Biodeterioro:</b> <mat-icon *ngIf="sitio.biodeterioro" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Construcción:</b> <mat-icon *ngIf="sitio.construccion" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Erosión:</b> <mat-icon *ngIf="sitio.erosion" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Huaqueado:</b> <mat-icon *ngIf="sitio.huaqueado" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Mecanizado:</b> <mat-icon *ngIf="sitio.mecanizado" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Meteorización:</b> <mat-icon *ngIf="sitio.meteorizacion" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Sembrado:</b> <mat-icon *ngIf="sitio.sembrado" color="check-icon">check_circle</mat-icon></p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Tipo de vegetación -->
+    <mat-card class="card-info">
+      <mat-card-content *ngIf="sitio">
+        <mat-card-subtitle>Tipo de vegetación</mat-card-subtitle>
+
+        <p><b>Bosque:</b> <mat-icon *ngIf="sitio.bosque" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Cultivo agrícola:</b> <mat-icon *ngIf="sitio.cultivo_agricola" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Matorral:</b> <mat-icon *ngIf="sitio.matorral" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Plantación forestal:</b> <mat-icon *ngIf="sitio.plantacion_forestal" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Sin vegetación:</b> <mat-icon *ngIf="sitio.sin_vegetacion" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Tacotal:</b> <mat-icon *ngIf="sitio.tacotal" color="check-icon">check_circle</mat-icon></p>
+
+        <hr />
+        <p><b>Otra vegetación:</b> {{ sitio.otra_vegetacion || '–' }}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Cobertura espacial -->
+    <mat-card class="card-info">
+      <mat-card-content *ngIf="sitio">
+        <mat-card-subtitle>Cobertura espacial</mat-card-subtitle>
+
+        <p><b>Poco denso:</b> <mat-icon *ngIf="sitio.poco_denso" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Semidenso:</b> <mat-icon *ngIf="sitio.semidenso" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Denso:</b> <mat-icon *ngIf="sitio.denso" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Muy denso:</b> <mat-icon *ngIf="sitio.muy_denso" color="check-icon">check_circle</mat-icon></p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Pendiente -->
+    <mat-card class="card-info">
+      <mat-card-content *ngIf="sitio">
+        <mat-card-subtitle>Pendiente</mat-card-subtitle>
+
+        <p><b>Plano:</b> <mat-icon *ngIf="sitio.plano" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Poco acentuado:</b> <mat-icon *ngIf="sitio.poco_acentuado" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Ligeramente acentuado:</b> <mat-icon *ngIf="sitio.ligeramente_acentuado" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Acentuado:</b> <mat-icon *ngIf="sitio.acentuado" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Muy acentuado:</b> <mat-icon *ngIf="sitio.muy_acentuado" color="check-icon">check_circle</mat-icon></p>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Uso del suelo -->
+    <mat-card class="card-info">
+      <mat-card-content *ngIf="sitio">
+        <mat-card-subtitle>Uso del suelo</mat-card-subtitle>
+
+        <p><b>Agrícola:</b> <mat-icon *ngIf="sitio.agricola" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Área protegida:</b> <mat-icon *ngIf="sitio.area_protegida" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Deportivo:</b> <mat-icon *ngIf="sitio.deportivo" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Ganadero:</b> <mat-icon *ngIf="sitio.ganadero" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Industrial:</b> <mat-icon *ngIf="sitio.industrial" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Minero:</b> <mat-icon *ngIf="sitio.minero" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Portuario:</b> <mat-icon *ngIf="sitio.portuario" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Sin uso:</b> <mat-icon *ngIf="sitio.sin_uso" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Silvícola:</b> <mat-icon *ngIf="sitio.silvicola" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Turismo:</b> <mat-icon *ngIf="sitio.turismo" color="check-icon">check_circle</mat-icon></p>
+        <p><b>Urbano:</b> <mat-icon *ngIf="sitio.urbano" color="check-icon">check_circle</mat-icon></p>
+
+        <hr />
+        <p><b>Otro uso del suelo:</b> {{ sitio.otro_uso_suelo || '–' }}</p>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
 </mat-tab>
 
-  <!--  <mat-tab>
-        <ng-template mat-tab-label>
-            <mat-icon class="example-tab-icon">local_library</mat-icon>
-            Documentación
-          </ng-template>
-        <div fxLayout="row" fxLayoutAlign="center stretch">
-            <mat-card fxFlex ="50" class = "descrip-card"> 
-                    <mat-card-content>
-                        <div *ngIf="sitio" align="left">
-                           
-                            <hr/>
-                            <p><b>Reportes: </b>{{sitio.reportes}}</p>
-                             <p><b>Catalogo de Sitios, UCR :</b> {{sitio.catalogo_sitios_ucr ? "X": " "}}</p>
-                            <p><b>Hoja de Registro :</b> {{sitio.hoja_registro ? "X": " "}}</p> 
-                            <p><b>Informe :</b> {{sitio.informe ? "X": " "}}</p>
-                            <p><b>Monografía :</b> {{sitio.monografia ? "X": " "}}</p>
-                            <p><b>Publicación :</b> {{sitio.publicacion ? "X": " "}}</p>
-                            <p><b>Tesis :</b> {{sitio.tesis ? "X": " "}}</p> 
-                            <hr/>
-                            <p><b>Bibliografía : {{sitio.bibliografia}}</b></p>
-                            <hr/>
-                            <p><b>Material Gráfico: </b>{{sitio.material_grafico}}</p>   
-                            <hr/>
-                          <p><b>Artefactos : </b>{{sitio.artefactos ? "X": " "}}</p>
-                            <p><b>Croquis :</b> {{sitio.croquis ? "X": " "}}</p>
-                            <p><b>Diarios de Campo :</b> {{sitio.diarios_campo ? "X": " "}}</p> 
-                            <p><b>Dibujos :</b> {{sitio.dibujos ? "X": " "}}</p>  
-                            <p><b>Material Fotográfico :</b> {{sitio.material_fotografico ? "X": " "}}</p>   
-                            <p><b>Planos :</b> {{sitio.planos ? "X": " "}}</p>
-                            <p><b>Videos :</b> {{sitio.video ? "X": " "}}</p> 
-                            
-                        </div>
-                   </mat-card-content>
-            </mat-card>
-    
-            
-        </div>
-    </mat-tab>-->
+<mat-tab>
+  <ng-template mat-tab-label>
+    <mat-icon class="example-tab-icon">menu_book</mat-icon>
+    Bibliografía
+  </ng-template>
 
-<!--     <mat-tab>
-        <ng-template mat-tab-label>
-            <mat-icon class="example-tab-icon">picture_in_picture</mat-icon>
-            Imágenes Asociadas
-          </ng-template>
+  <div class="grid-container">
 
-           <p *ngIf="sitio"><b>links :</b> {{resultado}}</p>  
+    <mat-card class="card-info full-width">
+      <mat-card-content *ngIf="sitio">
+        <mat-card-subtitle>Referencias bibliográficas</mat-card-subtitle>
 
-     <div *ngIf="mostrar == true" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-             <div class="carousel-item" *ngFor="let element of resultado?.slice(1) let i = index" [ngClass]="{'active': i === 0}">
-            <img src={{this.element}} class="w-50" title={{this.sitio.nombre_sitio}} /> 
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span>Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-     </div> 
+        <p style="white-space: pre-line;">
+          {{ sitio.bibliografia || 'Sin referencias registradas.' }}
+        </p>
 
-     <div *ngIf="mostrar == false" fxLayout="row" fxLayoutAlign="center stretch">
-        <div class="image-thumb-repo">                
-            <img src="{{url + 'get-image/' + sitio?.image}}" *ngIf="sitio?.image"/>
-            <img src="assets/images/default.png" *ngIf="!sitio?.image"/>   
-        </div>
-    </div>
-    
+      </mat-card-content>
+    </mat-card>
 
-
-</mat-tab> -->
+  </div>
+</mat-tab>
+  
 
   </mat-tab-group>
   

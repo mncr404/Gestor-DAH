@@ -1,10 +1,4 @@
-/* .boton{
-    font-size:10px;
-    border-style: solid;
-    border:1px solid black;
-    width:42px;
-    height:26px;
-   } */
+
 
    .admin-titulo {
     color: #3f51b5;
@@ -86,29 +80,109 @@ aside#sidebar {
   }
 
   .busqueda-fila {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.3rem;
-    margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: stretch;  /* o flex-start */
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+  width: 100%;
   }
   
-  .busqueda-fila select {
-    flex: 1;
-    max-width: 200px;
-    padding: 0.3rem;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+  .busqueda-fila select,
+.busqueda-fila input[type="text"] {
+  flex: 1;
+  max-width: none;          /* QUITA el límite */
+  width: 100%;
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #d5dbe5;
+  background: #fff;
   }
   
   .busqueda-fila button {
-    flex-shrink: 0;
-    margin-top: 2px;
+    width: 100%;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   }
   .busqueda-fila mat-icon {
     font-size: 20px;
   }
   
-  
-  
+  .btn-primary {
+  background-color: #0f2a43 !important;
+  border-color: #0f2a43 !important;
+}
 
+aside#sidebar{
+  width: 100%;
+  min-width: 0;
+}
+
+/* Botones institucionales suaves */
+aside#sidebar .btn-primary{
+  background: #16324a !important;   /* navy suave */
+  border-color: #16324a !important;
+  color: #fff !important;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(15, 42, 67, 0.12);
+}
+
+aside#sidebar .btn-primary:hover{
+  background: #0f2a43 !important;
+  border-color: #0f2a43 !important;
+}
+
+aside#sidebar .btn-outline-warning,
+aside#sidebar .btn-outline-success{
+  border-radius: 12px;
+}
+
+/* Botón filtros avanzado */
+.btn-filtros{
+  width: 100%;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-weight: 700;
+  border: 1px solid #d7dde6;
+  background: #ffffff;
+  color: #16324a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-filtros:hover{
+  background: #f3f6fa;
+}
+
+.filtros-cta{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.badge-nuevo{
+  background:#ffd45a;
+  color:#1d2b3a;
+  font-weight:800;
+  border-radius:999px;
+  padding:2px 8px;
+  font-size:12px;
+  margin-right:6px;
+}
+
+.ayuda{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  text-decoration:none;
+  padding:0;
+}

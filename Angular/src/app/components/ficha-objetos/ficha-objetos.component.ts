@@ -281,7 +281,7 @@ private yyyymmddNumToDate(n?: number|null): Date | null {
     return this.fb.group({
       // ===== Cabecera (Datos Generales superiores)
       nombre_objeto: [''],
-      numero_de_registro_de_artefacto: [''],  // “Número Registro Artefacto”
+      numero_registro_de_artefacto: [''],  // “Número Registro Artefacto”
       clave_monumento: [''],
       nombre_monumento: [''],
       clave_norm: [''],                        // vínculo con monumentos
@@ -303,7 +303,7 @@ private yyyymmddNumToDate(n?: number|null): Date | null {
     unidad_minima: [null],       // select (habilitado al elegir contenedor)
     localizacion_general: [null], // texto combinado que irá al backend
       // ===== Caracterización del Bien
-      artefacto: [null],
+      nombre_artefacto: [null],
   categoria: [null],
   material: [null],
   material_subtipo: [null],
@@ -356,6 +356,7 @@ clasif_complejo: [null],
 
       // ===== Movimiento del Bien
       prestamo: [''],
+      observaciones_movimiento: [''],
       // Si quieres un campo propio: observaciones_movimiento: [''],
 
       // ===== Registro y Verificación
