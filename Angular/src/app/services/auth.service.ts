@@ -11,10 +11,10 @@ export class AuthService {
 
    // private URL = 'http://181.193.24.142:3900/apu'; Museo
    // private URL = 'http://31.220.97.126:3900/apu';
-   // private URL = 'https://origenes.museocostarica.go.cr:3900/apu';
+    private URL = 'https://origenes.museocostarica.go.cr:3900/apu';
    //private URL = 'apu';
     //private URL = '/apu';
-   private URL = 'http://127.0.0.1:3900/apu';
+   //private URL = 'http://127.0.0.1:3900/apu';
 
     _isLoggedIn: boolean = false
 
