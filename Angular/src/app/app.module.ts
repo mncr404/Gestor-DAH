@@ -199,9 +199,6 @@ import { AdvancedFiltersHelpDialogComponent } from './components/advanced-filter
     MatTabsModule,
     NgbModule,
     FlexLayoutModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAV-I1NNfBoKoqykoOTsCipzR1wM5gRm3A'  
-    }),
     FormsModule,
     MatCardModule,
     ReactiveFormsModule,

@@ -3,88 +3,6 @@
 <h3 class="busqueda-titulo">Búsqueda de Monumentos</h3>
 
 
-<!-- <div class="center">
-    <p>Cantidad de Monumentos Encontrados : <b>{{sitios.length}}</b></p>
-  
-    <aside id="sidebar">
-        <div id="search">
-            
-            <div class="instrucciones-busqueda">
-                <mat-icon class="icono-info">info</mat-icon>
-                <p><strong>Puede buscar en cada uno de los niveles de la División Política de Costa Rica</strong></p>
-                <p><strong>Además puede buscar por nombre o clave del Monumento</strong></p>
-              </div>
-               
-               <hr>
-           
-<div class="busqueda-fila">
-    <select [(ngModel)]="selectedProvincia" (change)="onSelect($event)">
-      <option [ngValue]="null">--Seleccione Provincia--</option>
-      <option *ngFor="let provincia of provincias" [ngValue]="provincia">
-        {{ provincia.title }}
-      </option>
-    </select>
-  </div>
-  
-
-  <div class="busqueda-fila">
-    <select [(ngModel)]="selectedCanton" (change)="onSelectCanton($event)">
-      <option [ngValue]="null">--Seleccione Cantón--</option>
-      <option *ngFor="let canton of cantones" [ngValue]="canton">
-        {{ canton.title }}
-      </option>
-    </select>
-  </div>
-
-  <div class="busqueda-fila">
-    <select [(ngModel)]="selectedDistrito">
-      <option [ngValue]="null">--Seleccione Distrito--</option>
-      <option *ngFor="let distrito of distritos" [ngValue]="distrito">
-        {{ distrito.title }}
-      </option>
-    </select>
-  </div>
-
-  <div class="busqueda-fila mt-2">
-    <button class="btn btn-primary" (click)="buscarSitios()">
-      <mat-icon>search</mat-icon> Buscar
-    </button>
-  </div>         
-    </div>
-<br>
-<div class="busqueda-fila">
-    <form #searchForm="ngForm" (ngSubmit)= "goSearchNombre()">
-      <input type="text" placeholder="Nombre o Clave" name="search" [(ngModel)] ="searchNombre"/>
-  </form>
-  <button mat-icon-button matTooltip="Buscar" (click)="goSearchNombre()">
-    <mat-icon>search</mat-icon>
-  </button>
-</div>
-<br>
-                <p>Total Monumentos Encontrados : <b>{{sitios.length}}</b></p>
-<hr>
-<h3>Exportar Búsqueda a Excel</h3>
- <div class ="container">
-
-    <button mat-raised-button color="primary" (click)="exportAsXLSXFiltered()">
-        Exportar a Excel <mat-icon>file_download</mat-icon>
-    </button>
-</div>
-
-
-<hr>
-
-</aside>
-    
-<div class="map-container">
-  <div id="map"></div>
-
-</div> 
-
-
-</div> -->
-
-
 <div class="center">
   
 
@@ -94,79 +12,41 @@
       <div class="map-container">
         <div id="map"></div>
       </div>
+        <!-- ============================= -->
+<!-- CAPAS GEOGRÁFICAS DESCARGABLES -->
+<!-- ============================= -->
+
+<div class="capas-descarga">
+
+  <h4 class="bloque-titulo">Capas geográficas de monumentos arqueológicos</h4>
+
+  <p class="descripcion-capas">
+    Estas capas geográficas corresponden a los monumentos arqueológicos registrados en el sistema SIGMA del Museo Nacional de Costa Rica.
+    Incluyen la ubicación de los sitios arqueológicos y sus respectivos polígonos de delimitación cuando están disponibles.
+  </p>
+
+  <p class="descripcion-capas">
+    Se proporcionan dos formatos para facilitar su uso en diferentes plataformas de Sistemas de Información Geográfica (SIG).
+  </p>
+
+  <div class="descargas-sig">
+
+    <a href="assets/docs/SIGMA.gpkg" class="btn btn-outline-primary" download>
+      <mat-icon>file_download</mat-icon>
+      Descargar capa SIGMA (GeoPackage .gpkg)
+    </a>
+
+    <a href="assets/docs/SIGMA.kmz" class="btn btn-outline-success" download>
+      <mat-icon>file_download</mat-icon>
+      Descargar capa SIGMA (Google Earth .kmz)
+    </a>
+
+  </div>
+
+</div>
     </div>
 
- <!--    <aside id="sidebar" class="sidebar-panel">
-      <div id="search">
 
-        <div class="instrucciones-busqueda">
-          <mat-icon class="icono-info">info</mat-icon>
-          <p><strong>Puede buscar en cada uno de los niveles de la División Política de Costa Rica</strong></p>
-          <p><strong>Además puede buscar por nombre o clave del Monumento</strong></p>
-        </div>
-
-        <hr>
-
-        <div class="busqueda-fila">
-          <select [(ngModel)]="selectedProvincia" (change)="onSelect($event)">
-            <option [ngValue]="null">--Seleccione Provincia--</option>
-            <option *ngFor="let provincia of provincias" [ngValue]="provincia">
-              {{ provincia.title }}
-            </option>
-          </select>
-        </div>
-
-        <div class="busqueda-fila">
-          <select [(ngModel)]="selectedCanton" (change)="onSelectCanton($event)">
-            <option [ngValue]="null">--Seleccione Cantón--</option>
-            <option *ngFor="let canton of cantones" [ngValue]="canton">
-              {{ canton.title }}
-            </option>
-          </select>
-        </div>
-
-        <div class="busqueda-fila">
-          <select [(ngModel)]="selectedDistrito">
-            <option [ngValue]="null">--Seleccione Distrito--</option>
-            <option *ngFor="let distrito of distritos" [ngValue]="distrito">
-              {{ distrito.title }}
-            </option>
-          </select>
-        </div>
-
-        <div class="busqueda-fila mt-2">
-          <button class="btn btn-primary" (click)="buscarSitios()">
-            <mat-icon>search</mat-icon> Buscar
-          </button>
-        </div>
-      </div>
-
-      <br>
-
-      <div class="busqueda-fila">
-        <form #searchForm="ngForm" (ngSubmit)="goSearchNombre()">
-          <input type="text" placeholder="Nombre o Clave" name="search" [(ngModel)]="searchNombre"/>
-        </form>
-        <button mat-icon-button matTooltip="Buscar" (click)="goSearchNombre()">
-          <mat-icon>search</mat-icon>
-        </button>
-      </div>
-
-      <br>
-
-      <p>Total Monumentos Encontrados : <b>{{sitios.length}}</b></p>
-
-      <hr>
-
-      <h3>Exportar Búsqueda a Excel</h3>
-      <div class="container">
-        <button mat-raised-button color="primary" (click)="exportAsXLSXFiltered()">
-          Exportar a Excel <mat-icon>file_download</mat-icon>
-        </button>
-      </div>
-
-      <hr>
-    </aside> -->
 
     <aside id="sidebar" class="sidebar-panel">
   <div id="search" class="search-card">
@@ -269,4 +149,6 @@
 </aside>
 
   </div>
+
+
 </div>
